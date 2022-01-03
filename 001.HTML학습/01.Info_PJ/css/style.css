@@ -66,6 +66,32 @@ main {
     /* text-align: center; */
     /* 인라인요소 중앙정렬 */
 }
+/* 메인 문단 */
+main p{
+    /* font-style: italic; */
+    /* 글자스타일 - 기본 normal */
+    
+    /* font-weight: bold; */
+    /* 글자두께 
+    - lighter/bold/bolder/100/200등 숫자 */
+
+    font-size: 17px;
+    /* 글자크기 */
+    font-family: "굴림","궁서";
+    /* 글자체 - 여러글자체는 우선순위임
+    (없으면 뒤엣것나옴) */
+    line-height: 1.5;
+    /* 줄간격 - 숫자만 쓰면 글자크기의 배수
+    단위있으면 그 크기만큼 줄간격 설정됨 */
+    letter-spacing: -1px;
+    /* 자간(글자간격) - 기본값0 */
+    word-spacing: 2px;
+    /* 단어간격 - 기본값0 */
+
+    padding: 0 30px;
+    /* 안쪽여백 */
+
+}
 
 /* 하단영역 */
 footer {
