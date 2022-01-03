@@ -59,18 +59,27 @@
                 figure하위요소로 이미지설명박스(옵션)
          -->
         <!-- 2-3.기사내용 -->
-        <p>&lt;[서울&amp;뉴시스] 박대로 기자&gt; = 
+        <p>&lt;[서울&amp;뉴시스] 박대로 기자&gt; =
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <!-- 꺽쇠,엠퍼샌드,공백문자 특수문자처리 -->
-            <b>주한미군</b>이 <strong>역대 최대 코로나19<sup>①</sup> 확산세에 동요</strong>하고 있는 것으로 나타났다. 평택 <i>험프리스 기지</i> 일부 건물은 아예 일시 폐쇄된 것으로 드러났다.</p>
+            <b>주한미군</b>이 <strong>역대 최대 <ins>코로나19</ins><sup>①</sup> 확산세에 동요</strong>하고 있는 것으로 나타났다. 평택 <i>험프리스 기지</i> 일부
+            건물은 아예 일시 폐쇄된 것으로 드러났다.</p>
+        <!-- 
+                p 요소 : 단락 / 문단 을 나타내는 요소
+                ※주의사항 - 내부의 자식요소로 블록요소를
+                사용할 수 없다!!!(인라인요소는 사용가능!)
+                예컨데 div, h1, h2 등 블록요소를 포함못함!
+             -->
 
         <p>30일 미군 기관지 성조지<sub>STARS AND STRIPES</sub>에 따르면 지난 21일부터 27일까지 <b>주한미군</b> 내 코로나19 추가 확진자는 467명이다.</p>
 
-        <p>467명 중 한국 내 미군 기지에서 <mark>확진된 인원은 457명</mark>, 외국에서 입국 후 확진 판정을 받은 인원은 10명이다. 확진자들은 평택 <i>험프리스 기지</i>, 오산 공군 기지 등에 <em>격리돼 치료</em>를 받고 있다.</p>
+        <p>467명 중 한국 내 미군 기지에서 <mark>확진된 인원은 457명</mark>, 외국에서 입국 후 확진 판정을 받은 인원은 10명이다. 확진자들은 평택 <i>험프리스 기지</i>, 오산 공군
+            기지 등에 <em>격리돼 치료</em>를 받고 있다.</p>
 
         <p>세스 그레이브스 험프리스 수비대 사령관은 페이스북에 올린 글에서 "이번 확진자 급증은 팬데믹 시작 이후 <i>험프리스 기지</i>에서는 <em>유례가 없는 일</em>"이라고 밝혔다.</p>
 
-        <p>확진자 467명은 1주일 간 확진 건수로는 <strong>역대 최대 규모</strong>다. <mark>기존 최다 확진 사례는 지난 7월 동두천 캠프 케이시에서 발생한 58명이었다</mark>.</p>
+        <p>확진자 467명은 1주일 간 확진 건수로는 <strong>역대 최대 규모</strong>다. <mark>기존 최다 확진 사례는 지난 7월 동두천 캠프 케이시에서 발생한 58명이었다</mark>.
+        </p>
 
         <p>리 피터스 <b>주한미군</b> 대변인은 성조지에 "각 부대는 확진으로 인한 위험성을 분석하고 있다"며 "그리고 즉시임전태세를 유지하기 위한 조치를 시행하고 있다"고 설명했다.</p>
 
@@ -85,18 +94,20 @@
             (span은 범위라는 뜻!)
          -->
 
-         <hr>
-         <!-- hr 가로구분선(horizontal) -->
-         <small>
-             ① 코로나바이러스(Coronavirus; CoV)는 사람을 포함한 동물에 광범위한 호흡계 및 소화계 감염을 일으키는 RNA 바이러스로, 표면을 현미경으로 관찰했을 때 특징적인 왕관 모양의 돌기 때문에 '코로나(왕관)'라는 이름이 붙었다.
-         </small>
+        <hr>
+        <!-- hr 가로구분선(horizontal) -->
+        <small>
+            ① 코로나바이러스(Coronavirus; CoV)는 사람을 포함한 동물에 광범위한 호흡계 및 소화계 감염을 일으키는 RNA 바이러스로, 표면을 현미경으로 관찰했을 때 특징적인 왕관 모양의 돌기
+            때문에 '코로나(왕관)'라는 이름이 붙었다.
+        </small>
 
-         <hr>
+        <hr>
 
-         <br>
-         
+        <br>
+
         <!-- 원본기사 -->
-        <a href="https://news.naver.com/main/read.naver?mode=LS2D&mid=shm&sid1=100&sid2=267&oid=003&aid=0010918696" target="_blank">원본기사</a>
+        <a href="https://news.naver.com/main/read.naver?mode=LS2D&mid=shm&sid1=100&sid2=267&oid=003&aid=0010918696"
+            target="_blank">원본기사</a>
 
     </main>
     <!-- 3. 하단영역 -->
@@ -114,6 +125,7 @@
 
     <!-- 
         [ HTML 서식 요소 ]
+
         서식 요소는 다음과 같은 특수 유형의 텍스트를 
         표시하도록 설계되었습니다.
 
@@ -133,7 +145,18 @@
         (원본링크)
         https://www.w3schools.com/html/html_formatting.asp#:~:text=HTML%20Formatting%20Elements
 
-        [  ]
+
+        [ 인용구 및 인용문 관련 태그들 ]
+
+        <blockquote> 인용블록표시요소 
+            - cite속성으로 출처표시
+            - 블록요소이므로 p태그 안에 쓰지 않게 조심하자!
+            
+        <abbr>	Defines an abbreviation or acronym
+        <address>	Defines contact information for the author/owner of a document
+        <bdo>	Defines the text direction
+        <cite>	Defines the title of a work
+        <q>	Defines a short inline quotation
 
     -->
 
