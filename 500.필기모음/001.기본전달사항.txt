@@ -42,7 +42,14 @@ https://github.com/
 예시)
 https://tombap8.github.io/KNG-FED211/index.html
 
-10. 인터페이스 개념
+
+10. UI UX 참고자료
+
+1) UX 개념의 예 :  피아노건반 계단
+- The Fun Theory 동영상 시리즈 1번
+https://youtu.be/SByymar3bds
+
+2) 인터페이스 개념
 - 나건교수 동영상
 https://youtu.be/EKFM5yeXdck
 
