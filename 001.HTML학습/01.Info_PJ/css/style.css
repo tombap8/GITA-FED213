@@ -63,7 +63,9 @@
 }
 
 /* 정치 주요뉴스에 사이 구분선 넣기 */
-.pnews li{
+/* li+li 앞에 li형제가 있는 형제li요소 선택 */
+/* +는 형제선택자 */
+.pnews li+li{
     border-top: 4px dotted hotpink;
 }
 
