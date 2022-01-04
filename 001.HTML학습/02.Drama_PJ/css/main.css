@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* 최신드라마 페이지 CSS - main.css */
+
+/* 큰제목 */
+h1.tit{
+    text-align: center;
+    /* 글자중앙 */
+}
