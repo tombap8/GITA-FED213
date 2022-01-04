@@ -10,3 +10,32 @@ h1.tit{
     /* 글자그림자: x y 블러 색 */
 }
 /* 메뉴 */
+.menu{
+    text-align: center;
+    margin-bottom: 50px;
+    /* 
+        margin - 마진(바깥여백)
+        __________________________
+        margin-bottom: 아래쪽 마진
+        margin-top: 위쪽 마진
+        margin-left: 왼쪽 마진
+        margin-right: 오른쪽 마진
+    */
+}
+/* 메뉴 링크 */
+.menu a{
+    color: #222;
+    text-decoration: none;
+}
+/* 메뉴 마우스 오버시 + 클래스 on*/
+.menu a:hover,
+.menu a.on{
+    color: lightseagreen;
+    text-decoration: overline;
+}
+/* 마지막 a요소에 왼쪽보더 주기 */
+.menu a:last-child{
+    border-left: 3px solid blue;
+    padding-left: 10px;
+    margin-left: 5px;
+}
