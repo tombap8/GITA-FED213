@@ -39,15 +39,28 @@ h1.tit{
     padding-left: 10px;
     margin-left: 5px;
 }
-
-/* 드라마 테이블 */
-#drama{
-    border: 4px double #000;
+/* 드라마 테이블 박스 */
+.drama{
+    width: 850px;
     margin: 0 auto;
     /* 마진: 위아래0 양쪽auto */
     /* 마영오! - 가로 중앙정렬 */
     /* 마영오는 블록박스 또는 테이블만 적용됨! */
+    border: 4px double #000;
+    padding: 10px;
 }
+/* 드라마 테이블 */
+#drama{
+    width: 100%;
+    border-collapse: collapse;
+    /* 
+        기본적으로 테이블에는 사이간격이 존재함
+        이것을 없애려면 위와 같이 셋팅함
+        collapse(무너지다)
+        기본값: seperate(나누다)
+    */
+}
+
 /* 테이블 이미지 */
 #drama img{
     border-radius: 10px;
@@ -61,3 +74,19 @@ h1.tit{
     line-height: 2.5;
     /* 줄간격 */
 }
+/* 드라마 정보 a링크 */
+#drama a{
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    /* 기본글자 크기는 16px
+    12pt = 16px 이육사 */
+}
+/* 마우스 오버시 */
+#drama a:hover{
+    color: #f00;
+    text-decoration: underline;
+}
+
+
