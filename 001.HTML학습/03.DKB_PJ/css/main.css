@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* 도깨비 PJ 메인 CSS - main.css */
+
+/* 기본 리셋 */
+html,body{
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    /* 글자크기가 100%는 기본글자크기에 맞춤(16px) */
+}
+
+/* 공사중 박스표시 */
+/* 별표시(*)는 모든 요소를 선택함! */
+body *{
+    outline: 1px dashed #c7c7c7;
+    /*  외곽선(아웃라인) 속성
+        - 주변에 영향없이 테두리를 표시함
+        - 임시표시하거나 포커스표시 등으로 사용
+        - 박스모델에는 포함되지 않음!
+        - 표기법은 border와 동일함
+        - 두께는 박스요소 바깥쪽으로 표시됨
+    outline: 두께 종류 색상; */
+}
+
+/* 
+    기본적으로 block요소는
+    width: auto 로 설정되어서
+    부모요소를 끝까지 채운다!
+    height값을 설정하지 않으면
+    내용만큼 늘어남
+*/
+
+/* 전체배경넣기 */
+body{
+    /* 1. 배경색 */
+    background-color: rgb(152, 152, 255);
+    /* 2. 배경이미지 */
+    background-image: url(../images/bg_mainvisual.jpg);
+    /* 3. 배경반복옵션 */
+    background-repeat: no-repeat;
+    /* no-repeat반복없음
+    repeat-x x축반복
+    repeat-y y축반복
+    repeat 반복(기본값)*/
+    /* 4. 배경고정(보이는 화면에 붙인다!) */
+    background-attachment: fixed;
+
+    /* 5. 배경위치: x축 y축 (기준은 왼쪽선,윗선)*/
+    background-position: center;
+    /* background-position: 100px 200px; */
+    /* 배경위치옵션은 수치값(px,%등),
+    기준옵션값:
+        x축: left, center, right
+        y축: top center, bottom */
+    
+    /* 6. 배경크기 : 가로크기, 세로크기 / 특정값*/
+    background-size: cover;
+    /* cover를 쓰면 빈틈없이 비율에 맞게 배경을 요소에 채운다! */
+    /* background-size: 400px auto; */
+}
+
+/*********** 1. 상단영역 ***************/
+.top{
+    height: 124px;
+}
+/*********** 2. 메인영역 ***************/
+.cont{
+    height: 800px;
+}
+/*********** 3. 하단영역 ***************/
+.info{
+    height: 240px;
+}
