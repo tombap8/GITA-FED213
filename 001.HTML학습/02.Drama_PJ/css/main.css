@@ -5,4 +5,8 @@
 h1.tit{
     text-align: center;
     /* 글자중앙 */
+    color: #e200d7;
+    text-shadow: 2px 2px 2px #555;
+    /* 글자그림자: x y 블러 색 */
 }
+/* 메뉴 */
