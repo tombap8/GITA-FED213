@@ -38,14 +38,17 @@ body *{
 body{
     /* 1. 배경색 */
     background-color: rgb(152, 152, 255);
+
     /* 2. 배경이미지 */
     background-image: url(../images/bg_mainvisual.jpg);
+
     /* 3. 배경반복옵션 */
     background-repeat: no-repeat;
     /* no-repeat반복없음
     repeat-x x축반복
     repeat-y y축반복
     repeat 반복(기본값)*/
+    
     /* 4. 배경고정(보이는 화면에 붙인다!) */
     background-attachment: fixed;
 
