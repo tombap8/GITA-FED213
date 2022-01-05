@@ -11,17 +11,58 @@
             margin: 0;
             padding: 0;
             height: 100vh;
+            perspective: 480px;
         }
         .tit{
             text-align: center;
         }
         .board{
+            position: relative;
             width: 40%;
             height: 90vh;
             box-sizing: border-box;
             border: 2px solid silver;
             margin: 0 auto;
+            transform: rotateX(45deg);
+            transform-origin: bottom;
+            perspective: 480px;
+            perspective-origin: bottom;
         }
+        dl{    
+            position: absolute;  
+            transform-origin: bottom;
+            transition: .4s ease-out;
+            font-size: 40px;
+            border: 1px solid #000;
+            background-color: rgba(59, 45, 255, 0.541);
+        }
+        dl:hover{
+            transform: rotateX(-45deg);
+        }
+
+        dl:nth-child(1){
+            bottom: 5%;
+            left: 5%;
+        }
+
+        dl:nth-child(2){
+            bottom: 7%;
+            right: 5%;
+        }
+
+        dl:nth-child(3){
+            bottom: 20%;
+            left: 7%;
+        }
+        dl:nth-child(4){
+            bottom: 25%;
+            right: 10%;
+        }
+        dl:nth-child(5){
+            bottom: 37%;
+            left: 2%;
+        }
+
     </style>
 </head>
 
