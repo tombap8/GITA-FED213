@@ -87,6 +87,17 @@ body{
     margin: 0 auto;
     /* 마영오! - 블록가로중앙 */
 }
+
+/* 가상요소로 clear:both 셋팅하기 */
+#cbx::after{
+    content: '';
+    /* 빈content속성은 마치 span태그를 쓴것 같다~! */
+    display: block;
+    /* 블록 설정하는 순간 마치 div태그를 쓴것 같다~! */
+    clear: both;
+    /* 블록요소만 clear설정이 먹히므로 블록으로 만든다! */
+}
+
 /* 캐릭터박스 공통 */
 .cat{
     /* 4등분 가로 크기%는? 25% */
@@ -106,9 +117,11 @@ body{
         float 값이 left 면 left, right면 right로 끊어줌!
         both는 어떤 값이든 끊어줌! 그래서 이것을 많이씀!
         클리어보스 clear:both
+        -> 실제 요소를 쓰면 지워지거나 관리에 문제가 될 
+        소지가 큼! 따라서 가상요소로 셋팅함!
+        맨뒤 추가 가상요소는 ::after
     */
 }
-
 /* 캐릭터 이미지 */
 .ci>img{
     width: 100%;
