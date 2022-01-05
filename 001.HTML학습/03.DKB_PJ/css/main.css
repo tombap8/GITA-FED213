@@ -36,24 +36,31 @@ body *{
 
 /* 전체배경넣기 */
 body{
+
+    /* 배경: 색이반고윙/크 */
+    background: 
+    url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,    
+    url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+    /* 첫번째 배경이미지가 위! 10% 30% 위치값 슬래쉬(/)뒤가 가로크기 10%  */
+
     /* 1. 배경색 */
-    background-color: rgb(152, 152, 255);
+    /* background-color: rgb(152, 152, 255); */
 
     /* 2. 배경이미지 */
-    background-image: url(../images/bg_mainvisual.jpg);
+    /* background-image: url(../images/bg_mainvisual.jpg); */
 
     /* 3. 배경반복옵션 */
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     /* no-repeat반복없음
     repeat-x x축반복
     repeat-y y축반복
     repeat 반복(기본값)*/
     
     /* 4. 배경고정(보이는 화면에 붙인다!) */
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
 
     /* 5. 배경위치: x축 y축 (기준은 왼쪽선,윗선)*/
-    background-position: center;
+    /* background-position: center; */
     /* background-position: 100px 200px; */
     /* 배경위치옵션은 수치값(px,%등),
     기준옵션값:
@@ -61,7 +68,7 @@ body{
         y축: top center, bottom */
     
     /* 6. 배경크기 : 가로크기, 세로크기 / 특정값*/
-    background-size: cover;
+    /* background-size: cover; */
     /* cover를 쓰면 빈틈없이 비율에 맞게 배경을 요소에 채운다! */
     /* background-size: 400px auto; */
 }
