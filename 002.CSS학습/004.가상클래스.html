@@ -86,20 +86,37 @@
         } */
 
         /* 일반적으로 a요소 자체 디자인을 잡는다! */
+        h2 a {
+            color: hotpink;
+            text-decoration: none;
+            text-shadow: 2px 2px 2px #777;
+        }
         
 
         /* :hover 마우스 오버상태 */
-        
+        h2 a:hover{
+            color: red;
+            text-decoration: overline;
+        }
        
 
         /* :active 마우스로 눌려진상태(클!) */
-        
+        /* h2 a:active{
+            color: hotpink;
+            text-decoration: none;
+            text-shadow: 2px 2px 2px #777;
+        } */
 
         /* :visited 링크 방문후(한번클릭후) */
+        /* h2 a:visited {
+            color: blue;
+        } */
         
 
         /* :focus 요소를 클릭하여 초점이 올때 */
-        
+        h2 a:focus {
+            outline: 10px dotted orangered;
+        }
         
 
         /* 시인이름 */
@@ -137,14 +154,34 @@
         }
 
         /* 1번 li */
+        .part1 li:first-child{
+            font-size: 40px;
+            font-family: "궁서";
+            color: red;
+        }
         
 
-        /* 오버시(:hover) */        
+        /* 오버시(:hover) */     
+        .part1 li:first-child:hover{
+            font-size: 50px;
+            color: blueviolet;
+        }
+           
         
 
         /* 2번째 li */
+        .part1 li:nth-child(2){
+            font-size: 30px;
+            font-family: "굴림";
+            color: lightcoral;
+            font-weight: bold;
+        }
+        
        
         /* 오버시 */
+        .part1 li:nth-child(2):hover{
+            color: skyblue;
+        }
         
         
         /* 3번째 li */
