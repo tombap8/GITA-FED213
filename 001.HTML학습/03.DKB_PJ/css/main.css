@@ -153,7 +153,7 @@ body{
 
 /* 캐릭터 이미지 박스 */
 .ci{
-    transition: margin-top .6s ease-out;
+    transition: margin-top .4s ease-out;
 }
 /* .cat에 마우스 오버시 */
 .cat:hover .ci{
@@ -202,9 +202,19 @@ body{
     /* y축 스크롤만 생겨서 넘치는 자식요소 보이기 */
     background: url(../images/eachBG.jpg) no-repeat center/cover;
     margin-top: 15px;
+    border-radius: 20px 0 0 20px;
+    /* 
+        둥근모서리 방향별주기: 왼쪽위부터 시계방향
+        왼위 오른위 오른아래 왼아래
+        (하나의 값을 쓰면 4방향)
+
+        ((w3schools 참고))
+        https://www.w3schools.com/cssref/css3_pr_border-radius.asp
+
+    */
 
     /* 트랜지션 : 속성 시간 이징 지연시간 */
-    transition: height .6s ease-out;
+    transition: height .4s ease-out;
 }
 /* 오버시 높이값 변경! */
 .cat:hover .cd{
