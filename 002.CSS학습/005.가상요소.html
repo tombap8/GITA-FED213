@@ -97,7 +97,8 @@
         
         /* dd전체와 
         dd.story>h3에 가상요소 before적용하기 */
-        dl dd::before{
+        dl dd::before,
+        dd.story>h3::before{
             content: '♥';
             color: red;
             margin-right: 5px;
@@ -107,6 +108,9 @@
         
 
         /* 스토리의 dd는 가상요소 없애기 */
+        dd.story::before{
+            display: none;
+        }
         
         /* .story의 첫번째 p태그의 첫번째 글자 디자인 변경하기 */
         
