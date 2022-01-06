@@ -150,6 +150,16 @@ body{
         맨뒤 추가 가상요소는 ::after
     */
 }
+
+/* 캐릭터 이미지 박스 */
+.ci{
+    transition: margin-top .6s ease-out;
+}
+/* .cat에 마우스 오버시 */
+.cat:hover .ci{
+    margin-top: -100px;
+}
+
 /* 캐릭터 이미지 */
 .ci>img{
     width: 100%;
@@ -194,7 +204,7 @@ body{
     margin-top: 15px;
 
     /* 트랜지션 : 속성 시간 이징 지연시간 */
-    transition: height .6s;
+    transition: height .6s ease-out;
 }
 /* 오버시 높이값 변경! */
 .cat:hover .cd{
