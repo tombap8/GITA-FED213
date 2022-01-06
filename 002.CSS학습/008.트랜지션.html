@@ -71,12 +71,46 @@
 
 
         /* #tr1에 트랜지션 설정 */
+        /* 트랜지션을 hover가 아닌 원래 요소에 주면
+        양방향 모두 동시적용된다! */
+        #tr1 span{
+            transition: 2s;
+            /* 앞에 속성을 생략하면 all과 같다! */
+        }
+        #tr1:hover span{
+            left: 50%;
+            background-color: #f00;
+        }
 
         /* #tr2에 트랜지션 설정 */
+        #tr2 span{
+            left: -5%;
+            background-color: orange;
+        }
+        /* 오버시에만 트랜지션을 주면 오버시에만 적용됨! */
+        #tr2:hover span{
+            left: 70%;
+            background-color: lime;
+            transition: all 3s;
+        }
         
 
         /* #tr3에 트랜지션 설정 */
-        
+        #tr3 span{
+            /* 원상복귀시 적용! */
+            transition: all 5s ease-in-out 2s;
+            /* 모든 속성이 5초동안 처음과 마지막 천천히 2초후에 애니 */
+        }
+        #tr3:hover span{
+            left: 60%;
+            background-color: pink;
+            border-radius: 0;
+            /* 원을 사각형으로! */
+            
+            /* 오버시 적용 */
+            transition: 1s ease-out;
+            /* 1초동안 마지막에 천천히 */
+        }
 
         /* #tr4에 트랜지션 설정 */
         
