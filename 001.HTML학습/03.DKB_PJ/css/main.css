@@ -186,12 +186,21 @@ body{
 
 /* 캐릭터 설명 박스 */
 .cd{
-    height: 250px;
+    height: 0;
+    /* .cat 오버시 250px로 높이값 변경! */
     overflow-y: scroll;
     /* y축 스크롤만 생겨서 넘치는 자식요소 보이기 */
     background: url(../images/eachBG.jpg) no-repeat center/cover;
     margin-top: 15px;
+
+    /* 트랜지션 : 속성 시간 이징 지연시간 */
+    transition: height .6s;
 }
+/* 오버시 높이값 변경! */
+.cat:hover .cd{
+    height: 250px;
+}
+
 /* 캐릭터 설명 타이틀 */
 .cd h3{
     font-size: 24px;
