@@ -50,9 +50,30 @@
 
              */
         /* h2요소 맨앞에 이미지 넣기 */
+        h2::before{
+            content: url(./imgs/blogo.png);
+            /* width: 30px;
+            height: 10px; */
+            /* 이미지는 원본 그대로만 표시됨
+            가로,세로 크기조정불가! */
+            margin-right: 20px;
+            /* 오른쪽마진 */
+            vertical-align: middle;
+            /* 인라인요소가 세로정렬
+            - top, middle, bottom, 숫자px 등 */
+        }
         
 
         /* 맨뒤 추가요소 ::after */
+        h2::after {
+            content: '';
+            display: inline-block;
+            /* inline-block설정으로 박스디자인적용하기 */
+            width: 42px;
+            height: 20px;
+            background: url(./imgs/blogo.png) no-repeat center/cover;
+            /* background: 색이반고윙/크; */
+        }
         
         
 
