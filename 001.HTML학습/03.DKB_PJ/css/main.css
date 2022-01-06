@@ -13,6 +13,26 @@ h1,h2,h3,h4{
     /* 글자크기가 100%는 기본글자크기에 맞춤(16px) */
 }
 
+/* 공통 class */
+
+/* 스크롤바 디자인 class */
+/* -webkit- 벤더사명(크롬,사파리) 접두어 */
+.scbar::-webkit-scrollbar{
+    /* 전체 스크롤바 크기변경 */
+    width: 7px;
+}
+.scbar::-webkit-scrollbar-thumb{
+    /* 스크롤바 */
+    background-color: #666;
+    border-radius: 5px;
+}
+.scbar::-webkit-scrollbar-track{
+    /* 스크롤바 트랙 */
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+
 /* 공사중 박스표시 */
 /* 별표시(*)는 모든 요소를 선택함! */
 body *{
@@ -101,7 +121,15 @@ body{
 /* 캐릭터박스 공통 */
 .cat{
     /* 4등분 가로 크기%는? 25% */
-    width: 25%;
+    width: 24%;
+    margin: 0 .5%;
+    /* 양쪽마진은 합해서 1% 가로폭 25%에 맞춤! */
+    /* 
+        margin: 0 0.5%; 
+        마진: 위아래 0, 양쪽 0.5% 
+        0.몇 수치일때 앞의 0은 자주 생략된다!
+    */
+    
     float: left;
     /* 블록요소를 옆으로 흘러가게 하는 속성은?
     float속성
@@ -155,6 +183,32 @@ body{
 .cat:hover .ci span img:last-child{
     display: none;
 }
+
+/* 캐릭터 설명 박스 */
+.cd{
+    height: 250px;
+    overflow-y: scroll;
+    /* y축 스크롤만 생겨서 넘치는 자식요소 보이기 */
+    background: url(../images/eachBG.jpg) no-repeat center/cover;
+    margin-top: 15px;
+}
+/* 캐릭터 설명 타이틀 */
+.cd h3{
+    font-size: 24px;
+    font-weight: normal;
+    padding: 5px 10px 0;
+    /* 패딩: 위 5px, 양쪽 10px, 아래0 */
+}
+
+/* 캐릭터 설명 문단 */
+.cd p{
+    font-size: 20px;
+    line-height: 1.7;
+    padding: 10px;
+    text-align: justify;
+    /* 양쪽정렬 */
+}
+
 
 /*********** 3. 하단영역 ***************/
 .info{
