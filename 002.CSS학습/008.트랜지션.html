@@ -106,13 +106,27 @@
             background-color: pink;
             border-radius: 0;
             /* 원을 사각형으로! */
-            
+
             /* 오버시 적용 */
             transition: 1s ease-out;
             /* 1초동안 마지막에 천천히 */
         }
 
         /* #tr4에 트랜지션 설정 */
+        /* 
+            여러가지 속성을 별도로 트랜지션 주고자 할 경우
+            속시이지 순으로 셋팅하고 콤마로 구분한다!
+        */
+        #tr4 span{
+            transition: left 5s ease-in-out,
+                        background-color 2s ease-in 3s,
+                        border-radius 1s ease-out 4s;
+        }
+        #tr4:hover span{
+            left: 70%;
+            background-color: hotpink;
+            border-radius: 0;
+        }
         
     </style>
 </head>
