@@ -117,6 +117,9 @@ body{
 }
 /* GNB 메뉴 */
 .gnb{
+    width: 574px;
+    margin: 0 auto;
+    /* 크기를 가지는 블록박스 중앙정렬 - 마영오! */
     font-family: 'Nanum Gothic', sans-serif;
 }
 .gnb>ul{
@@ -125,15 +128,24 @@ body{
     list-style: none;
     /* 3無 */
 }
-.gnb>ul>li{
-    float: left;
-}
 /* 가상요소로 clear */
 .gnb>ul::after{
     content: '';
     display: block;
     clear: both;
 }
+.gnb>ul>li{
+    float: left;
+}
+/* 메뉴 a링크 */
+.gnb>ul>li>a{
+    color: #222;
+    text-decoration: none;
+    padding: 0 15px;
+    line-height: 39px;
+    font-size: 17px;
+}
+
 
 
 /*********** 2. 메인영역 ***************/
