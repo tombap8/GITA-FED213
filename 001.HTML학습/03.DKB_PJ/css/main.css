@@ -114,6 +114,27 @@ body{
 #logo img{
     width: 100px;
 }
+/* GNB 메뉴 */
+.gnb{
+
+}
+.gnb>ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* 3無 */
+}
+.gnb>ul>li{
+    float: left;
+}
+/* 가상요소로 clear */
+.gnb>ul::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
 /*********** 2. 메인영역 ***************/
 .cont{
     height: 800px;
