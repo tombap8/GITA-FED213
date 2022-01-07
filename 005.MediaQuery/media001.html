@@ -89,7 +89,7 @@
                 }
 
                 2. 세로모드 -> (orentation:portrait)
-                
+
                 @media (orentation:portrait){
                     세로모드 CSS
                 }
@@ -206,27 +206,87 @@
         /************ 미디어쿼리 적용하기 ************/
 
         /*************** 1200px 이하 ***************/
-        
+        @media screen and (max-width:1200px) {
+            /* 출력글자 변경하기 */
+            .tit::after {
+                content: "1200px이하";
+                color: pink;
+            }
+            /* 기존이미지 숨기기 */
+            .screen img:nth-child(1){
+                display: none;
+            }
+            /* 다음이미지 보이기 */
+            .screen img:nth-child(2){
+                display: inline;
+            }
 
-        /* 1200px이하 */
+        } /* 1200px이하 */
+
+
 
         /***************** 1100px 이하 *****************/
-       /* 1100px 이하 */
+        @media screen and (max-width:1100px) {
+            /* 출력글자 변경하기 */
+            .tit::after {
+                content: "1100px이하";
+                color: lime;
+            }
+            /* 기존이미지 숨기기 */
+            .screen img:nth-child(2){
+                display: none;
+            }
+            /* 다음이미지 보이기 */
+            .screen img:nth-child(3){
+                display: inline;
+            }
+
+        } /* 1100px 이하 */
 
 
 
         /****************** 1000px 이하 ******************/
-        /* 1000px이하 */
+        @media screen and (max-width:1000px) {
+            /* 출력글자 변경하기 */
+            .tit::after {
+                content: "1000px이하";
+                color: lightsalmon;
+            }
+            /* 기존이미지 숨기기 */
+            .screen img:nth-child(3){
+                display: none;
+            }
+            /* 다음이미지 보이기 */
+            .screen img:nth-child(4){
+                display: inline;
+            }
+
+        } /* 1000px이하 */
 
         /*************** 900px 이하 ***************/
-       /* 900px 이하 */
+        @media screen and (max-width:900px) {
+            /* 출력글자 변경하기 */
+            .tit::after {
+                content: "900px이하";
+                color: hotpink;
+            }
+            /* 기존이미지 숨기기 */
+            .screen img:nth-child(4){
+                display: none;
+            }
+            /* 다음이미지 보이기 */
+            .screen img:nth-child(5){
+                display: inline;
+            }
+
+        } /* 900px 이하 */
 
         /***************** 850px 이하 *****************/
-       /* 850px 이하 */
+        /* 850px 이하 */
 
         /****************** 830px 이하 ******************/
-         /* 830px 이하 */
-        
+        /* 830px 이하 */
+
 
 
         /******************** 810px 이하 ********************/
@@ -237,7 +297,6 @@
 
         /******************* 770px 이하 *******************/
         /* 770px 이하 */
-
     </style>
 </head>
 
