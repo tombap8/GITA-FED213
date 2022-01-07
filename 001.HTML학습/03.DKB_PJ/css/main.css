@@ -2,11 +2,12 @@
 /* 도깨비 PJ 메인 CSS - main.css */
 
 /* 웹폰트 */
-@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Gugi&family=Nanum+Gothic&display=swap');
 
 /* 
     font-family: 'Black And White Picture', sans-serif;
     font-family: 'Gugi', cursive;
+    font-family: 'Nanum Gothic', sans-serif;
 */
 
 /* 기본 리셋 */
@@ -116,7 +117,7 @@ body{
 }
 /* GNB 메뉴 */
 .gnb{
-
+    font-family: 'Nanum Gothic', sans-serif;
 }
 .gnb>ul{
     margin: 0;
