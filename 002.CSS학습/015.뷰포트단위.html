@@ -96,43 +96,83 @@
         }
         /* 1. vw단위 - 보이는 화면 가로폭기준 */
         .vp1 {
-            
+            width: 50vw;
+            font-size: 10vw;
+        }
+        .vp1-2 {
+            width: 50vw;
+            font-size: min(10vw,100px);
+            /* 
+                css 함수: min(값들) -> 최소값 선택함!
+                예)
+                min(유동적이값,특정값) -> 특정값 보다 안커짐!
+                이는 최대크기를 지정한 것과 같음!
+            */
+        }
+        .vp1-3 {
+            width: 50vw;
+            font-size: max(10vw,50px);
+            /* 
+                css 함수: max(값들) -> 최대값 선택함!
+                예)
+                max(유동적이값,특정값) -> 특정값 보다 안작아짐!
+                이는 최소크기를 지정한 것과 같음!
+            */
+        }
+        .vp1-4 {
+            width: 50vw;
+            font-size: min(max(10vw,50px),100px);
+            /* 
+                min,max 같이 사용하면 사이범위를 만들 수 있음
+                min(max(10vw,50px),100px)
+                -> 최소 50px, 최대 100px범위임!
+            */
         }
         
         /* 2. vh단위 - 보이는 화면 세로폭기준 */
         .vp2{
-            
+            width: 50vh;
+            font-size: 10vh;
         }
 
         /* 3. vmax단위 - 보이는 화면 가로,세로폭 중 큰것기준 */
         .vp3{
-            
+            width: 50vmax;
+            font-size: 10vmax;
         }
 
         /* 4. vmin단위 - 보이는 화면 가로,세로폭 중 작은것기준 */
         .vp4{
-            
+            width: 50vmin;
+            font-size: 10vmin;
         }
         
 
         /* 뷰포트 단위와 일반 %단위 비교 */
         .vp5 {
-            
+            width: 50%;
+            font-size: 24px;
         }
         .vp5-1{/* 뷰포트단위사용! */
-            
+            width: 50vw;
+            border: 5px dotted red;
         }
         .vp5-2{/* %단위사용! */
-            
+            width: 50%;
+            border: 5px dotted green;
         }
 
         /* 100vw */
         .vp6{
-            
+            width: 100vw;
+            background-color: red;
+            font-size: 24px;
         }
         /* 100% */
         .vp7{
-            
+            width: 100%;
+            background-color: blue;
+            font-size: 24px;
         }
         
 
@@ -142,6 +182,15 @@
 <body>
     <div class="vp vp1">
         I am vw!
+    </div>
+    <div class="vp vp1-2">
+        I am vw!<br>(min함수)
+    </div>
+    <div class="vp vp1-3">
+        I am vw!<br>(max함수)
+    </div>
+    <div class="vp vp1-4">
+        I am vw!<br>(min,max함수)
     </div>
     <div class="vp vp2">
         I am vh!
