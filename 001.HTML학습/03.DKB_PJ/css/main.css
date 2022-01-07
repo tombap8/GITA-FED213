@@ -352,3 +352,8 @@ body{
     font-size: 14px;
     font-weight: bold;
 }
+/* 메뉴 a링크 오버시 */
+.blink>ul>li>a:hover{
+    color: red;
+    text-decoration: underline;
+}
