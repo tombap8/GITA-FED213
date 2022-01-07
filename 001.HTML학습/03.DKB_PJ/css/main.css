@@ -319,3 +319,36 @@ body{
     height: 240px;
     background-color: rgba(255, 255, 255, 0.7);
 }
+
+.blink{
+    width: 804px;
+    margin: 0 auto;
+    /* 크기를 가지는 블록박스 중앙정렬 - 마영오! */
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* 하단링크 */
+.blink>ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* 3無 */
+}
+/* 가상요소로 clear */
+.blink>ul::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.blink>ul>li{
+    float: left;
+}
+/* 메뉴 a링크 */
+.blink>ul>li>a{
+    color: #222;
+    text-decoration: none;
+    padding: 0 15px;
+    line-height: 39px;
+    font-size: 14px;
+    font-weight: bold;
+}
