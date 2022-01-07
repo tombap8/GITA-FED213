@@ -1,6 +1,14 @@
 @charset "utf-8";
 /* 도깨비 PJ 메인 CSS - main.css */
 
+/* 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Gugi&display=swap');
+
+/* 
+    font-family: 'Black And White Picture', sans-serif;
+    font-family: 'Gugi', cursive;
+*/
+
 /* 기본 리셋 */
 html,body{
     margin: 0;
@@ -96,6 +104,15 @@ body{
 /*********** 1. 상단영역 ***************/
 .top{
     height: 124px;
+    background-color: #fff;
+}
+/* 로고박스 */
+#logo{
+    padding: 20px;
+    text-align: center;
+}
+#logo img{
+    width: 100px;
 }
 /*********** 2. 메인영역 ***************/
 .cont{
@@ -243,17 +260,21 @@ body{
 
 /* 캐릭터 설명 타이틀 */
 .cd h3{
-    font-size: 24px;
-    font-weight: normal;
-    padding: 5px 10px 0;
+    font-family: 'Black And White Picture', sans-serif;
+    font-size: min(2vw,30px);
+    font-weight: normal;    
+    padding: 1vw 1.7vw 0px;
     /* 패딩: 위 5px, 양쪽 10px, 아래0 */
+    white-space: nowrap;
+    /* 줄바꿈방지(기본값은 wrap) */
 }
 
 /* 캐릭터 설명 문단 */
 .cd p{
-    font-size: 20px;
+    font-family: 'Gugi', cursive;
+    font-size: min(1.4vw,17px);
     line-height: 1.7;
-    padding: 10px;
+    padding: 1vw;
     text-align: justify;
     /* 양쪽정렬 */
 }
