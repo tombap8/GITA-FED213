@@ -316,15 +316,17 @@ body{
 
 /*********** 3. 하단영역 ***************/
 .info{
-    height: 240px;
+    /* height: 240px; */
+    /* 높이값을 주지 않으면 auto가 되어 내용만큼 늘어남! */
     background-color: rgba(255, 255, 255, 0.7);
+    font-family: 'Nanum Gothic', sans-serif;
+    padding: 15px;
 }
 
 .blink{
     width: 804px;
     margin: 0 auto;
     /* 크기를 가지는 블록박스 중앙정렬 - 마영오! */
-    font-family: 'Nanum Gothic', sans-serif;
 }
 
 /* 하단링크 */
@@ -356,4 +358,25 @@ body{
 .blink>ul>li>a:hover{
     color: red;
     text-decoration: underline;
+}
+
+/* 회사주소박스 */
+.addr{
+    width: 804px;
+    margin: 10px auto;
+    border: 4px double #222;
+    padding: 10px;
+    box-sizing: border-box;
+    /* 크기유지-보더,패딩포함! */
+    text-align: center;
+    font-style: normal;
+    /* 기본 이탤릭해제! */
+    font-size: 14px;
+    line-height: 2;
+}
+
+/* 하단로고 박스 */
+.blogo{
+    text-align: center;
+    /* 인라인요소 중앙정렬 */
 }
