@@ -57,3 +57,12 @@ html,body{
 }
 /* 본문(tbody) 마지막 tr의 td 
 아래쪽 보더 넣기 */
+#drama tbody tr:last-child td{
+    border-bottom: 2px solid #555;    
+}
+/* 본문(tbody)의 짝수번째 tr의 td
+배경색 넣기 */
+/* nth-child(순번) -> odd(홀수), even(짝수) */
+#drama tbody tr:nth-child(even) td{
+    background-color: #f3f3f3;
+}
