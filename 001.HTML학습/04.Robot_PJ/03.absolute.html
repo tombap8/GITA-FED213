@@ -102,19 +102,25 @@
         .s5{
             margin-top: 200px;
         }
+
+        /* 젠틀앱솔루트! */
         .a3{
             position: absolute;
+            /* 스테틱요소 안에 가만히 있음! - 위치값 없음! */
             width: 50px;
             height: 50px;
             
             color: #fff;
             background: url(./ab_img/ab1.jpg) no-repeat center/cover;
         }
+
+        /* 위치값을 준 방향에 대해서만 부모찾아 삼만리! */
         .a4{
             position: absolute;
-            bottom: 0;
-            right: 0;
-            /* 나의 부모는? */
+            top: 0;
+            left: 0;
+            /* 나의 부모는? 
+            static이 아닌 포지션을 가진 조상요소 중 선택*/
 
             width: 50px;
             height: 50px;
@@ -129,15 +135,15 @@
             background-color: #ffc1c1;
         }
         .s6{
-            position: relative;
+            /* position: relative; */
             background-color: #b1ffc2;
         }
         .s7{
-            position: relative;
+            /* position: relative; */
             background-color: #ffb7ff;
         }
         .s8{
-            position: relative;
+            /* position: relative; */
             background-color: #f0ff67;
         }
 
