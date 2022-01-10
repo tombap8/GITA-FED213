@@ -66,3 +66,10 @@ html,body{
 #drama tbody tr:nth-child(even) td{
     background-color: #f3f3f3;
 }
+
+/* 하단부분(tfoot) */
+#drama tfoot td{
+    text-align: center;
+    /* 텍스트 중앙정렬 */
+    padding: 45px 0;
+}
