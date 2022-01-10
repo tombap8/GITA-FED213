@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Position - absolute</title>
     <style>
+        body{
+            height: 3000px;
+        }
         .bx{
             width: 100px;
             height: 100px;
@@ -20,6 +23,44 @@
 
         #a1{
             position: absolute;
+            /* 
+                [ 3. absolute 포지션 ]
+
+                1) absolute 포지션은 위치이동값을
+                쓰기전과 후로 나누어 볼 수 있다!
+
+                    (1) 위치이동값을 쓰지 않은 경우
+                    - 자기 보다 위에 있는 요소를 존중하여
+                    그 아래에 위치한다!(젠틀앱솔루트!)
+                    - 자기 보다 아랫쪽에 있는 요소는 앱솔루트를
+                    인식하지 못하여 같은 자리에 올라옴!
+                    - 어떤 요소 내부에 자식요소가 앱솔루트일 경우
+                    그 부모박스에 가만히 있는다!(젠틀앱솔루트!)
+
+                    (2) 위치이동값을 사용한 경우
+                    - 위치이동값을 사용한 부분에 대해서만!!!!!!!!!
+                    앱솔루트가 위치를 잡을때 부모를 찾는다!
+                    부모자격은 싸고 있는 요소들 중 static이 아닌
+                    포지션을 가진요소가 부모가 된다!!!
+
+                    -> static이 아닌 포지션이란?
+                    relative / absolute / fixed / sticky
+
+                    -> 위치이동값을 쓰지 않은 부분은 젠틀하다!
+
+                    -> 부모자격이 있는 부모요소들 중 가장 가까운것이
+                    부모가 된다!
+
+                    [ 만약 부모자격이 모두 없으면 
+                    보이는 화면(window)을 기준한다! ]
+                    -> 보이는 화면은 body가 아니다!!!
+                    보이는 브라우저 화면 즉, window화면이다!
+                    (스크롤이 생겨도 스크롤 위쪽화면을 말함!)
+            
+            */
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
         }
 
         #r1{
@@ -36,11 +77,64 @@
             position: relative;
             bottom: 75px;
             right: -86px;
-            z-index: -1;
-            /* z-index값을 마이너스로 주면 static보다 아래! */
-            
+
             color: #fff;
             background: url(./ab_img/ab4.jpg) no-repeat center/cover;
+        }
+
+        #a2{
+            position: absolute;
+            top: 0;
+            right: 0;
+            /* 나의 부모는? 보이는 화면(window) */
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+
+        /* 앱솔루트를 싸고 있는 요소공통 */
+        .bx2{
+            border: 2px dotted orange;
+            padding: 50px;
+            font-size: 24px;
+            text-align: center;
+        }
+        .s5{
+            margin-top: 200px;
+        }
+        .a3{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+        .a4{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            /* 나의 부모는? */
+
+            width: 50px;
+            height: 50px;
+            
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+
+        /* 부모자격셋팅 */
+        .s5{
+            position: relative;
+        }
+        .s6{
+            position: relative;
+        }
+        .s7{
+            position: relative;
+        }
+        .s8{
+            position: relative;
         }
 
         
@@ -52,15 +146,18 @@
     <div class="bx" id="a1">a1</div>
     <div class="bx" id="r2">r2</div>
     <div class="bx" id="s3">s3</div>
+    <div class="bx" id="a2">a2</div>
 
-    <!-- 
-        젠코딩
-        .bx#s${s$}*3
-        div인데 클래스가 bx, 
-        아이디가 s1,s2,s3 연속 증가번호로 생성하기
-        $(달러)는 연속번호가 들어가는 위치임!
-        중괄호({})는 데이터에 들어갈 내용임!
-
-     -->
+    <!-- 부모를 찾는 absolute요소 -->
+    <div class="bx2 s5">s5
+        <div class="bx2 s6">s6
+            <div class="bx2 s7">s7
+                <div class="bx2 s8">s8
+                    <div class="a3">a3</div>
+                    <div class="a4">a4</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
