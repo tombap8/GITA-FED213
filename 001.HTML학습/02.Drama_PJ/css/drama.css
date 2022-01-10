@@ -73,3 +73,31 @@ html,body{
     /* 텍스트 중앙정렬 */
     padding: 45px 0;
 }
+
+/* 구분테이블 박스 */
+div.gubun{
+    width: 1000px;
+    margin: 0 auto;
+    /* 위의 테이블과 같은 사이즈 가로중앙정렬 */
+}
+/* 구분테이블 */
+table#gubun{
+    font-size: 20px;
+    border: 1px solid #999;
+}
+/* 구분테이블 td */
+#gubun td{
+    padding: 10px;
+}
+
+/* 구분테이블 첫번째 tr의 첫번째 td의
+오른쪽 점선넣기 */
+#gubun tr:first-child td:first-child{
+    border-right: 1px dotted #999;
+}
+/* 구분테이블 두번째 tr부터 마지막 tr까지
+즉, 앞에 tr형제가 있는 tr -> tr+tr 의
+td에 윗쪽 점선보더 주기(사이점선보더 생김) */
+#gubun tr+tr td{
+    border-top: 1px dotted #999;
+}
