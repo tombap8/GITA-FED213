@@ -1,6 +1,12 @@
 @charset "utf-8";
-
 /* 한국최신드라마 리스트 CSS - drama.css */
+
+/* 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@200&display=swap');
+/* 
+    font-family: 'Hahmlet', serif;
+*/
+
 
 /* 초기화 */
 html,body{
@@ -9,7 +15,7 @@ html,body{
 }
 /* 테이블공통 */
 .tbl{
-    font-family: "궁서","굴림";
+    font-family: 'Hahmlet', serif;
     /* 글씨체 - 순서대로 있는 글씨체 적용 */
     color: #222;
     /* 글자색 */
@@ -79,6 +85,7 @@ div.gubun{
     width: 1000px;
     margin: 0 auto;
     /* 위의 테이블과 같은 사이즈 가로중앙정렬 */
+    margin-bottom: 100px;
 }
 /* 구분테이블 */
 table#gubun{
