@@ -23,7 +23,35 @@
 
         .f1{
             position: fixed;
-            
+            /* 
+                [ 4. fixed 포지션 ]
+
+                1) 위치값을 설정하지 않을때
+                - 자신보다 위에 있는 static한 요소 아래에
+                그대로 있다가 스크롤시 그 자리를 화면에서
+                지키고 움직이지 않는다!
+                -> 젠틀앱솔루트와 유사! 젠틀픽스트!
+
+                2) 위치이동값을 썼을때
+                - 부모를 기준하여 위치를 잡는다!
+                -> 부모가 누구? 보이는 화면 즉, window!!!
+
+                -> 보이는 화면에서 사라지지 않게 하고자할때
+                사용하는 포지션!!!
+
+                -> 부모를 제외한 모든 다른 특성은 앱솔루트와 거의 같다!
+
+                3) 아무리 부모요소가 여러개일지라도
+                    자식요소 중 fixed를 주면 화면을 기준함!!!
+
+                4) 부모박스가 fixed이면 그 자식요소들은 모두 화면에 고정된다! (자식요소들은 fixed일 필요가 없다!)
+
+                5) 화면 바깥으로 숨겼다가 보이게 할때 fixed를 사용함!
+
+                6) z-index도 포지션이 있는 경우에 숫자로 비교한다!
+                (숫자가 크면 위에 옴!)
+                
+            */
 
 
             width: 100%;
@@ -36,6 +64,51 @@
             background: url(./ab_img/ab0.jpg) repeat-x 0/auto 100%;
 
 
+        }
+        .f2{
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            /* 먼저 코딩되고 순서상 위에 오고자할때 
+            z-index를 크게 주면 가장위에 올 수 있다! */
+            
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border: 4px double green;
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) repeat-x 0/auto 100%;
+
+
+
+        }
+
+        /* 자식요소로 있는 경우 fixed */
+        .f3{
+            position: fixed;
+            top: 0;
+            right: -180px;
+            /* 나의 부모는? 당연히 보이는 화면!!! */
+
+            /* 트랜지션 */
+            transition: right .4s ease-out;
+
+            width: 300px;
+            height: 100px;
+
+            background-color: #ff0;
+            font-size: 30px;
+            line-height: 100px;
+            text-align: center;
+            font-weight: bold;
+            z-index: 9999;
+        }
+        /* .f3에 마우스 오버시 right값 변경하여 화면에 등장하기 */
+        .f3:hover{
+            right: 0;
         }
 
         #a1{
@@ -177,6 +250,20 @@
             opacity: 1;
         }
 
+        /* .f2 자식요소 앱솔루트 */
+        .newabs{
+            position: absolute;
+            bottom: 0;
+            left: 30%;
+            /* 나의 부모는? 
+            .f2요소 왜? fixed 즉, static이 아니니까! */
+            background-color: pink;
+            font-size: 30px;
+            line-height: 50px;
+            color: #000;
+            /* 부모로 부터 글자 속성들이 상속됨! 
+            그래서 재정의 필요함! */
+        }
         
     </style>
 </head>
@@ -201,6 +288,9 @@
 
     <!-- 화면고정 fixed포지션 -->
     <div class="f1">f1</div>
+    <div class="f2">f2
+        <div class="newabs">나는 fixed자식!</div>
+    </div>
 
     <!-- 부모를 찾는 absolute요소 -->
     <div class="bx2 s5">s5
@@ -212,6 +302,9 @@
                     <span class="sabs">
                         나는 span앱솔루트다!
                     </span>
+                    <div class="f3">
+                        나는 fixed다!
+                    </div>
                 </div>
             </div>
         </div>
