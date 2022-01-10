@@ -53,13 +53,19 @@
                     기본적인 위아래 관계는 아래와 같다!
                     (1) static보다 항상위!
                     -> static보다 아래로 내려가는 방법은?
+                    ->>> z-index값을 음수로 준다!
 
                     (2) static 포지션이 아닌 경우
                         나중에 그려진 요소가 위!
                         (손 놓고 손등때리기!)
                     (3) z-index 속성으로 숫자가 크면 위!
 
+                9) 
+
+                ________________________________________
+
                 [ z-index란? ]
+
                 - 겹치는 포지션을 주는 경우 위치순서를
                 정하여 디스플레이를 변경하는 속성
 
@@ -96,6 +102,8 @@
             position: relative;
             bottom: 75px;
             right: -86px;
+            z-index: -1;
+            /* z-index값을 마이너스로 주면 static보다 아래! */
             
             color: #fff;
             background: url(./ab_img/ab4.jpg) no-repeat center/cover;
