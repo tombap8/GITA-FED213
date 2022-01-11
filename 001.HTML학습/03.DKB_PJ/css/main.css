@@ -146,6 +146,43 @@ body{
     font-size: 17px;
 }
 
+/* 서브메뉴 */
+.smenu{
+    position: absolute;
+    /* 젠틀앱솔루트! */
+
+    height: 0;
+    overflow: hidden;
+    /* 서브메뉴 숨기기 */
+
+    /* 트랜지션:속시이지 */
+    transition: height .4s ease-out;
+
+}
+.smenu ol{
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    background-color: #fff;
+}
+.smenu a{
+    padding: 0 15px;
+    line-height: 30px;
+    font-size: 14px;
+
+    /* a요소 필수설정 - 글자색, 밑줄없앰 */
+    color: #222;
+    text-decoration: none;
+}
+
+/* 상위메뉴 오버시 서브메뉴 보이기 */
+/* 1번째 메뉴 */
+.gnb>ul>li:first-child:hover .smenu{
+    height: 110px;
+}
+/* 3번째 메뉴 */
+/* 4번째 메뉴 */
+
 
 
 /*********** 2. 메인영역 ***************/
