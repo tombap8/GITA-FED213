@@ -150,6 +150,8 @@ body{
 .smenu{
     position: absolute;
     /* 젠틀앱솔루트! */
+    z-index: 1;
+    /* 가상요소 배경보다 위! */
 
     height: 0;
     overflow: hidden;
@@ -175,13 +177,45 @@ body{
     text-decoration: none;
 }
 
+/* 서브메뉴 100% 배경박스 가상요소로 만들기! */
+.gnb>ul>li::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    /* 부모는? 보이는 화면(중간에 부모요소가 없다!) */
+    width: 100%;
+    height: 0;/* 처음에 안보임! */
+    background-color: #fff;
+    
+    /* 트랜지션:속시이지 */
+    transition: height .4s ease-out;
+}
+
 /* 상위메뉴 오버시 서브메뉴 보이기 */
+/* 
+    서브메뉴와 상위li의 가상요소로 만든 서브배경을 
+    같은 높이값으로 애니메이션하기 
+    + 하단빨간색 보더 적용하기
+*/
 /* 1번째 메뉴 */
-.gnb>ul>li:first-child:hover .smenu{
+.gnb>ul>li:first-child:hover .smenu,
+.gnb>ul>li:first-child:hover::after{
     height: 110px;
+    border-bottom: 2px solid red;
 }
 /* 3번째 메뉴 */
+.gnb>ul>li:nth-child(3):hover .smenu,
+.gnb>ul>li:nth-child(3):hover::after{
+    height: 140px;
+    border-bottom: 2px solid red;
+}
 /* 4번째 메뉴 */
+.gnb>ul>li:nth-child(4):hover .smenu,
+.gnb>ul>li:nth-child(4):hover::after{
+    height: 80px;
+    border-bottom: 2px solid red;
+}
 
 
 
