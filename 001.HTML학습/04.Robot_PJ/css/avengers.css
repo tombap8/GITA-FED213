@@ -74,3 +74,26 @@ body{
     /* box-shadow: x y blur spread color */
     /* 박스그림자를 밝은 색으로 주면 글로우효과를 줄 수 있음! */
 }
+
+/* 공통 설명박스 */
+.cat{
+    position: absolute;
+
+    width: 300px;
+    
+    font-family: 'Single Day', cursive;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 캐릭터별 위치값 */
+/* 1.아이언맨 */
+.abg>div:first-child{    
+    top: -99px;
+    left: -84px;
+}
