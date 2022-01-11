@@ -57,6 +57,18 @@ body{
     border: 3px solid cyan;
     border-radius: 50%;
     /* 원형 */
+
+    box-shadow: 0px 0px 50px 5px cyan;
+    /* 
+    box-shadow: inset hoff voff blur spread color;
+    박스그림자: inset(내부그림자) - 안쓰면 바깥그림자
+                hoff(x축이동값)
+                voff(y축이동값)
+                blur(경계선흐림)
+                spread(그림자크기) - 안쓰면 같은크기
+                color(그림자색)
+ */
+
     background: url(../ab_img/ab0.jpg) no-repeat center/cover;
 }
 
@@ -119,6 +131,10 @@ body{
 /* 설명박스 왼쪽 클래스 */
 .ltxt{
     right: 120%;
+}
+.ltxt h2{
+    text-align: right;
+    /* 설명제목 오른쪽 정렬 */
 }
 
 /* body에 오버시 캐릭터박스 opacity */
