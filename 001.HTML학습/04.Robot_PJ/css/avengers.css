@@ -8,3 +8,15 @@
     font-family: 'Monoton', cursive;
     font-family: 'Single Day', cursive;
 */
+
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /* 보이는 화면 채우기! */
+    overflow: hidden;
+}
+/* 전체 배경 */
+body{
+    background: url(../ab_img/space.jpg) no-repeat center/cover;
+}
