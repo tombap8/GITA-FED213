@@ -67,6 +67,13 @@ body{
     top: 128px;
     left: 105px;
     /* 부모는? .abg */
+    opacity: 0;/* 투명 */
+
+    /* 트랜지션: 속시이지 */
+    transition: all 2s ease-in-out;
+    /* 
+        트랜지션 애니메이션은 top,left,opacity 세가지를 적용함!
+    */
 }
 /* 캐릭터 이미지 공통 */
 .abg>div>img{
@@ -79,8 +86,10 @@ body{
 /* 공통 설명박스 */
 .cat{
     position: absolute;
-    top: 0;
+    top: 70px;
     /* 부모는? .abg>div */
+    opacity: 0;
+    /* 투명하게 숨김! */
 
     width: 300px;
 
@@ -92,6 +101,15 @@ body{
     border-radius: 5px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.4);
+    
+    /* 트랜지션: 속시이지 */
+    transition: all .6s ease-in-out;
+}
+
+/* 캐릭터박스에 오버시 설명보이기 */
+.abg>div:hover .cat{
+    top: 0;
+    opacity: 1;
 }
 
 /* 설명박스 오른쪽 클래스 */
@@ -103,29 +121,34 @@ body{
     right: 120%;
 }
 
-/* 캐릭터별 위치값 */
+/* body에 오버시 캐릭터박스 opacity */
+body:hover .abg>div{
+    opacity: 1;
+}
+
+/* body에 오버시 캐릭터별 위치값 */
 /* 1.아이언맨 */
-.abg>div:first-child{    
+body:hover .abg>div:first-child{    
     top: -78px;
     left: -109px;
 }
 /* 2.타노스 */
-.abg>div:nth-child(2){  
+body:hover .abg>div:nth-child(2){  
     top: 264px;
     left: -145px;
 }
 /* 3.토르 */
-.abg>div:nth-child(3){  
+body:hover .abg>div:nth-child(3){  
     top: 460px;
     left: 106px;
 }
 /* 4.닥터스트레인져 */
-.abg>div:nth-child(4){  
+body:hover .abg>div:nth-child(4){  
     top: 263px;
     left: 365px;
 }
 /* 5.스타로드 */
-.abg>div:last-child{  
+body:hover .abg>div:last-child{  
     top: -76px;
     left: 320px;
 }
