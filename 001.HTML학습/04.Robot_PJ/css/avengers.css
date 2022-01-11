@@ -63,6 +63,7 @@ body{
 /* 캐릭터 각 박스 공통 */
 .abg>div{
     position: absolute;
+    /* 자식요소 .cat에 대한 부모자격도 있음! */
     top: 128px;
     left: 105px;
     /* 부모는? .abg */
@@ -78,9 +79,11 @@ body{
 /* 공통 설명박스 */
 .cat{
     position: absolute;
+    top: 0;
+    /* 부모는? .abg>div */
 
     width: 300px;
-    
+
     font-family: 'Single Day', cursive;
     color: #fff;
     text-shadow: 1px 1px 1px #000;
@@ -91,9 +94,38 @@ body{
     background-color: rgba(255, 255, 255, 0.4);
 }
 
+/* 설명박스 오른쪽 클래스 */
+.rtxt{
+    left: 120%;
+}
+/* 설명박스 왼쪽 클래스 */
+.ltxt{
+    right: 120%;
+}
+
 /* 캐릭터별 위치값 */
 /* 1.아이언맨 */
 .abg>div:first-child{    
-    top: -99px;
-    left: -84px;
+    top: -78px;
+    left: -109px;
+}
+/* 2.타노스 */
+.abg>div:nth-child(2){  
+    top: 264px;
+    left: -145px;
+}
+/* 3.토르 */
+.abg>div:nth-child(3){  
+    top: 460px;
+    left: 106px;
+}
+/* 4.닥터스트레인져 */
+.abg>div:nth-child(4){  
+    top: 263px;
+    left: 365px;
+}
+/* 5.스타로드 */
+.abg>div:last-child{  
+    top: -76px;
+    left: 320px;
 }
