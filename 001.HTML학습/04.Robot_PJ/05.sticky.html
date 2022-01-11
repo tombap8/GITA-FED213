@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Position - fixed</title>
+    <title>Position - sticky</title>
     <style>
         body{
             height: 3000px;
@@ -21,39 +21,31 @@
             background-color: #ff0;
         }
 
-        .f1{
-            position: fixed;
+        #stk1{
+            position: sticky;
+            top: 100px;
             /* 
-                [ 4. fixed 포지션 ]
+                [ 5. sticky 포지션 ]
 
-                1) 위치값을 설정하지 않을때
-                - 자신보다 위에 있는 static한 요소 아래에
-                그대로 있다가 스크롤시 그 자리를 화면에서
-                지키고 움직이지 않는다!
-                -> 젠틀앱솔루트와 유사! 젠틀픽스트!
-
-                2) 위치이동값을 썼을때
-                - 부모를 기준하여 위치를 잡는다!
-                -> 부모가 누구? 보이는 화면 즉, window!!!
-
-                -> 보이는 화면에서 사라지지 않게 하고자할때
-                사용하는 포지션!!!
-
-                -> 부모를 제외한 모든 다른 특성은 앱솔루트와 거의 같다!
-
-                3) 아무리 부모요소가 여러개일지라도
-                    자식요소 중 fixed를 주면 화면을 기준함!!!
-
-                4) 부모박스가 fixed이면 그 자식요소들은 모두 화면에 고정된다! (자식요소들은 fixed일 필요가 없다!)
-
-                5) 화면 바깥으로 숨겼다가 보이게 할때 fixed를 사용함!
-
-                6) z-index도 포지션이 있는 경우에 숫자로 비교한다!
-                (숫자가 크면 위에 옴!)
-                
+                1) 위치값 설정에 따라 보이는 화면에 고정되는 포지션
+                2) 원리: 처음에는 relative하게 (위치값 적용됨)
+                    가만히 있다가 자신의 설정된 top값이
+                    화면에서 위치값보다 작아질때 그 위치를 
+                    fixed하게 고정시켜준다!
+                    
+                    -> 만약 top값을 안쓰게 되면 relative하게 
+                    그대로 있게 된다!
+                    
             */
 
+            width: 30%;
+            background-color: #ff0;
+            z-index: 999999999;
+        }
 
+        .f1{
+            position: fixed;
+            
             width: 100%;
             height: 50px;
             line-height: 50px;
@@ -274,6 +266,7 @@
     <div class="bx" id="a1">a1</div>
     <div class="bx" id="r2">r2</div>
     <div class="bx" id="s3">s3</div>
+    <div class="bx" id="stk1">stk1</div>
     <div class="bx" id="a2">a2</div>
 
     <!-- 앱솔루트 : 판타롱스타킹 -->
