@@ -244,7 +244,19 @@ body{
     border-bottom: 2px solid red;
 }
 
-
+/* 모바일용 햄버거 버튼 */
+button.ham {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    /* 부모는? .top */
+    border: none;
+    background-color: transparent;
+    font-size: 37px;
+    
+    display: none;
+    /* 처음에 안보임! */
+}
 
 
 /*********** 2. 메인영역 ***************/
