@@ -34,18 +34,24 @@
         background-color: lightblue;
     }
 
-    /* GNB li변경 */
+    /* 1-4. GNB li변경 */
     .gnb>ul>li {
         float: none;
         text-align: center;
         padding: 0;
     }
 
-    /* 메뉴 a링크 */
+    /* 1-5. 메뉴 a링크 */
     .gnb>ul>li>a {
         line-height: 12.5vh;
         height: 12.5vh;
         padding-top: 12.5vh;
+        font-size: 4vh;
+    }
+
+    /* 1-6. 메뉴 마우스 오버시 a링크 보더 없앰 */
+    .gnb>ul>li:hover>a {
+        border-bottom: none;
     }
 
     /* 2. 상단영역 */

@@ -253,9 +253,21 @@ button.ham {
     border: none;
     background-color: transparent;
     font-size: 37px;
-    
+
+    z-index: 999;
+    /* .gnb보다 위! */
+
     display: none;
     /* 처음에 안보임! */
+}
+/* 햄버거 버튼에 가상요소로 글자넣기 */
+button.ham::before{
+    content: '≡';
+}
+/* 모바일 GNB 메뉴일 경우 닫기버튼으로 변경!
+.ham에 클래스 on추가! */
+button.ham.on::before{
+    content: '×';
 }
 
 
