@@ -15,7 +15,30 @@
         // JS코드 저장공간 -> 함수 >>> function (예약어:키워드)
         // 함수형식: function 함수명(){코드}
         function 보여줘(){
-            alert("나야나!");
+            // alert("나야나!");
+            // 변경대상선정: .gnb, .ham
+            // 변경내용: 각 대상에 클래스 on넣기/on빼기!
+
+            // 클래스 넣는 객체 : classList
+            // 클래스 넣기 메서드 classList.add(클래스명)
+            // 클래스 빼기 메서드 classList.remove(클래스명)
+            // 클래스 토글 메서드 classList.toggle(클래스명)
+            // 토글이란? 두가지 기능을 전환하는 것!
+            // 여기서 토글은 지정 클래스가 없으면 넣고 있으면 뺀다!
+
+            // JS에서 현재 웹문서 전체란? document
+            // getElementsByClassName(클래스명) - 클래스요소 선택
+            // item(번호) - 클래스 중 몇번째 (첫번째는 0번)
+
+            // GNB 요소
+            document.getElementsByClassName("gnb").item(0)
+            .classList.toggle("on");
+
+            // 햄버거 버튼요소
+            document.getElementsByClassName("ham").item(0)
+            .classList.toggle("on");
+
+
         } ////// 보여줘 함수 /////////
 
         // 이벤트가 발생하는 곳에서 함수를 호출할때는
