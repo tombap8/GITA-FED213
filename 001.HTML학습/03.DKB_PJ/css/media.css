@@ -35,6 +35,11 @@
         margin: 0;
     }
 
+    /* 6. .cat에 마우스 오버시 */
+    .cat:hover .ci {
+        margin-top: 0;
+    }
+
 
 }
 
