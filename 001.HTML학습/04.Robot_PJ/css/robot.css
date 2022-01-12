@@ -165,11 +165,10 @@ body *{
 /* 스크린 */
 #screen{
     position: absolute;
-    top: 0;
-    left: 0;
-    /* 부모는? #tv */
-    width: 50px;
-    height: 50px;
+    top: 17px;
+    left: 13px;
+    width: 138px;
+    height: 106px;
     background-color: #f00;
-    border-radius: 5px;
+    border-radius: 16px;
 }
