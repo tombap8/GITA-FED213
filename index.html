@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>나의 첫페이지!</title>
+        <title>나의 프로젝트!</title>
         <meta charset="utf-8">
-        <!-- 
-            메타요소: 웹페이지 기본정보 셋팅 
-            charset="utf-8" -> 인코딩형식 지정
-            utf-8 한글 등 2byte문자 안깨짐!
-        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html,body,h1,h2{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                background: url(./imgs/worksbg.jpg) no-repeat center/cover;
+                overflow: hidden;
+                /* 첫번째 자식블록요소 마진탑포함 */
+            }
+            .wrap{
+                max-width: 1200px;
+                background-color: rgba(255, 255, 255, 0.7);
+                margin: 0 auto;
+                margin-top: 50px;
+                border-radius: 15px;
+                padding: 15px;
+            }
+            .tit{
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <div class="wrap">
