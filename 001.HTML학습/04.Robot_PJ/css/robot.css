@@ -80,11 +80,11 @@ body *{
 /* 귀1 */
 #ear1{
     left: -50px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 20px 0 0 20px;
     /* 보더 각 셋팅: 왼쪽위부터 시계방향 */
 }
 /* 귀2 */
 #ear2{
     right: -50px;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 20px 20px 0;
 }
