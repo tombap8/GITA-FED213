@@ -6,11 +6,46 @@
 /************** 800px이하일때 **************/
 @media screen and (max-width:800px) {
 
-    /* 1. 디스플레이 없앰 - .gnb, .blink, .optxt */
+    /* 1-1. 디스플레이 없앰 
+    - GNB메뉴,하단링크박스,오프닝텍스트,
+    서브메뉴,서브배경가상요소 */
     .gnb,
     .blink,
-    .optxt {
+    .optxt,
+    .smenu,
+    .gnb>ul>li::after {
         display: none;
+    }
+
+    /* 1-2. 디스플레이 보임 - .ham */
+    button.ham {
+        display: block;
+    }
+
+    /* 1-3. GNB 변경하기 - .gnb에 클래스 on을 추가하면 변경됨 */
+    .gnb.on {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 99;
+        background-color: lightblue;
+    }
+
+    /* GNB li변경 */
+    .gnb>ul>li {
+        float: none;
+        text-align: center;
+        padding: 0;
+    }
+
+    /* 메뉴 a링크 */
+    .gnb>ul>li>a {
+        line-height: 12.5vh;
+        height: 12.5vh;
+        padding-top: 12.5vh;
     }
 
     /* 2. 상단영역 */
