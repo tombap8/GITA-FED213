@@ -2,3 +2,40 @@
 
 /* 도깨비 PJ 미디어쿼리 CSS - media.css */
 
+
+/************** 800px이하일때 **************/
+@media screen and (max-width:800px) {
+
+    /* 1. 디스플레이 없앰 - .gnb, .blink, .optxt */
+    .gnb,
+    .blink,
+    .optxt {
+        display: none;
+    }
+
+    /* 2. 상단영역 */
+    .top {
+        height: auto;
+        /* 기존크기를 자동으로 변환(내용만큼 늘어남) */
+    }
+
+    /* 3. 메인영역박스 */
+    .cont {
+        height: auto;
+    }
+
+    /* 4.캐릭터 부모박스 */
+    #cbx {
+        margin-top: 50px;
+    }
+
+    /* 5. 캐릭터박스 공통 */
+    .cat {
+        width: 100%;
+        margin: 0;
+    }
+
+
+}
+
+/* 800px이하일때 */
