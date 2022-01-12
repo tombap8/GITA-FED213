@@ -14,6 +14,17 @@
                 overflow: hidden;
                 /* 첫번째 자식블록요소 마진탑포함 */
             }
+            /* 초기화 */
+            ul{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            a{
+                color: #222;
+                text-decoration: none;
+            }
+
             .wrap{
                 max-width: 1200px;
                 background-color: rgba(255, 255, 255, 0.7);
@@ -25,6 +36,17 @@
             .tit{
                 text-align: center;
             }
+            /* 프로젝트 박스 */
+            .pbx{
+                display: flex;
+                /* 자식 블록요소를 옆으로 흐르게함! */
+            }
+            .pbx>div{
+                flex: 1;
+                /* 부모가 flex인 자식을 등분할시 설정값은 1 */
+                padding: 10px;
+            }
+
         </style>
     </head>
     <body>
