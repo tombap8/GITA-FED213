@@ -269,6 +269,10 @@ button.ham::before{
 button.ham.on::before{
     content: '×';
 }
+/* 모바일 햄버거 메뉴 중 클래스가 on일때 fixed 포지션! */
+button.ham.on{
+    position: fixed;
+}
 
 
 /*********** 2. 메인영역 ***************/
