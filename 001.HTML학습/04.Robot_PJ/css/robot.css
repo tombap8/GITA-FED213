@@ -13,9 +13,9 @@ body{
 }
 
 /* 공사중 아웃라인 */
-body *{
+/* body *{
     outline: 5px dashed lime;
-}
+} */
 
 /* 로봇머리 */
 #head{
@@ -97,6 +97,8 @@ body *{
     height: 300px;
     margin: 0 auto;
     margin-top: 50px;
+    margin-bottom: 300px;
+    /* 다리가 내려간 만큼 하단여유공간확보! */
     background: url(../images/metal01.jpg) no-repeat center/cover;
 }
 /* 목 */
@@ -183,4 +185,72 @@ body *{
     /* 부모는? #screen */
     width: 164%;
     height: 125%;
+}
+
+/* 로봇설명박스 */
+#dcbx{
+    width: 800px;
+    margin: 0 auto;/* 마영오 */
+    margin-bottom: 200px;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    padding: 15px 30px;
+    /* 패딩: 위아래 양쪽 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 반투명 검정배경 */
+
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    /* 글자그림자: x y 블러 색 */
+    box-shadow: inset 0 0 60px cyan;
+    /* 박스그림자: (내부) x y 블러 (크기) 색 */
+
+}
+/* 로봇설명 제목 */
+#dcbx h2{
+    position: sticky;
+    top: 0;
+    /* sticky의 top의 의미는 보이는 화면에서
+    top위치값보다 커지면 fixed로 고정해줌! */
+    font-size: 35px;
+    text-align: center;
+    color: lime;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+/* 설명출처 */
+#dcbx small{
+    display: block;
+    /* 텍스트 중앙정렬위해 */
+    text-align: center;
+    color: #ff0;
+}
+/* 설명문단 */
+#dcbx p{
+    font-size: 15px;
+    /* 기본글자크기 16px */
+    line-height: 1.8;
+    /* 줄간격: 배수/단위 등 */
+    letter-spacing: 1px;
+    /* 자간 */
+    word-spacing: 2px;
+    /* 단어간격 */
+
+    /* 가독성을 위한 다단설정 */
+    /* 다단표기(다중열속성) */
+    column-count: 3;
+    /* 다중열개수 */
+    column-rule: 5px dotted lime;
+    /* 다중열구분선 
+    - 값은 보더와 같다(두께 종류 색상) */
+    column-gap: 55px;
+    /* 다중열 사이간격 - 구분선 오른쪽 간격조정 */
+
+    text-align: justify;
+    /* 양쪽정렬 - 양쪽 끝 라인을 맞춤! */
+    word-break: break-all;
+    /* 단어깨기! - 단어단위를 한글자씩 깨준다!
+    양쪽 정렬시 사용하면 보기 좋아진다! */
+    text-indent: 20px;
+    /* 첫줄 들여쓰기(마이너스값을 쓰면 내어쓰기임) */
+
 }
