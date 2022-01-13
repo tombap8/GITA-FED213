@@ -17,6 +17,41 @@ body{
     outline: 5px dashed lime;
 } */
 
+/* 로봇페이지 로고 */
+h1#logo{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    /* 보이는 화면기준! */
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ccc;
+    border-radius: 50%;/* 원 */
+    margin: 0;
+    /* h1요소의 기본마진 없앰! */
+
+    /* 글자중앙 */
+    text-align: center;
+    line-height: 200px;
+
+    color: #fff;
+    font-family: "Vladimir Script";
+    font-size: 60px;
+    text-shadow: 2px 2px 2px #000;
+    /* 글자그림자: x y blur 색 */
+    box-shadow: 0 0 20px 5px pink,
+                inset 0 0 20px 5px #000;
+    /* 박스그림자: 내부 x y blur spread 색 */
+    /* 박스그림자나 글자그림자는 콤마로 여러개 셋팅가능! */
+
+    /* 배경 */
+    background: pink url(../images/robot_03.png) no-repeat;
+    background-position: center 10px;
+    background-size: 160px;
+}
+
+
+
 /* 로봇머리 */
 #head{
     position: relative;
@@ -253,4 +288,11 @@ body{
     text-indent: 20px;
     /* 첫줄 들여쓰기(마이너스값을 쓰면 내어쓰기임) */
 
+}
+
+/* 가상요소로 첫글자 디자인변경하기 */
+#dcbx p::first-letter{
+    font-size: 30px;
+    font-weight: bold;
+    color: lightsalmon;
 }
