@@ -81,13 +81,21 @@
             - deg는 각도의 단위(도:degree)
          */
          #trans1:hover img{
-             
+             transform: rotateY(180deg);
+             filter: grayscale(100%);
+             /* 필터(이미지필터효과) */
+             /* grayscale(비율%) - 100% 완전흑백 */
+             transition-property: all;
+             transition-duration: 2s;
+             /* 트랜지션 개별속성 변경이 가능함! */
          }
         /* 
             2. rotateX(각도deg) - X축회전
          */
          #trans2:hover img{
-             
+             transform: rotateX(180deg);
+             filter: blur(1px);
+             /* 필터 blur(px) - 흐림효과 */
          }
 
          /* 
@@ -108,7 +116,7 @@
             - 이동방향: + 는 오른쪽, - 는 왼쪽
           */
           #trans3:hover img{
-              
+              transform: translateX(-50%);
           }
           /* 
             4. translateY(거리) - Y축이동
@@ -119,7 +127,7 @@
             - 이동방향: + 는 아랫쪽, - 는 윗쪽
           */
           #trans4:hover img{
-              
+              transform: translateY(-100%);
           }
            /* 
             5. translate(X축거리,Y축거리) - X,Y축이동
@@ -132,7 +140,7 @@
                         - 는 왼쪽/윗쪽
           */
           #trans5:hover img{
-              
+              transform: translate(-100px, 200px);
           }
           /* 
             6. rotate(각도deg) - 원형회전
@@ -142,11 +150,12 @@
                 (변경가능: transform-origin)
            */
            #trans6:hover img{
-               
+               transform: rotate(5432deg);
+               transition-duration: 10s;
            }
            /* 회전축 변경하기 */
            #trans6 img{
-               
+               transform-origin: 70% 60%;
                /* 
                   [트랜스폼 축변경 속성]
                   transform-origin: 가로값 세로값;
@@ -161,7 +170,7 @@
                 - 각도가 양수/음수에 따라 기울임 방향달라짐                
             */
             #trans7:hover img{
-                
+                transform: skewY(30deg);
             }
             /* 
                8. scale(배수)
@@ -170,17 +179,20 @@
                - 값이 0이면 사라짐
              */
              #trans8 img{
-                 
+                 transform: scale(.5);
+                 /* 0.5배 -> 축소 */
              }
              #trans8:hover img{
-                 
+                 transform: scale(2);
+                 /* transform: scaleY(2); */
              }
              /* 
                 9. 복합적용하기
                 transform: 속성1 속성2 속성3 .....;
               */
               #trans9:hover img{
-                  
+                  transform: scale(2) translate(-200%,-100%) rotateX(1200deg) skewX(50deg) rotate(5300deg);
+                  transition-duration: 20s;
               }
 
               /* 
