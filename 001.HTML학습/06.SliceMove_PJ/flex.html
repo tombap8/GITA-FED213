@@ -102,21 +102,25 @@
         #wrap>ul>li:nth-child(1) {
             background-image: url(./images/m01_bg.jpg);
         }
+
         #wrap>ul>li:nth-child(2) {
             background-image: url(./images/m02_bg.jpg);
         }
+
         #wrap>ul>li:nth-child(3) {
             background-image: url(./images/m03_bg.jpg);
         }
+
         #wrap>ul>li:nth-child(4) {
             background-image: url(./images/m04_bg.jpg);
         }
+
         #wrap>ul>li:nth-child(5) {
             background-image: url(./images/m05_bg.jpg);
         }
 
         /* 중앙타이틀 공통 */
-        .tit{
+        .tit {
             position: absolute;
             left: calc(50% - 250px);
             /* 가로중앙위치 계산! */
@@ -124,12 +128,14 @@
             height: 100px;
             border: 5px double #fff;
         }
+
         /* 타이틀 하위 li 공통 */
-        .tit>li{
+        .tit>li {
             width: 50px;
             height: 50px;
             border: 3px solid #fff;
-            border-radius: 50%;/* 원 */
+            border-radius: 50%;
+            /* 원 */
             font: bold 14px/50px Verdana;
             /* [한줄에 font셋팅하기]
             font: 스두크/줄체;
@@ -140,7 +146,7 @@
         }
 
         /* 타이틀1 */
-        .t1{
+        .t1 {
             top: 50px;
 
             /* 플렉스박스 */
@@ -181,34 +187,37 @@
         }
 
         /* 타이틀2 */
-        .t2{
+        .t2 {
             top: 200px;
             /* 플렉스박스 */
             display: flex;
             justify-content: space-between;
             align-items: baseline;
         }
-        .t2 li:nth-child(2){
+
+        .t2 li:nth-child(2) {
             line-height: 80px;
         }
-        .t2 li:nth-child(4){
+
+        .t2 li:nth-child(4) {
             line-height: 30px;
         }
 
         /* 타이틀박스3 */
-        .t3{
+        .t3 {
             top: 350px;
             display: flex;
             align-items: center;
         }
+
         /* 3번째 li부터 오른쪽끝으로 보내기! */
         /* 왼쪽마진 auto를 사용함! */
-        .t3>li:nth-child(3){
+        .t3>li:nth-child(3) {
             margin-left: auto;
         }
 
         /* 타이틀4 */
-        .t4{
+        .t4 {
             top: 50px;
             left: 50px;
             width: 150px;
@@ -216,8 +225,9 @@
             /* 플렉스박스 */
             display: flex;
         }
+
         /* 자식요소에 flex-shrink설정으로 크기유지하기! */
-        .t4>li{
+        .t4>li {
             flex-shrink: 0;
             /* 부모박스가 작아질때 같이 자동으로 줄어들래? 0 아니! */
             /* 
@@ -232,7 +242,7 @@
         }
 
         /* 타이틀5 */
-        .t5{
+        .t5 {
             top: 200px;
             left: 50px;
             width: 150px;
@@ -246,14 +256,15 @@
             /* 진행방향에 따라 가로/세로 정렬이 바뀜! 
             진행방향에 대한 수직정렬 */
         }
+
         /* 4번째 li부터 맨끝으로 보내기 */
         /* margin-top:auto를 사용함! */
-        .t5>li:nth-child(4){
+        .t5>li:nth-child(4) {
             margin-top: auto;
         }
 
         /* 타이틀6 */
-        .t6{
+        .t6 {
             top: 500px;
             height: 250px;
 
@@ -272,10 +283,35 @@
                 이유는 자식요소의 flex속성값으로
                 flex-shrink가 1로 기본설정 되어 있기때문!
             */
+
+            justify-content: space-between;
+            /* 가로정렬 */
+
+            align-content: space-around;
+            /* 
+                align-content 속성:
+                - 여려줄일때 수직정렬!
+                여러줄이니까 content!
+
+                1) flex-start : 맨위(기본값)
+                2) flex-end : 맨아래
+                3) center : 세로중앙
+                4) space-between : 
+                    아이템 요소 상하에 붙고 사이간격일정
+                5) space-around : 
+                    아이템 요소 상하간격일정
+                6) space-evenly : 
+                    아이템 요소 상하와 사이간격 모두일정
+
+                비교) 한줄 수직정렬은? align-items!
+
+            */
+
         }
+
         /* 글자수를 맞추기위해 li에 마진을 설정 */
-        .t6>li{
-            margin: 0 10px;
+        .t6>li {
+            margin: 0 14px;
             /* 양쪽마진으로 조정! */
         }
     </style>
@@ -333,7 +369,7 @@
             <li>D</li>
         </ol>
         <!-- 타이틀 박스6 -->
-        <ol class="tit t6">            
+        <ol class="tit t6">
             <li>L</li>
             <li>O</li>
             <li>T</li>
@@ -345,18 +381,12 @@
             <li>R</li>
             <li>L</li>
             <li>D</li>
-                     
+
             <li>L</li>
             <li>O</li>
             <li>T</li>
             <li>T</li>
             <li>E</li>
-
-            <li>W</li>
-            <li>O</li>
-            <li>R</li>
-            <li>L</li>
-            <li>D</li>
         </ol>
     </div>
 
