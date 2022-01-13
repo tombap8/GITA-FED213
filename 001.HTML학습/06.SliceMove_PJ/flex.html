@@ -141,7 +141,7 @@
 
         /* 타이틀1 */
         .t1{
-            top: 5%;
+            top: 50px;
 
             /* 플렉스박스 */
             display: flex;
@@ -182,7 +182,7 @@
 
         /* 타이틀2 */
         .t2{
-            top: 20%;
+            top: 200px;
             /* 플렉스박스 */
             display: flex;
             justify-content: space-between;
@@ -197,7 +197,7 @@
 
         /* 타이틀박스3 */
         .t3{
-            top: 35%;
+            top: 350px;
             display: flex;
             align-items: center;
         }
@@ -205,6 +205,51 @@
         /* 왼쪽마진 auto를 사용함! */
         .t3>li:nth-child(3){
             margin-left: auto;
+        }
+
+        /* 타이틀4 */
+        .t4{
+            top: 50px;
+            left: 50px;
+            width: 150px;
+
+            /* 플렉스박스 */
+            display: flex;
+        }
+        /* 자식요소에 flex-shrink설정으로 크기유지하기! */
+        .t4>li{
+            flex-shrink: 0;
+            /* 부모박스가 작아질때 같이 자동으로 줄어들래? 0 아니! */
+            /* 
+                flex 속성을 셋팅하지 않았을때 기본값은 아래와 같다!
+                flex : initial
+                즉, 아래와 동일!
+                flex : 0 1 auto -> 두번째값이 flex-shrink:1 로 셋팅
+                크기가 작아지면 줄어들므로 이값을 0으로 변경시
+                자신의 셋팅된 크기를 유지함!
+                줄바꿈은 절대안되고 부모바깥으로 나감!
+            */
+        }
+
+        /* 타이틀5 */
+        .t5{
+            top: 200px;
+            left: 50px;
+            width: 150px;
+            height: 500px;
+
+            /* 플렉스박스 */
+            display: flex;
+            flex-direction: column;
+            /* 진행방향 세로! */
+            align-items: center;
+            /* 진행방향에 따라 가로/세로 정렬이 바뀜! 
+            진행방향에 대한 수직정렬 */
+        }
+        /* 4번째 li부터 맨끝으로 보내기 */
+        /* margin-top:auto를 사용함! */
+        .t5>li:nth-child(4){
+            margin-top: auto;
         }
     </style>
 </head>
@@ -238,6 +283,30 @@
         </ol>
         <!-- 타이틀 박스3 -->
         <ol class="tit t3">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+        <!-- 타이틀 박스4 -->
+        <ol class="tit t4">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+        <!-- 타이틀 박스5 -->
+        <ol class="tit t5">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+        <!-- 타이틀 박스6 -->
+        <ol class="tit t6">
             <li>W</li>
             <li>O</li>
             <li>R</li>
