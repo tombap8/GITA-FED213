@@ -314,6 +314,37 @@
             margin: 0 14px;
             /* 양쪽마진으로 조정! */
         }
+
+        /* 타이틀7 */
+        .t7{
+            top: 50px;
+            right: 50px;
+            left: auto;
+            /* 기존left해제! */
+            width: 450px;
+            height: auto;
+            /* 높이값 자동! */
+
+            /* 플렉스박스 */
+            display: flex;
+            flex-wrap: wrap;
+            /* 자동줄바꿈! */
+            justify-content: space-between;
+            /* 양쪽맨끝에 위치하고 사이간격 일정! */
+            /* 자식요소에 마진으로 줄바꿈할때 양쪽 끝 간격이
+            생기는 문제를 아래와 같이 해결함! 마진안씀! */
+        }
+        /* 줄바꿈을 위한 li */
+        /* 원리는 줄바꿈할 부분에서 100%를 차지하게 해서 줄바꿈함! */
+        .tit>li.brk{
+            /* width: 100%; */
+            flex-basis: 100%;
+            /* flex자식요소는 width대신 
+            flex-basis를 사용가능! */
+            height: 0;
+            border: none;
+            /* 안보이게 기존 디자인없앰! */
+        }
     </style>
 </head>
 
@@ -387,6 +418,22 @@
             <li>T</li>
             <li>T</li>
             <li>E</li>
+        </ol>
+        <!-- 타이틀 박스7 -->
+        <ol class="tit t7">
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+
+            <li class="brk"></li>
+
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
         </ol>
     </div>
 
