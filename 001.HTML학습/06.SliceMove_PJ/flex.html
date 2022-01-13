@@ -65,6 +65,32 @@
             /* 등분할 셋팅! 
             높이값은 자동으로 부모채우기를 함! */
 
+            /* 
+                [ flex : 플렉스 자식요소에 주는 속성 ]
+                -> flex : 한번에 아래 3가지 속성을 줌
+                flex: 1 숫자하나만 쓰면 flex: 1 1 0 과 동일
+                해석) 커질래? 응(1), 작아질래?응(1), 가로크기 없음
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 0;
+
+                1) flex-grow : 1 | 0 -> 커질래? 1응, 0 아니
+                2) flex-shrink : 1 | 0 -> 작아질래? 1응, 0 아니
+                3) flex-basis : 설정값(px,%,em,rem,vw등)
+                -> width 가로크기를 설정하는 속성
+                -> 만약 0을 쓰면 속성값 없음!
+            */
+
+            /* 
+                float:left와 비교!
+                1) width: 20% -> 가로 크기계산
+                2) height: 100% -> 높이값 계산
+                3) float:left -> 옆으로 흐르게 설정
+                4) 부모요소에 가상요소로 clear:both 설정 
+                
+                -> flex는 위의 모든 것이 불필요!!!
+            */
+
 
             /* 배경공통 */
             background-repeat: no-repeat;
