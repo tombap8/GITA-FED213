@@ -29,11 +29,36 @@
 
         /* 파티션박스 ul */
         #wrap>ul {
+            display: flex;
+            /* 
+                플렉스박스!!! 
+                flex란? - flexible(유연한-에서 나온말)
+
+                - 가변적인 자식요소를 컨크롤 하기위해
+                CSS3에서 새롭게 선보인 display 기술
+                - 자식요소를 같은 비율로 혹은 다른비율로 분할이 쉽다
+                - 자식요소의 순서를 일괄적으로 변경할 수 있다
+                - 무엇보다도 블록요소를 옆으로 흐르게 하는데 탁월하다!
+
+                [ 셋팅법 ]
+                - 옆으로 흐르게 할 요소의 부모요소에
+                display:flex 로 설정함
+                - 자식요소의 flex:1 로 설정하면 등분할 된다!
+            */
+            flex-direction: column;
+
+
+
             height: 100%;
         }
 
         /* 파티션 li */
         #wrap>ul>li {
+            flex: 1;
+            /* 등분할 셋팅! 
+            높이값은 자동으로 부모채우기를 함! */
+
+
             /* 배경공통 */
             background-repeat: no-repeat;
             background-position: center;
