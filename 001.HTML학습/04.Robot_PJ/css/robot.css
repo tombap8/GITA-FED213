@@ -67,7 +67,21 @@ h1#logo{
     background: pink url(../images/robot_03.png) no-repeat;
     background-position: center 10px;
     background-size: 160px;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: logoAni 2s ease-in-out 2s forwards;
 }
+
+
+/* 로고 키프레임 */
+@keyframes logoAni {
+    /* from은 초기값과 같으므로 생략! */
+    to{
+        top: 50px;
+        left: 50px;
+        transform: scale(1);
+    }
+} /* logoAni 키프레임 */
 
 /******************************************************* 
     [ CSS 로 애니메이션 하기 ]
