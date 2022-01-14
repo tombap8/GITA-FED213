@@ -76,6 +76,29 @@ h1.tit{
     /* 아이프레임 기본보더 없앰! */
 }
 
+/* 2-2.예고편 선택메뉴 */
+.mlist{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    /* 부모박스를 절반밀어놓고 */
+    transform: translateX(-50%);
+    /* X축방향으로 자기크기의 절반 
+    왼쪽으로이동하기-> 가로중앙이동! */
+    width: 61%;
+
+}
+.mlist ul {
+    display: flex;
+}
+.mlist ul>li{
+    flex: 1;
+    margin: 0 1%;
+}
+.mlist img {
+    width: 100%;
+}
+
 /*************** 3. 하단영역 ***************/
 #info{
     height: 100px;
