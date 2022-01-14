@@ -6,14 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>비율유지박스(Ratio Box)</title>
     <style>
+        html,body{
+            margin: 0;  
+            padding: 0;
+            height: 100%;
+            /* 보이는 화면을 채움
+            -> 자식요소 중 높이값이 %일 경우에 기준이됨! */
+        }
+        /* 
+            [ 비율유지 박스를 만드는 원리 ]
+
+            1. 가로크기는 %에 준하는 유동적 셋팅
+            2. 세로크기를 셋팅하지 않는다!(auto)
+            3. 가상요소 before 자식요소로 패딩탑 %설정!
+            4. 앱솔루트 속박스를 만들어 컨텐츠공간확보!
+            (비율유지박스에 부모자격필요!)
+
+            ___________________________________________
+
+            -> 가로크기에 대한 세로크기는 유동적이어야 함!
+            -> 높이값 없이 높이값이 어떻게 생기지?
+            __________________________________
+
+            박스의 패딩을 주면 박스가 커진다!
+            패딩탑값으로 높이를 만든다!
+            패딩탑값을 %로 주면?
+            -> 가로크기에 대한 비율이 생성된다!!!
+            정확한 비율은 자식요소에 패딩탑을 줄때 생김!
+
+        */ 
 
         .rbx{
+            position: relative;
+            /* 비율유지 속박스를 위한 부모자격!!! */
+
             width: 50%;
-            height: 400px;
+            /* height: 400px; */
+            /* height: 50%; */
+            /* padding-top: 50%; */
 
             background: url(./images/mobum.jpg) no-repeat center/cover;
             margin: 0 auto;
         }
+
+        /* 자식요소 패딩탑 % */
+        /* -> 가상요소::before로 자식요소를 대신함! */
+        .rbx::before{
+            content: '';
+            display: block;/* div를 쓴것과 동일함! */
+            padding-top: 56.25%;
+            /* 
+                100% 부모요소 가로크기와 동일함 1:1비율 
+                예컨데 16:9 비율만들기!
+
+                16: 9 = 100% : ?%
+
+                -> ?%가 패딩탑값!
+
+                계산-> 
+                9*100/16 = 56.25%
+            
+            */
+        }
+
+        /* 비율유지 속박스(앱솔루트박스) */
+        .rbxIn{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            /* 부모는? 반드시 .rbx여야함!!! */
+        }
+        /* 위치이동값을 모두 사용하여 0으로 셋팅하면
+        부모박스에 밀착된 앱솔루트 박스가 생성된다! */
 
 
         
@@ -22,9 +88,30 @@
 
         
         /* 내용셋팅 */
+        .cat{
+            position: absolute;
+            bottom: 2%;
+            left: 5%;
+            /* 부모는? .rbxIn */
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-size: 1.5vw;
+            font-weight: bold;
+            line-height: 2;
+            text-shadow: 2px 2px 2px #000;
+        }
         
 
         /* 800px이하 미디어쿼리 */
+        @media screen and (max-width:800px) {
+            .rbx{
+                width: 100%;
+            }
+            .cat{
+                font-size: 3vw;
+            }
+        }
         /* 미디어쿼리 */
 
        
@@ -32,15 +119,19 @@
 </head>
 
 <body>
-    <div class="rbx"></div>
+    <div class="rbx">
+        <div class="rbxIn">
+            <!-- 비율유지 속박스에 내용넣기 -->
+            <dl class="cat">
+                <dt>출연진</dt>
+                <dd>이제훈(김도기역)</dd>
+                <dd>이솜(강하나역)</dd>
+                <dd>김의성(장성철역)</dd>
+            </dl>
+        </div>
+        
+    </div>
 
-<!-- 비율유지 속박스에 내용넣기 -->
-<!-- <dl class="cat">
-    <dt>출연진</dt>
-    <dd>이제훈(김도기역)</dd>
-    <dd>이솜(강하나역)</dd>
-    <dd>김의성(장성철역)</dd>
-</dl>  -->
 </body>
 
 </html>
