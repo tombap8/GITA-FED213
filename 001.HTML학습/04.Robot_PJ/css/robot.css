@@ -337,12 +337,27 @@ h1#logo{
 }
 /* 왼팔 */
 #arm1{
+    top: 20px;
     left: -50px;
 }
 /* 오른팔 */
 #arm2{
+    top: 20px;
     right: -50px;
+    transform-origin: top;
+    /* 세로기준축을 맨위로 변경! */
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: armAni .5s ease-in-out 5s forwards;
 }
+
+/* 오른팔 키프레임 */
+@keyframes armAni {
+    to{
+        transform: rotate(-152deg);
+    }
+}/* armAni 키프레임 */
+
 /* 왼다리 */
 #leg1{
     top: 100%;
