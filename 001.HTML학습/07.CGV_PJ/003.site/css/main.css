@@ -58,6 +58,17 @@ h1.tit{
     */
 }
 
+/* 2-1.스크린 박스 */
+#screen{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    /* 부모는? #cont.rbx */
+    width: 50%;
+    height: 40%;
+    background-color: #f00;
+}
+
 /*************** 3. 하단영역 ***************/
 #info{
     height: 100px;
