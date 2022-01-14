@@ -300,15 +300,15 @@ h1#logo{
     background: url(../images/mouth.png) no-repeat 0/100% 100%;
 
     /* 애니메이션: 이시이지반방마 */
-    animation: mouthAni .2s linear 6s infinite alternate;
+    animation: mouthAni .1s linear 6s infinite alternate;
 }
 /* 입움직이기 키프레임 */
 @keyframes mouthAni {
     0%{
-        transform: skewY(1);
+        transform: scaleY(1);
     }
     100%{
-        transform: skewY(.4);
+        transform: scaleY(.2);
     }
 } /* mouthAni 키프레임 */
 
