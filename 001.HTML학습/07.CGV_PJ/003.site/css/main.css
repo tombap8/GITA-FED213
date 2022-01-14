@@ -40,8 +40,22 @@ h1.tit{
 
 /*************** 2. 메인영역 ***************/
 #cont{
-    height: 788px;
-    background: url(../images/bg.jpg) no-repeat center;
+    /* height: 788px; */
+    /* 높이값을 주지않고 비율유지 가상요소로 생성함! */
+    background: url(../images/bg.jpg) no-repeat;
+    background-size: 100%;
+    /* 배경이미지 크기도 가로크기에 맞춰서 세로는 자동
+    -> 그래야 비율이 맞게됨! */
+}
+/* 비율만들기 */
+#cont.rbx::before{
+    padding-top: 65.66%;
+    /* 
+        비율계산하기:
+        1200px : 788px = 100% : x%
+        x = 788px * 100% / 1200px 
+          = 65.66%
+    */
 }
 
 /*************** 3. 하단영역 ***************/
