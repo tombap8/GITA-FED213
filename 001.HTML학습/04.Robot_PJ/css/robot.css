@@ -225,7 +225,20 @@ h1#logo{
     background: url(../images/metal01.jpg) no-repeat center/cover;
     margin: 0 auto;
     margin-top: 100px;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: robotAni 1.5s ease-out 3s forwards;
 }
+
+
+/* 로봇머리, 몸 제자리 키프레임! */
+@keyframes robotAni {
+    to{
+        left: 0;
+    }
+} /* robotAni 키프레임 */
+
+
 /* 눈1 */
 #eye1{
     position: absolute;
@@ -301,6 +314,9 @@ h1#logo{
     margin-bottom: 300px;
     /* 다리가 내려간 만큼 하단여유공간확보! */
     background: url(../images/metal01.jpg) no-repeat center/cover;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: robotAni 1.5s ease-out 3s forwards;
 }
 /* 목 */
 #neck{
