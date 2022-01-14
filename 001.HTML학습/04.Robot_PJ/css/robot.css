@@ -173,7 +173,21 @@ h1#logo{
     top: 100px;
     right: 50px;
     /* 부모는? 보이는 화면 */
+    opacity: 0;/* 처음에 안보임 */
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: showIt 1s ease-in 6s forwards;
 }
+/* 링크, 탑버튼, 로봇TV 등장 키프레임 */
+@keyframes showIt {
+    0%{opacity: 0;}
+    20%{opacity: 0.5;}
+    30%{opacity: 0;}
+    40%{opacity: 1;}
+    60%{opacity: 0.3;}
+    70%{opacity: 0;}
+    100%{opacity: 1;}
+} /*  showIt 키프레임 */
 .link a{
     font-family: 'Neonderthaw', cursive;
     font-size: 4vw;
@@ -204,6 +218,11 @@ h1#logo{
     font-weight: bold;
     text-decoration: none;
     background-color: #ccc;
+    
+    opacity: 0;/* 처음에 안보임 */
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: showIt 1.5s ease-in 7s forwards;
 }
 /* 버튼오버시 */
 .btnTop:hover{
@@ -279,7 +298,19 @@ h1#logo{
     width: 120px;
     height: 50px;
     background: url(../images/mouth.png) no-repeat 0/100% 100%;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: mouthAni .2s linear 6s infinite alternate;
 }
+/* 입움직이기 키프레임 */
+@keyframes mouthAni {
+    0%{
+        transform: skewY(1);
+    }
+    100%{
+        transform: skewY(.4);
+    }
+} /* mouthAni 키프레임 */
 
 /* 귀공통 */
 .ear{
@@ -406,6 +437,11 @@ h1#logo{
     width: 200px;
     height: 150px;
     background: url(../images/tv.jpg) no-repeat 0/100% 100%;
+    
+    opacity: 0;/* 처음에 안보임 */
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: showIt 3s ease-in 5s forwards;
 }
 /* 스크린 */
 #screen{
