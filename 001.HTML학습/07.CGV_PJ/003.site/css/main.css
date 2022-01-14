@@ -61,12 +61,12 @@ h1.tit{
 /* 2-1.스크린 박스 */
 #screen{
     position: absolute;
-    top: 10%;
-    left: 10%;
+    top: 17.2%;
+    left: 21.4%;
     /* 부모는? #cont.rbx */
-    width: 50%;
-    height: 40%;
-    background-color: #f00;
+    width: 58.5%;
+    height: 50.5%;
+    background-color: #000;
 }
 
 /*************** 3. 하단영역 ***************/
