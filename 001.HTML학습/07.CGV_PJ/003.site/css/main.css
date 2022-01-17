@@ -152,6 +152,59 @@ h1.tit{
     float: right;
 }
 
+/* 영사기 박스 */
+#cam{
+    position: absolute;
+    bottom: 0;
+    right: -51px;
+    /* 부모는? .gnb */
+}
+/* 영사기 이미지 */
+#cam img{
+    position: relative;
+    z-index: 1;
+    /* 영사기가 빔박스보다 위에 보이게함! */
+    width: 50px;
+
+    /* 영사기 회전 */
+    transform: rotate(25deg);
+    /* 양수값은 시계방향 */
+
+    /* 트랜지션: 속시이지 */
+    transition: .5s ease-out .3s;
+    /* 돌아올땐 기다려~! */
+}
+/* GNB에 마우스 오버시 영사기 회전하기 */
+.gnb:hover #cam img{
+    transform: rotate(0deg);
+    transition-delay: 0s;
+    /* 기다리는 시간없음! */
+}
+
+/* 빔박스 */
+.bim{
+    position: absolute;
+    top: -16px;
+    right: 8px;
+    /* 부모는? #cam */
+    width: 0;/* 200px; */
+    height: 70px;
+    background: url(../images/bim.png) no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    /* 이미지 크기를 세로에 맞춤! */
+
+    /* 트랜지션: 속시이지 */
+    transition: width .3s linear;
+    /* 돌아올땐 기다리지마~! */
+}
+/* GNB에 오버시 영사기 쏘기(width:200px) */
+.gnb:hover .bim{
+    width: 200px;
+    transition-delay: .5s;
+    /* 오버시엔 0.5초 기다려! */
+}
+
 /*************** 2. 메인영역 ***************/
 #cont{
     /* height: 788px; */
