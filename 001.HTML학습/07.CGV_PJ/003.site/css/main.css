@@ -51,13 +51,29 @@ h1.tit{
 .glist{
     display: flex;
     /* 플렉스 박스 */
+    font-family: 'Jua', sans-serif;
 }
 /* GNB li 리스트 */
-.glist li{
+.glist>li{ /* 상위메뉴 li */
+    position: relative;
+    /* 부모자격 - .smenu */
     padding: 0 10px;
-    font-family: 'Jua', sans-serif;
     font-size: 20px;
 }
+
+/* GNB 서브메뉴 */
+.smenu{
+    position: absolute;
+    width: 160px;
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    padding: 3px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff;
+}
+
+
+
 /*************** 2. 메인영역 ***************/
 #cont{
     /* height: 788px; */
