@@ -76,7 +76,7 @@ h1.tit{
     left: 50%;
     transform: translateX(-50%);
     /* x축방향으로 자신의 크기의 절반 왼쪽이동(중앙맞춤) */
-    width: 160px;
+    width: 140px;
     background: url(../images/bg_smenu.png) no-repeat center/cover;
     padding: 3px;
     margin-top: 5px;
@@ -112,7 +112,7 @@ h1.tit{
 /* 서브메뉴 ol */
 .smenu ol{
     border: 1px solid #ccc;
-    padding: 5px;
+    padding: 10px;
 }
 /* 서브메뉴 li 리스트 */
 .smenu li{
@@ -134,6 +134,7 @@ h1.tit{
     color: red;
 }
 /* 서브메뉴 a에 오버시 가상요소로 이모지 보이기 */
+/* 이모지는 윈도우키+세미콜론(;) 단축키임! */
 .glist>li:nth-child(1) .smenu li a:hover::after{
     content: '😍';
     float: right;
