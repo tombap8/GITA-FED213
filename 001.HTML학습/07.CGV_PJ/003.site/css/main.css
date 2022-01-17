@@ -133,7 +133,7 @@ h1.tit{
 .smenu a:hover {
     color: red;
 }
-/* 서브메뉴 a에 오버시 가상요소 손가락보이기 */
+/* 서브메뉴 a에 오버시 가상요소로 이모지 보이기 */
 .glist>li:nth-child(1) .smenu li a:hover::after{
     content: '😍';
     float: right;
