@@ -148,6 +148,8 @@ h1.tit{
 
 /*************** 3. 하단영역 ***************/
 #info{
+    position: relative;
+    /* 부모자격 - .sns */
     height: 100px;
 }
 /* 회사정보 */
@@ -170,3 +172,16 @@ h1.tit{
     margin-right: 20px;
 }
 
+/* 3-2. sns박스 */
+ul.sns{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /* 부모는? #info */
+    display: flex;
+    /* 플렉스박스 */
+}
+.sns li{
+    width: 34px;
+    height: 34px;
+}
