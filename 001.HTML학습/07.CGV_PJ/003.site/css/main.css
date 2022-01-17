@@ -150,3 +150,23 @@ h1.tit{
 #info{
     height: 100px;
 }
+/* 회사정보 */
+#info address {
+    color: #fff;
+    font-style: normal;
+    font-family: 'Cute Font', cursive;
+    font-size: 18px;
+    line-height: 20px;
+
+    /* 안쪽여백 */
+    padding-top: 20px;
+    padding-left: 20px;
+
+}
+/* 하단로고 이미지 */
+#info img{
+    float: left;
+    /* 이미지는 왼쪽, 글자를 오른쪽에 흐르게 */
+    margin-right: 20px;
+}
+
