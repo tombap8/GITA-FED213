@@ -69,13 +69,8 @@
             transition: height .4s ease-out;
         }
         /* 상위 li메뉴에 마우스 오버시 서브메뉴 보이기 */
-        /* 두번째 메뉴 서브메뉴 */
-        .gnb>ul>li:nth-child(2):hover .smenu{
-            height: 180px;
-        }
-        /* 세번째 메뉴 서브메뉴 */
-        .gnb>ul>li:nth-child(3):hover .smenu{
-            height: 100px;
+        .gnb>ul>li:hover .smenu{
+            height: 60px;
         }
 
 
@@ -120,7 +115,7 @@
             <li>
                 <a href="#">웹개발</a>
                 <div class="smenu">
-                    <ol>
+                    <ol class="fll">
                         <li>
                             <a href="#">웹디자인</a>
                         </li>
@@ -139,7 +134,7 @@
             <li>
                 <a href="#">게시판</a>
                 <div class="smenu">
-                    <ol>
+                    <ol class="fll">
                         <li>
                             <a href="#">Q&amp;A</a>
                         </li>
