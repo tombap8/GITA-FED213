@@ -9,9 +9,9 @@ body{
     background-color: #000;
 }
 
-body * {
+/* body * {
     outline: 1px dashed #ccc;
-}
+} */
 
 /* 레이아웃 공통 class */
 .part{
@@ -27,6 +27,9 @@ body * {
     /* 부모자격 - .gnb */
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x;
+    z-index: 9999;
+    /* 메뉴를 포함한 부모박스이 위치를 가장높게 
+    - 겹치는 하위메뉴를 위에 오도록하기 위함 */
 }
 /* 1-1. 페이지타이틀 */
 h1.tit{
@@ -60,16 +63,64 @@ h1.tit{
     padding: 0 10px;
     font-size: 20px;
 }
+/* 임시로 첫번째 .smenu만 보이게하기 */
+/* .glist>li:first-child~li .smenu{
+    display: none;
+} */
 
 /* GNB 서브메뉴 */
 .smenu{
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* x축방향으로 자신의 크기의 절반 왼쪽이동(중앙맞춤) */
     width: 160px;
     background: url(../images/bg_smenu.png) no-repeat center/cover;
     padding: 3px;
     margin: 5px;
     border-radius: 5px;
     box-shadow: 0 0 5px #fff;
+    display: none;
+    /* 처음에 안보임! */
+}
+/* 상위메뉴 li에 오버시에 .smenu보임 */
+.glist>li:hover .smenu{
+    display: block;
+}
+
+/* 가상요소로 삼각형 만들기 */
+.smenu::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* 삼각형만들기 */
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #353535;
+    /* 역삼각형 */
+    /* border-top: 10px solid red; 삼각형*/
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    /* transparent는 투명색 */
+}
+/* 서브메뉴 ol */
+.smenu ol{
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+/* 서브메뉴 li 리스트 */
+.smenu li{
+    font-size: 16px;
+    line-height: 2;
+
+}
+/* 서브메뉴 li 중 보더탑 디자인용 class */
+.bdt{
+    border-top: 1px solid #ccc;
 }
 
 
