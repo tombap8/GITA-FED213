@@ -124,8 +124,32 @@ h1.tit{
 .bdt{
     border-top: 1px solid #ccc;
 }
-
-
+/* 서브메뉴 a요소 확장 */
+.smenu a{
+    display: block;
+    /* li부모요소 끝까지 차지함! */
+}
+/* 서브메뉴 a에 오버시 글자색 빨강 */
+.smenu a:hover {
+    color: red;
+}
+/* 서브메뉴 a에 오버시 가상요소 손가락보이기 */
+.glist>li:nth-child(1) .smenu li a:hover::after{
+    content: '😍';
+    float: right;
+}
+.glist>li:nth-child(2) .smenu li a:hover::after{
+    content: '😺';
+    float: right;
+}
+.glist>li:nth-child(3) .smenu li a:hover::after{
+    content: '🔔';
+    float: right;
+}
+.glist>li:nth-child(4) .smenu li a:hover::after{
+    content: '📅';
+    float: right;
+}
 
 /*************** 2. 메인영역 ***************/
 #cont{
