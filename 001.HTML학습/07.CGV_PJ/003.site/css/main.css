@@ -184,4 +184,26 @@ ul.sns{
 .sns li{
     width: 34px;
     height: 34px;
+    background: url(../images/sprites_logo.png) no-repeat;
+    filter: grayscale(100%);
+    /* 필터 흑백처리 */
+}
+/* 오버시 칼라 */
+.sns li:hover{
+    filter: grayscale(0%);
+}
+.sns li:first-child{
+    background-position: -510px -429px;
+}
+.sns li:nth-child(2){
+    background-position: -551px -429px;
+}
+.sns li:last-child{
+    background-position: -593px -429px;
+}
+/* sns a링크 확장 */
+.sns a{
+    display: block;
+    width: 100%;
+    height: 100%;
 }
