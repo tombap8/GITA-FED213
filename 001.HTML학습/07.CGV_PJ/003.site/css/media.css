@@ -1,2 +1,13 @@
 @charset "utf-8";
 /* CGV PJ 메인 페이지 미디어쿼리 - media.css */
+
+/******* 미디어쿼리 : 1300px 이하 시작 *******/
+@media screen and (max-width:1300px) {
+    
+    /* GNB 메뉴 위치이동 - 영사기 보이게 */
+    .gnb{
+        right: 63px;
+    }
+}
+
+/******* 미디어쿼리 : 1300px 이하 끝 *******/
