@@ -35,3 +35,32 @@ html,body{
     filter: brightness(50%);
     /* 비디오의 밝기를 어둡게 조정하여 입장버튼이 잘보이게함! */
 }
+
+/* 들어가기 버튼박스 */
+#enter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 트랜스폼으로 정중앙이동하기! */
+
+    outline: 4px dotted lime;
+}
+/* Click Here! 글자박스 */
+#enter span{
+    display: block;
+    /* 옆에 아무도 못오고 width는 끝까지 간다! */
+    text-align: center;
+    /* 글자중앙 */
+
+    font: bold 34px/1.8 'Audiowide';
+    /* font: 스두크/줄체; */
+}
+/* 로고 이미지 */
+#enter img{
+    transition: transform .4s ease-out;
+}
+/* 엔터박스 오버시 로고이미지변경 */
+#enter:hover img{
+    transform: rotate(-15deg) scale(1.5);
+}
