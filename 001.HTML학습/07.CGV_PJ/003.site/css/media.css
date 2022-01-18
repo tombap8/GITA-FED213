@@ -82,25 +82,31 @@
 
 /******* 미디어쿼리 : 600px 이하 시작 *******/
 @media screen and (max-width:600px) {
+
     /* 타이틀 글자크기 */
-    h1.tit{
+    h1.tit {
         font-size: 9vw;
     }
 
     /* 하단 회사주소만 숨기기 */
-    #info address span{
+    #info address span {
         display: none;
     }
+
     /* 하단영역 높이값없앰 */
-    #info{
+    /* 하단영역높이는 결과적으로 124px */
+    #info {
         height: auto;
+        padding: 10px;
     }
+
     /* sns 마진없앰*/
-    ul.sns{
+    ul.sns {
         margin: 0;
     }
+
     /* 로고 이미지 : 위아래 마진없앰*/
-    #info img{
+    #info img {
         margin: 0 auto;
     }
 
