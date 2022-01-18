@@ -110,6 +110,16 @@
         margin: 0 auto;
     }
 
+    /* 메인영역 높이값 비율변경하기 */
+    #cont.rbx::before {
+        padding-top: 150%;
+    }
+    /* 메인영역 배경 크기비율, 위치변경 */
+    #cont{
+        background-size: 140%;
+        background-position: center top;
+    }
+
 }
 
 /******* 미디어쿼리 : 600px 이하 끝 *******/
