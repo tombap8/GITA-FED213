@@ -52,6 +52,10 @@ h1.tit{
 }
 /* GNB ul */
 .glist{
+    position: relative;
+    /* z-index적용위해 */
+    z-index: 1;
+    /* 영사기보다 위! */
     display: flex;
     /* 플렉스 박스 */
     font-family: 'Jua', sans-serif;
@@ -203,7 +207,20 @@ h1.tit{
     width: 200px;
     transition-delay: .5s;
     /* 오버시엔 0.5초 기다려! */
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: bimAni .04s linear infinite alternate;
 }
+
+/* 빔이 너울너울 거리도록 애니메이션 키프레임 */
+@keyframes bimAni {
+    from{
+        opacity: 0.9;
+    }
+    to{
+        opacity: 0.5;
+    }
+} /* bimAni 키프레임 */
 
 /*************** 2. 메인영역 ***************/
 #cont{
