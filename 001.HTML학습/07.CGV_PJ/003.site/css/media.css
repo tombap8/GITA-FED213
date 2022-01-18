@@ -114,10 +114,19 @@
     #cont.rbx::before {
         padding-top: 150%;
     }
+
     /* 메인영역 배경 크기비율, 위치변경 */
-    #cont{
+    #cont {
         background-size: 140%;
         background-position: center top;
+    }
+
+    /* 스크린 박스 - 위치,크기조정 */
+    #screen {
+        top: 10.5%;
+        left: 9.9%;
+        width: 81.8%;
+        height: 31.1%;
     }
 
 }
