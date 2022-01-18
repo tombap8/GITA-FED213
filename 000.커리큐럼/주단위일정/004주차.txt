@@ -15,7 +15,7 @@ ____________________________________________
 
 2. CSS학습
 ----------------
-1) 스프라이츠(Sprites) + IR(Image Replacement)
+1) 스프라이츠(Sprites) + IR(Image Replacement) - 완료!
 2) 3D 애니메이션 - Open Door + Rolling Cube
 ____________________________________________
 
