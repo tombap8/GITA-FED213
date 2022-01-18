@@ -41,7 +41,17 @@ h1.tit{
 
     /* 그림자를 이용한 Glow효과 */
     text-shadow: 0 0 4px aquamarine;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: titAni 1.5s ease-in infinite alternate;
 }
+
+/* 타이틀 글로우효과 애니메이션 */
+@keyframes titAni {
+    to{
+        text-shadow: 0 0 12px aquamarine;
+    }
+} /* titAni 키프레임 */
 
 /* 1-2. 전체메뉴(GNB) */
 .gnb{
