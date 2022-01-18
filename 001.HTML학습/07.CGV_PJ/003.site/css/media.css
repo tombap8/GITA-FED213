@@ -155,6 +155,8 @@
     /* 영화정보박스 */
     .movtxt {
         font-size: 4vw;
+        white-space: nowrap;
+        /* 줄바꿈 방지! */
     }
 
     /* 첫번째 li는 영화제목 */
