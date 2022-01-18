@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* 보그 PJ 메인 CSS - main.css */
+
+/* 외부파일 합치기 */
+@import url(reset.css);
+@import url(core.css);
+
+/* 박스표시 */
+body *{
+    outline: 1px dashed gray;
+}
+
+/* 속박스 class */
+.ibx{
+    max-width: 1300px;
+    /* 최대 1300px, 보다 작아지면 auto */
+    margin: 0 auto;
+    /* 박스 중앙정렬 */
+}
+
+/* 1. 상단영역 */
+.top{
+    height: 206px;
+}
+/* 2. 하단영역 */
+.info{
+    height: 286px;
+}
+/* 3. 메인영역 */
+/* 컨텐츠 유형1 */
+.pt1{
+    height: 724px;
+}
+.pt3{
+    height: 650px;
+}
