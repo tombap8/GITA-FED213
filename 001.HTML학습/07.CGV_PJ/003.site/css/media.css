@@ -11,3 +11,17 @@
 }
 
 /******* 미디어쿼리 : 1300px 이하 끝 *******/
+
+/* GNB ul */
+.glist{
+    position: absolute;
+left: -68px;
+    width: 120px;
+    text-align: right;
+
+    flex-direction: column;
+}
+/* 상위메뉴 li에 오버시에 .smenu보임 */
+.glist>li:hover .smenu{
+    display: none;
+}
