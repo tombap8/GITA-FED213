@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 보그 PJ 메인 CSS - main.css */
+/* 제주맥주 메인 CSS - main.css */
 
 /* 외부파일 합치기 */
 @import url(reset.css);
@@ -12,25 +12,42 @@ body *{
 
 /* 속박스 class */
 .ibx{
-    max-width: 1300px;
-    /* 최대 1300px, 보다 작아지면 auto */
+    max-width: 1200px;
+    /* 최대 1200px, 보다 작아지면 auto */
     margin: 0 auto;
     /* 박스 중앙정렬 */
 }
 
+.ibx h2{
+    text-align: center;
+    font-size: 70px;
+    color: lightseagreen;
+}
+
 /* 1. 상단영역 */
 .top{
-    height: 206px;
+    height: 197px;
 }
 /* 2. 하단영역 */
 .info{
-    height: 286px;
+    height: 323px;
 }
 /* 3. 메인영역 */
-/* 컨텐츠 유형1 */
-.pt1{
-    height: 724px;
+.cont1{
+    height: 1208px;
 }
-.pt3{
-    height: 650px;
+.cont2{
+    height: 1056px;
+}
+.cont3{
+    height: 1546px;
+}
+.cont4{
+    height: 1497px;
+}
+.cont5{
+    height: 1414px;
+}
+.cont6{
+    height: 285px;
 }
