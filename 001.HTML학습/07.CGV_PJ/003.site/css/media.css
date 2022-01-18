@@ -152,6 +152,16 @@
         -> 한줄에 3개씩 2줄 설정! */
     }
 
+    /* 영화정보박스 */
+    .movtxt {
+        font-size: 4vw;
+    }
+
+    /* 첫번째 li는 영화제목 */
+    .movtxt li:first-child {
+        font-size: 5vw;
+    }
+
     /* 영사기 박스 */
     #cam {
         bottom: 18px;
