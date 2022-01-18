@@ -44,7 +44,7 @@ html,body{
     transform: translate(-50%, -50%);
     /* 트랜스폼으로 정중앙이동하기! */
 
-    outline: 4px dotted lime;
+    /* outline: 4px dotted lime; */
 }
 /* Click Here! 글자박스 */
 #enter span{
@@ -55,7 +55,17 @@ html,body{
 
     font: bold 34px/1.8 'Audiowide';
     /* font: 스두크/줄체; */
+
+    /* 트랜지션: 속시이지 */
+    transition: all .4s ease-out .2s;
 }
+/* 엔터박스 오버시 글자박스 변경 */
+#enter:hover span{
+    transform: scale(2);
+    color: chartreuse;
+}
+
+
 /* 로고 이미지 */
 #enter img{
     transition: transform .4s ease-out;
