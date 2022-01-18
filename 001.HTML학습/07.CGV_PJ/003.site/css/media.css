@@ -3,25 +3,76 @@
 
 /******* 미디어쿼리 : 1300px 이하 시작 *******/
 @media screen and (max-width:1300px) {
-    
+
     /* GNB 메뉴 위치이동 - 영사기 보이게 */
-    .gnb{
+    .gnb {
         right: 63px;
     }
 }
 
 /******* 미디어쿼리 : 1300px 이하 끝 *******/
 
-/* GNB ul */
-.glist{
-    position: absolute;
-left: -68px;
-    width: 120px;
-    text-align: right;
 
-    flex-direction: column;
+/******* 미디어쿼리 : 1050px 이하 시작 *******/
+@media screen and (max-width:1050px) {
+
+    /* GNB ul */
+    .glist {
+        position: absolute;
+        left: -68px;
+        width: 120px;
+        text-align: right;
+
+        flex-direction: column;
+        /* 플렉스 방향: 세로  */
+        display: none;
+    }
+
+    /* GNB에 마우스 오버시 .glist보이기 */
+    .gnb:hover .glist {
+        display: flex;
+    }
+
+    /* 상위메뉴 li에 오버시에 .smenu숨기기 */
+    .glist>li:hover .smenu {
+        display: none;
+    }
+
+    /* GNB li 리스트 */
+    .glist>li {
+        /* 상위메뉴 li */
+        padding-bottom: 10px;
+    }
+
+
+
 }
-/* 상위메뉴 li에 오버시에 .smenu보임 */
-.glist>li:hover .smenu{
-    display: none;
+
+/******* 미디어쿼리 : 1050px 이하 끝 *******/
+
+/******* 미디어쿼리 : 780px 이하 시작 *******/
+@media screen and (max-width:780px) {
+
+    /* 회사정보 */
+    #info address {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* 하단로고 이미지 */
+    #info img {
+        display: block;
+        float: none;
+        margin: 10px auto;
+    }
+
+    /* 3-2. sns박스 */
+    ul.sns {
+        position: static;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
 }
+
+/******* 미디어쿼리 : 780px 이하 끝 *******/
