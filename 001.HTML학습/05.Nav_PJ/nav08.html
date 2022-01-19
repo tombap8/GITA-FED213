@@ -237,6 +237,20 @@
             color: #fff;
         }
     </style>
+    <!-- JS코드구역 -->
+    <script>
+        // 호출시에 실행하는 코드블록 -> 함수!
+        function 보여숨겨(){
+            // alert("나야나!")
+            // 변경대상: .gnb
+            // 변경내용: 클래스"on" 없으면 넣고 있으면 빼기!
+            // 사용메서드: classList.toggle(클래스명)
+            // 전체문서.가져와클래스요소(이름)[첫번째]
+            document.getElementsByClassName("gnb")[0]
+            .classList.toggle("on");
+
+        } /// 보여숨겨함수 /////////////
+    </script>
 </head>
 
 <body>
@@ -286,12 +300,16 @@
         </ul>
 
         <!-- 닫기버튼 -->
-        <button id="cbtn" class="btns"><span>×</span></button>
+        <button id="cbtn" class="btns" onclick="보여숨겨()">
+            <span>×</span>
+        </button>
 
     </nav>
 
     <!-- 햄버거버튼 -->
-    <button id="ham" class="btns"><span>＝</span></button>
+    <button id="ham" class="btns" onclick="보여숨겨()">
+        <span>＝</span>
+    </button>
 
     <!-- 글자출력 -->
     <h2 class="tit">Show Me The Menu!!!</h2>
