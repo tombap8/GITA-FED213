@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* 제주맥주 메인 CSS - main.css */
+
+/* 외부파일 합치기 */
+@import url(reset.css);
+@import url(core.css);
+
+/* 박스표시 */
+body *{
+    outline: 1px dashed gray;
+}
+
+/* 속박스 class */
+.ibx{
+    max-width: 1200px;
+    /* 최대 1200px, 보다 작아지면 auto */
+    margin: 0 auto;
+    /* 박스 중앙정렬 */
+}
+
+.ibx h2{
+    text-align: center;
+    font-size: 30px;
+    color: lightseagreen;
+    outline: none;
+}
+
+/* 1. 상단영역 */
+#topbar{
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
+}
+.topbar{
+    height: 37px;
+}
+.top{
+    height: 100px;
+}
+/* 2. 하단영역 */
+.info{
+    height: 323px;
+}
+/* 3. 메인영역 */
+.c1{
+    height: 560px;
+}
+.c2{
+    height: 149px;
+}
+.c3{
+    height: 134px;
+}
+.c4{
+    height: 478px;
+}
+.c5{
+    height: 568px;
+}
+.c6{
+    height: 124px;
+}
