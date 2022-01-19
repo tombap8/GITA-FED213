@@ -35,6 +35,8 @@
             /* 크기를 가진 블록박스 가로중앙 */
         }
         .gnb>ul>li{
+            position: relative;
+            /* 부모자격 - .smenu */
             width: 200px;
             text-align: center;
         }
@@ -62,8 +64,10 @@
 
         /* 서브메뉴 */
         .smenu{
-            /* position: absolute; */
-            /* 변경 - static으로 변경하면 자리차지함! */
+            position: absolute;
+            top: 0;
+            left: 100%;
+            /* 부모는? 싸고 있는 li */
             height: 0;
             overflow: hidden;
             /* 높이값 0, 넘치는 자식요소 숨기기로 서브안보이게함! */
