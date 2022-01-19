@@ -21,10 +21,13 @@
             padding: 0;
         }
 
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
         body {
             background: url(./imgs/worksbg.jpg) no-repeat fixed center/cover;
-            overflow-x: hidden;
-            /* 첫번째 자식블록요소 마진탑포함 */
         }
 
         /* 초기화 */
@@ -41,19 +44,21 @@
 
         .wrap {
             width: 1200px;
-            max-width: 90%;
+            max-width: 80%;
             background-color: rgba(255, 255, 255, 0.7);
             margin: 0 auto;
             margin-top: 50px;
             margin-bottom: 50px;
             border-radius: 15px;
             padding: 15px;
+            white-space: nowrap;
         }
 
         .tit {
             text-align: center;
         }
-        .tit img{
+
+        .tit img {
             max-width: 80%;
             /* 이미지 크기의 80%보다 작아질때 최대 80%크기유지!
             이 사이즈 보다 크면 원래 이미지 사이즈를 유지함! */
@@ -86,7 +91,7 @@
         }
 
         .pbx ul li {
-            padding-left: 20px;
+            padding-left: 5rem;
         }
 
         .pbx>div:first-child::after {
@@ -113,9 +118,11 @@
 
         /* 미디어쿼리 - 1000px이하 */
         @media screen and (max-width:1000px) {
+
             .pbx {
                 flex-direction: column;
                 /* 레이아웃 진행방향 세로! */
+                text-align: center;
             }
 
             .pbx>div:first-child::after {
@@ -129,12 +136,24 @@
 
 
             }
-            .pbx>div:last-child{
+
+            .pbx>div:last-child {
                 margin-top: 50px;
             }
-        }
 
-        /* 1000px이하 */
+            .pbx ul li {
+                padding-left: 0;
+            }
+
+            .pbx a {
+                font-size: 4vh;
+            }
+
+            .pbx h2 {
+                font-size: 5vh;
+            }
+
+            /* 1000px이하 */
     </style>
 </head>
 
