@@ -154,6 +154,35 @@
         function showMe(){
             // 1. 함수호출확인!
             console.log("나야나!!!");
+
+            // 2. html변경하기!
+            // 변경대상: #name
+            document 
+            // html문서전체객체
+            .getElementById("name")
+            // 가져와요소아이디로(아이디명)
+            .innerHTML = '<img src="images/kim.png" alt="김비서가 왜그럴까">';
+            // innerHTML = 값
+            // 선택요소에 html코드를 넣어준다!
+
+            // 3. css변경하기
+            // 대상: .pbox
+
+            // 대상을 재사용하도록 변수에 할당한다!
+            // var 는 변수를 선언하는 키워드
+            var tg = document
+            .getElementsByClassName("pbox") //클래스요소
+            .item(0); // 첫번째요소
+
+            // 3-1. 글자색변경하기
+            tg.style.color = "lime"; 
+            // style 스타일시트 객체
+            // 스타일속성은 모두 JS변수로 만들어져 있다!
+            
+            // 3-2. 글자크기변경하기
+            tg.style.fontSize = "50px";
+
+
         } /////////// showMe함수 ///////////////
         ////////////////////////////////////////
 
@@ -175,6 +204,7 @@
     </style>
 </head>
 <body>
+    
     <p class="pbox" title="여기를 클릭하세요!" onclick="showMe()">
         나는 요즘 매일 생각한다! <br>
         도대체 <span id="name"></span>
