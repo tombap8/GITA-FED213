@@ -179,6 +179,8 @@
             line-height: 66px;
             padding: 0;
             margin: 0;
+            cursor: pointer;
+            /* 오버시 손가락모양 */
         }
         /* 가상요소 검정원 */
         #ham::before{
@@ -206,6 +208,9 @@
             transform: scaleX(2);
             display: block;
             /* 트랜스폼 적용위해 블록으로!(또는 인라인블록) */
+        }
+        /* 오버시 글자색 */
+        #ham:hover span{
             color: #fff;
         }
     </style>
