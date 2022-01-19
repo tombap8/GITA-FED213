@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>유형8.숨긴네비 고정전체창형</title>
     <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 3000px;
+            background-image: linear-gradient(to bottom, #e0ffb7,#ffcea7,#e9c8ff);
+            /* 
+                linear-gradient(방향, 색1,색2,색3)
+                -> 진행방향으로 색을 선형 그라데이션함!
+            */
+        }
         /* ul,ol초기화 */
         ul,
         ol {
@@ -32,7 +44,8 @@
         /* GNB메뉴 */
         .gnb {
             position: fixed;
-            top: 0;
+            top: -100%;
+            /* 위에 올라가있음(숨김) */
             left: 0;
             width: 100vw;
             height: 100vh;
@@ -132,6 +145,22 @@
             background-color: #f0f0f0;
             color: #ff5411;
         }
+
+        /* 출력글자 */
+        .tit{
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100vw;
+            text-align: center;
+            font-size: 7vw;
+            white-space: nowrap;
+            /* 줄바꿈방지 */
+            color: rgb(255, 0, 191);
+            
+            margin: 0;
+            padding: 0;
+        }
     </style>
 </head>
 
@@ -181,6 +210,9 @@
             </li>
         </ul>
     </nav>
+
+    <!-- 글자출력 -->
+    <h2 class="tit">Show Me The Menu!!!</h2>
 </body>
 
 </html>
