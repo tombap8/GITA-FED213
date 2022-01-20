@@ -42,6 +42,18 @@
             height: 280px;
             margin: 0 auto;
             background: url(./images/seashore.jpg) no-repeat center/auto 100%;
+            /********************************** 
+             [ 3D 원근설정 ]
+             1. 셋팅위치:
+             3D원근 설정을 할 대상의 부모박스
+             2. 설정방법:
+             perspective: 수치;
+             - 수치는 px단위로 숫자가 클수록
+             소실점이 먼것이므로 각도가 작아짐
+             (이 거리는 기준점에서 소실점까지의 거리임)
+            **********************************/
+            perspective: 480px;
+
         }
         /* 문짝 */
         .door{
@@ -50,6 +62,11 @@
             width: 150px;
             height: 280px;
             background-color: #c90;
+
+            /* 문짝을 Y축회전 */
+            transform: rotateY(60deg);
+            /* 축변경 */
+            transform-origin: left;
         }
         /* 손잡이 */
         .handle{
