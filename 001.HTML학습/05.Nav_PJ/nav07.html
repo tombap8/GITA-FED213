@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>유형7 : 가로네비 서브없는 디자인형</title>
     <style>
+        /* 타이틀 */
+        .tit{
+            text-align: center;
+            background-image: linear-gradient(45deg, red,green 30%, yellow 40%,yellow 80%,blue);
+        }
+
+
         /* GNB 최상위부모 */
         .gnb{
             width: 900px;
             height: 40px;
             margin: 0 auto;
-            outline: 1px dashed gray;
+            /* outline: 1px dashed gray; */
         }
         /* GNB 플렉스박스 */
         .gnb ul{
@@ -70,6 +77,15 @@
             background-image: 
             linear-gradient(to top, #6d6d6d,#d6d6d6);
             text-shadow: 0 1px 0 #777;
+        }
+
+        /* 첫번째 li의 둥근모서리 적용 */
+        .gnb li:first-child a{
+            border-radius: 5px 0 0 5px;
+        }
+        /* 마지막째 li의 둥근모서리 적용 */
+        .gnb li:last-child a{
+            border-radius: 0 5px 5px 0;
         }
        
 
