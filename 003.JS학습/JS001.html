@@ -331,6 +331,16 @@
         } /////////// showMe함수 ///////////////
         ////////////////////////////////////////
 
+        /******************************************* 
+            함수명: 맘대로해라
+            기능: 선택요소를 중앙으로 보낸다!
+        *******************************************/
+       function 맘대로해라(헐){ // 헐 - 파라미터변수
+            // 1. 호출확인, 전달값확인!
+            console.log("맘대로해라!",헐)
+       } ///////// 맘대로해라 함수 ///////////////////
+       //////////////////////////////////////////////
+
     </script>
     <style>
         .pbox{
@@ -346,6 +356,47 @@
             color: yellow;
             text-shadow: 1px 1px 1px #000;
         }
+
+        /* 원모양박스 */
+        .원이야{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+
+            /* 배경공통 */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* 원박스 개별배경이미지 */
+        .원이야:nth-of-type(1){
+            right: 400px;
+            background-image: url(./images/01.png);
+        }
+        .원이야:nth-of-type(2){
+            right: 200px;
+            background-image: url(./images/02.png);
+        }
+        .원이야:nth-of-type(3){
+            background-image: url(./images/03.png);
+        }
+
+        /* 사각형으로 변할 원박스 */
+        .넌뭐냐{
+            position: absolute;
+            top: 40%;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            white-space: nowrap;
+            /* 줄바꿈방지 */
+            border-radius: 50%;
+            background: url(./images/prog.jpg) no-repeat top/cover;
+        }
     </style>
 </head>
 <body>
@@ -354,6 +405,14 @@
         나는 요즘 매일 생각한다! <br>
         도대체 <span id="name"></span>
     </p>
+
+    <!-- 원모양박스 -->
+    <div class="원이야" onclick="맘대로해라(0)"></div>
+    <div class="원이야" onclick="맘대로해라(1)"></div>
+    <div class="원이야" onclick="맘대로해라(2)"></div>
+
+    <!-- 사각형으로 변할 원박스 -->
+    <div class="넌뭐냐" onclick="사각사각()"></div>
     
 </body>
 </html>
