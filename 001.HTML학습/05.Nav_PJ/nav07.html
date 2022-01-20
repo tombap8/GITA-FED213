@@ -6,6 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>유형7 : 가로네비 서브없는 디자인형</title>
     <style>
+        /* GNB 최상위부모 */
+        .gnb{
+            width: 900px;
+            height: 40px;
+            margin: 0 auto;
+            outline: 1px dashed gray;
+        }
+        /* GNB 플렉스박스 */
+        .gnb ul{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        /* GNB li 리스트 */
+        .gnb li{
+            width: 150px;
+            height: 40px;
+            /* 
+                플렉스의 자식요소는 flex속성을 셋팅하지 않으면
+                기본적으로 flex:initial 로 셋팅된다!
+                이는 flex: 0 1 auto 즉, flex-shrink: 1 로 셋팅되어
+                있기때문에 구분선 보더가 추가되어 박스 늘어나는것을
+                방지해 준다! 자동으로 크기를 줄여준다!
+                결과적으로 li가 아래로 떨어지지 않는다!
+
+                (플렉스 대신 float:left를 사용했다면 박스가 늘어서
+                li가 아래로 떨어지기 때문에 box-sizing:border-box
+                설정으로 박스크기가 늘어나지 않게 셋팅해야한다!)
+            */
+
+        }
+        /* 첫번째 li를 제외한 나머지 li에 왼쪽보더넣기 */
+        .gnb li+li{
+            border-left: 1px solid #777;
+        }
+        /* GNB a링크 */
+        .gnb a{
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            color: #333;
+            text-decoration: none;
+
+            font: 12px/40px Verdana;
+            /* font: 스두크/줄체; */
+            text-align: center;
+            text-shadow: 1px 1px 0 #ccc;
+
+            /* 그라데이션 주기 */
+            background-image: 
+            linear-gradient(to bottom, #6d6d6d,#d6d6d6);
+            /* background-image: 
+            linear-gradient(-45deg, red 30%, green 70%, blue); */
+        }
+
+        /* 메뉴 li에 마우스 오버시
+        a요소의 글자색, 배경색, 글자그림자 변경 */
+        .gnb li:hover a{
+            color: #fff;
+            background-image: 
+            linear-gradient(to top, #6d6d6d,#d6d6d6);
+            text-shadow: 0 1px 0 #777;
+        }
        
 
 
