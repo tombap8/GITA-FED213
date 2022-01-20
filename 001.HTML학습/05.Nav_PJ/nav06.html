@@ -68,17 +68,30 @@
         /* 서브메뉴 */
         .smenu {
             position: absolute;
+            /* top값을 주지않아서 젠틀! */
+            left: 50%;
+            transform: translateX(-50%);
+            /* left를 절반 보내고 자기크기의 절반 중앙이동함! */
+            display: flex;
+            /* 자식인 h2,ol이 옆으로 흐르게함! */
+            width: 800px;
+            /* 특정가로크기설정 */
             height: 0;
             overflow: hidden;
             /* 높이값 0, 넘치는 자식요소 숨기기로 서브안보이게함! */
             background-color: #d5eeff;
 
+
+
             /* 트랜지션: 속시이지 */
             transition: height .4s ease-out;
         }
 
+        /* 서브메뉴 타이틀 */
+        .smenu h2 {}
+
         /* 상위 ul에 마우스 오버시 서브메뉴 전체보이기 */
-        .gnb>ul:hover>li .smenu {
+        .gnb>ul>li:hover .smenu {
             height: 180px;
         }
 
@@ -114,7 +127,7 @@
         }
 
         /* ul에 가상요소로 서브메뉴 배경만들기 */
-        .gnb>ul::after{
+        .gnb>ul>li::after {
             content: '';
             display: block;
             position: absolute;
@@ -122,7 +135,8 @@
             left: 0;
             width: 100%;
             /* 나의부모는? .gnb */
-            height: 0;/* 처음에 안보임 */
+            height: 0;
+            /* 처음에 안보임 */
             background-color: #d5eeff;
 
             /* 트랜지션: 속시이지 */
@@ -131,8 +145,9 @@
             /* static요소 보다 아래옴 */
         }
 
-        /* 상위메뉴 li에 오버시 서브배경 가상요소 보이기 */
-        .gnb>ul:hover::after{
+        /* 상위메뉴 li(2,3번)에 오버시 서브배경 가상요소 보이기 */
+        .gnb>ul>li:nth-child(2):hover::after,
+        .gnb>ul>li:nth-child(3):hover::after {
             height: 180px;
             border-bottom: 3px solid #4571ff;
         }
@@ -151,6 +166,8 @@
             <li>
                 <a href="#">웹개발</a>
                 <div class="smenu">
+                    <!-- 서브메뉴제목 -->
+                    <h2>웹개발</h2>
                     <ol>
                         <li>
                             <a href="#">웹디자인</a>
@@ -170,6 +187,8 @@
             <li>
                 <a href="#">게시판</a>
                 <div class="smenu">
+                    <!-- 서브메뉴제목 -->
+                    <h2>게시판</h2>
                     <ol>
                         <li>
                             <a href="#">Q&amp;A</a>
