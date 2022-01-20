@@ -243,15 +243,19 @@
             transition: all .4s;
         }
         /* 오버시 창문열기 */
+        .cont2:hover .door2{
+            transform: rotateX(65deg);
+        }
 
         .handle {
             position: absolute;
-            top: 140px;
-            right: 10px;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            /* 가로중앙이동 */
             /* 부모는? .door */
             width: 20px;
-            height: 20px;
-            border-radius: 50%;
+            height: 5px;
             background-color: blue;
         }
     </style>
