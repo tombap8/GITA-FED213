@@ -64,10 +64,37 @@
             background-color: #c90;
 
             /* 문짝을 Y축회전 */
-            transform: rotateY(60deg);
+            transform: rotateY(0deg);
             /* 축변경 */
             transform-origin: left;
         }
+
+        .cont:hover .door{
+            /* 애니메이션: 이시이지반방마 */
+            animation: 
+            openFirst 1s ease-in-out forwards,
+            openDoor 2s ease-in-out 1s infinite alternate;
+        }
+
+        /* 문짝 처음열기 키프레임 */
+        @keyframes openFirst {
+            to{
+                transform: rotateY(60deg);
+            }
+        } /* openFirst 키프레임 */
+
+        /* 문짝 열기닫기 키프레임 */
+        @keyframes openDoor {
+            0%{
+                transform: rotateY(60deg);
+            }
+            100%{
+                transform: rotateY(-60deg);
+            }
+        } /* openDoor 키프레임 */
+
+
+
         /* 손잡이 */
         .handle{
             position: absolute;
