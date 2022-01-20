@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -264,17 +265,17 @@
             함수명: showMe
             기능: .pbox의 디자인을 변경한다!
         *************************************/
-        function showMe(){
+        function showMe() {
             // 1. 함수호출확인!
             console.log("나야나!!!");
 
             // 2. html변경하기!
             // 변경대상: #name
-            document 
-            // html문서전체객체
-            .getElementById("name")
-            // 가져와요소아이디로(아이디명)
-            .innerHTML = '<img src="images/kim.png" alt="김비서가 왜그럴까">';
+            document
+                // html문서전체객체
+                .getElementById("name")
+                // 가져와요소아이디로(아이디명)
+                .innerHTML = '<img src="images/kim.png" alt="김비서가 왜그럴까">';
             // innerHTML = 값
             // 선택요소에 html코드를 넣어준다!
 
@@ -284,14 +285,14 @@
             // 대상을 재사용하도록 변수에 할당한다!
             // var 는 변수를 선언하는 키워드
             var tg = document
-            .getElementsByClassName("pbox") //클래스요소
-            .item(0); // 첫번째요소
+                .getElementsByClassName("pbox") //클래스요소
+                .item(0); // 첫번째요소
 
             // 3-1. 글자색변경하기
-            tg.style.color = "lime"; 
+            tg.style.color = "lime";
             // style 스타일시트 객체
             // 스타일속성은 모두 JS변수로 만들어져 있다!
-            
+
             // 3-2. 글자크기변경하기
             tg.style.fontSize = "50px";
 
@@ -299,8 +300,8 @@
             tg.style.transition = "2s";
 
             // 3-5. 배경이미지 넣기
-            tg.style.background = 
-            "url(./images/kimbs.jpg) no-repeat top/cover";
+            tg.style.background =
+                "url(./images/kimbs.jpg) no-repeat top/cover";
 
             // 3-6. 원모양만들기
             tg.style.borderRadius = "50%";
@@ -316,8 +317,8 @@
             tg.style.left = "50%";
 
             // 3-10. 트랜스폼 중앙이동(축소, 회전)
-            tg.style.transform = 
-            "translate(-50%,-50%) rotate(360deg) scale(.7)";
+            tg.style.transform =
+                "translate(-50%,-50%) rotate(360deg) scale(.7)";
 
             // 3-11. 전체배경색 변경하기
             // 대상: body
@@ -326,7 +327,7 @@
             var bd = document.body;
             bd.style.backgroundColor = "orange";
             bd.style.transition = "5s";
-            
+
 
         } /////////// showMe함수 ///////////////
         ////////////////////////////////////////
@@ -335,15 +336,31 @@
             함수명: 맘대로해라
             기능: 선택요소를 중앙으로 보낸다!
         *******************************************/
-       function 맘대로해라(헐){ // 헐 - 파라미터변수
+        function 맘대로해라(헐) { // 헐 - 파라미터변수
             // 1. 호출확인, 전달값확인!
-            console.log("맘대로해라!",헐)
-       } ///////// 맘대로해라 함수 ///////////////////
-       //////////////////////////////////////////////
+            console.log("맘대로해라!", 헐)
+            // 2. 변경대상: .원이야
+            var 멍청이 = 
+            document.querySelectorAll(".박스야 .원이야");
+            console.log("확인:",멍청이.length);
+            /* document
+            .getElementsByClassName("박스야").item(0)
+            .getElementsByClassName("원이야").item(1) */
 
+            // 너무 복잡하다!
+
+            // .박스야 .원이야 -> CSS선택자 선택법!
+            // JS 선택 메서드 등장! -> CSS선택자를 쓰는 방법!
+
+            // 1) querySelector(CSS선택자) -> 1개만 선택
+            // 2) querySelectorAll(CSS선택자) -> 다수 선택
+            // -> 2번은 .item(순번)/[순번] 으로 구체적선택!
+
+        } ///////// 맘대로해라 함수 ///////////////////
+        //////////////////////////////////////////////
     </script>
     <style>
-        .pbox{
+        .pbox {
             position: absolute;
             top: 0;
             left: 0;
@@ -358,7 +375,7 @@
         }
 
         /* 원모양박스 */
-        .원이야{
+        .원이야 {
             position: absolute;
             top: 0;
             right: 0;
@@ -370,21 +387,24 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
         /* 원박스 개별배경이미지 */
-        .원이야:nth-of-type(1){
+        .원이야:nth-of-type(1) {
             right: 400px;
             background-image: url(./images/01.png);
         }
-        .원이야:nth-of-type(2){
+
+        .원이야:nth-of-type(2) {
             right: 200px;
             background-image: url(./images/02.png);
         }
-        .원이야:nth-of-type(3){
+
+        .원이야:nth-of-type(3) {
             background-image: url(./images/03.png);
         }
 
         /* 사각형으로 변할 원박스 */
-        .넌뭐냐{
+        .넌뭐냐 {
             position: absolute;
             top: 40%;
             right: 0;
@@ -399,20 +419,25 @@
         }
     </style>
 </head>
+
 <body>
-    
+
     <p class="pbox" title="여기를 클릭하세요!" onclick="showMe()">
         나는 요즘 매일 생각한다! <br>
         도대체 <span id="name"></span>
     </p>
 
-    <!-- 원모양박스 -->
-    <div class="원이야" onclick="맘대로해라(0)"></div>
-    <div class="원이야" onclick="맘대로해라(1)"></div>
-    <div class="원이야" onclick="맘대로해라(2)"></div>
+    <div class="박스야">
 
-    <!-- 사각형으로 변할 원박스 -->
-    <div class="넌뭐냐" onclick="사각사각()"></div>
-    
+        <!-- 원모양박스 -->
+        <div class="원이야" onclick="맘대로해라(0)"></div>
+        <div class="원이야" onclick="맘대로해라(1)"></div>
+        <div class="원이야" onclick="맘대로해라(2)"></div>
+
+        <!-- 사각형으로 변할 원박스 -->
+        <div class="넌뭐냐" onclick="사각사각()"></div>
+
+    </div>
 </body>
+
 </html>
