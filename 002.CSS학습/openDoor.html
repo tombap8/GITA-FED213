@@ -54,6 +54,16 @@
             **********************************/
             perspective: 480px;
 
+            /************************************ 
+                [ 뷰포인트(관찰자위치) 변경옵션 ]
+                perspective-origin : 가로 세로;
+                - 가로값: left, center, right
+                - 세로값: top, center, bottom
+                - 정해지지 않은값: px, % 등 가능
+                - 두 값 중 하나만 쓸 수 있고 복합일
+                경우 2가지를 같이 셋팅함!
+            ************************************/
+
         }
         /* 문짝 */
         .door{
@@ -67,13 +77,20 @@
             transform: rotateY(0deg);
             /* 축변경 */
             transform-origin: left;
-        }
-
-        .cont:hover .door{
+            
             /* 애니메이션: 이시이지반방마 */
             animation: 
             openFirst 1s ease-in-out forwards,
             openDoor 2s ease-in-out 1s infinite alternate;
+
+            /* 애니메이션 상태관리하기! - 중간상태에서 멈춤*/
+            animation-play-state: paused;
+            /* paused - 멈춤상태, running - 진행상태 */
+        }
+
+        /* 오버시 애니메이션 작동하기! */
+        .cont:hover .door{
+            animation-play-state: running;
         }
 
         /* 문짝 처음열기 키프레임 */
