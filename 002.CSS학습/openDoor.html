@@ -211,17 +211,38 @@
             perspective: 500px;
         }
 
-        .door {
+        .door2 {
             position: relative;
             /* 부모자격 - .handle */
-            width: 150px;
-            height: 280px;
-            background-color: #c90;
-            /* 문짝을 Y축회전 */
-            transform: rotateY(0deg);
-            /* 축변경 */
-            transform-origin: left;
+            width: 130px;
+            height: 130px;
+            background-color: rgba(204, 153, 0, 0.493);
+
+            text-align: center;
+            /* 글자중앙(세로글자면 세로방향 중앙이다!) */
+            writing-mode: vertical-lr;
+            /* 
+                글자진행방향 설정속성
+                writing-mode:
+                옵션값
+                horizontal-tb 가로글자방향 위에서 아래로(기본값)
+                vertical-rl 세로글자방향 오른쪽에서 왼쪽으로
+                vertical-lr 세로글자방향 왼쪽에서 오른쪽으로
+            */
+            padding: 0 30px;
+            border: 5px solid red;
+            box-sizing: border-box;
+            /* 박스크기유지 - 보더,패딩포함 */
+
+            /* 문짝을 X축회전 */
+            transform: rotateX(0deg);
+            /* 축변경(상단) */
+            transform-origin: top;
+
+            /* 트랜지션: 속시이지*/
+            transition: all .4s;
         }
+        /* 오버시 창문열기 */
 
         .handle {
             position: absolute;
