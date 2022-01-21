@@ -10,6 +10,21 @@
 .top{
     height: 206px;
 }
+/* 1-1.상단메뉴 */
+.tmenu{
+    display: flex;
+    /* 플렉스박스 */
+    max-width: 970px;
+    height: 45px;
+    margin: 0 auto;
+}
+/* 직계박스 등분할 설정 */
+.tmenu>div{
+    flex: 1;
+}
+/* 1-1-1.sns박스 */
+
+
 /*************** 2. 하단영역 ***************/
 .info{
     height: 286px;
