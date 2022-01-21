@@ -285,6 +285,9 @@ h1.tit{
 }
 .mlist ul {
     display: flex;
+
+    /* 원근셋팅! */
+    perspective: 480px;
 }
 .mlist ul>li{
     position: relative;
@@ -293,6 +296,18 @@ h1.tit{
     margin: 0 1%;
     overflow: hidden;
     /* 넘치는 자식요소 숨기기 */
+    
+    transform: rotateX(45deg);
+    transform-origin: bottom;
+    transition: .4s ease-out;
+}
+/* li에 마우스 오버시 세우기!
++ 클래스on일 경우 세우기 */
+.mlist ul>li:hover ,
+.mlist ul>li.on {
+    transform: rotateX(0deg);
+    z-index: 1;
+    /* 오버된 li가 항상위 */
 }
 .mlist img {
     width: 100%;
@@ -327,6 +342,8 @@ h1.tit{
 /* 부모li에 오버시 설명박스 올라오기 */
 .mlist ul>li:hover .movtxt{
     top: 0;
+    transition-delay: .3s;
+    /* 오버시에만 트랜지션 지연시간(세운후) */
 }
 
 
