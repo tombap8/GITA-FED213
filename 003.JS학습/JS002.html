@@ -374,6 +374,12 @@
        var mem = "네이버";
        var gen2 = "남자";
        var age2 = 25;
+
+       // 조건문 결과변수
+       var res1 = true;
+       var res2 = false;
+
+
        document.write(`
             회원정보<br>
             회원소속:${mem},
@@ -382,6 +388,34 @@
             회원조건:<br>
             카카오회원인 남자거나 20살미만인 남자입니까?
             ${(mem=="카카오"||age2<20)&&gen2=="남자"}
+
+            <br><br>
+
+            논리곱은 ${res1}와 ${res1}일때만 true이다!
+            <br>
+            ${res1}&amp;&amp;${res1}
+            결과: ${res1&&res1} <br>
+
+            ${res1}&amp;&amp;${res2}
+            결과: ${res1&&res2} <br>
+
+            ${res2}&amp;&amp;${res2}
+            결과: ${res2&&res2} <br>
+
+            논리합은 ${res1}와 ${res1}중 하나만 true여도 true이다!
+            <br>
+            ${res1}||${res1}
+            결과: ${res1||res1} <br>
+
+            ${res1}||${res2}
+            결과: ${res1||res2} <br>
+
+            ${res2}||${res2}
+            결과: ${res2||res2} <br>
+
+
+
+
        `);
 
 
