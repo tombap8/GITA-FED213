@@ -58,10 +58,18 @@
             함수명: chgImg
             기능: 버튼 클릭시 해당 이미지변경하기
         */ /////////////////////////////////////////
-        function chgImg(){
+        function chgImg(U){ 
+            // U - this키워드로 보낸 버튼요소자신을 받는 전달변수
 
             // 1. 함수호출확인
-            console.log("나야나!");
+            console.log("나야나!",U.innerText);
+            // U.innerText는 버튼글자를 읽어옴!
+
+            // 2. 변경대상: #scene
+            var scene = document.getElementById("scene");
+
+            // 3. 변경내용: 대상img요소의 src속성값 변경
+            scene.src = "./images/ala2.jpg";
 
         } //////// chgImg 함수 ////////////////////
         ///////////////////////////////////////////
@@ -75,16 +83,22 @@
 
     <!-- 스틸컷장면박스 -->
     <div class="photo">
-        <img id="scene" src="./images/ala3.jpg" alt="알라딘스틸컷">
+        <img id="scene" src="./images/ala1.jpg" alt="알라딘스틸컷">
     </div>
 
     <!-- 선택버튼박스 -->
     <div class="btnbx">
-        <button class="btns" onclick="chgImg()">포스터</button>
-        <button class="btns" onclick="chgImg()">장면1</button>
-        <button class="btns" onclick="chgImg()">장면2</button>
-        <button class="btns" onclick="chgImg()">장면3</button>
+        <button class="btns" onclick="chgImg(this)">포스터</button>
+        <button class="btns" onclick="chgImg(this)">장면1</button>
+        <button class="btns" onclick="chgImg(this)">장면2</button>
+        <button class="btns" onclick="chgImg(this)">장면3</button>
     </div>
+    <!-- 
+        함수호출시 this란?
+        this 키워드는 클릭이벤트가 발생한 요소 자신을 말한다!
+        함수에서 이것을 받은 후 내부 속성값이나 데이터를 읽어갈 수 있다!
+
+     -->
 
 </body>
 
