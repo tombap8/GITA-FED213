@@ -41,32 +41,43 @@
             // 결과에 따른 글자색 변수
             var fc;
 
+            // 결과에 따른 칭찬스티커 위치변수
+            var pos;
+
             ////////////////////////////////
             /// 3. 점수환산하기 /////////////
-            // if
+            // if + else if 셋업을 하면 구간설정을 한것과 같다!
+            // 3가지 값 셋팅 : 
+            //        메시지(msg), 글자색(fc), 배경위치(pos)
             if (score >= 90) {
                 msg = "매우잘함";
                 fc = "blue";
+                pos = "0 0";
             } ///// if //////
             else if (score >= 80) {
                 msg = "잘함";
                 fc = "green";
+                pos = "-322px 0";
             } //// else if //////
             else if (score >= 70) {
                 msg = "보통";
                 fc = "purple";
+                pos = "-322px -322px"
             } //// else if //////
             else if (score >= 60) {
                 msg = "노력요함";
                 fc = "orange";
+                pos = "-322px -644px";
             } //// else if //////
             else {
                 msg = "재시험";
                 fc = "red";
+                pos = "-644px -644px";
             } //// else //////
 
 
-            console.log("msg변수:", msg, "/색상:", fc);
+            console.log(
+                "msg변수:", msg, "/색상:", fc, "/위치:", pos);
 
             // 4. 결과출력
             jexp.innerText = "평가결과는 " + msg;
@@ -136,8 +147,9 @@
             /* 트랜지션: 속시이지 */
             transition: all .4s ease-out;
         }
+
         /* IR(배경이미지설명숨김) */
-        .ir{
+        .ir {
             display: block;
             width: 0;
             height: 0;
