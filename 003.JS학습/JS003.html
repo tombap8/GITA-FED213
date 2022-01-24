@@ -12,8 +12,26 @@
     <!-- if문 연습 -->
     <h2>if문 연습</h2>
     <h3 id="jexp">평가출력</h3>
-    <label for="">점수입력:</label>
-    <input type="text" id="jumsu" placeholder="점수를 입력하세요!">
+    <label for="jumsu">점수입력:</label>
+    <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3">
+
+    <!-- 
+        [ input요소 : 입력양식 요소 ]
+                    (텍스트, 라디오버튼, 체크박스, 버튼 등)
+        - type="text" 텍스트 입력양식
+        - placeholder 속성: 안내문구출력(글자입력시 사라짐)
+        - value 속성: 미리입력할 글자넣기
+        (JS에서 입력된 글자를 읽어갈때 value속성을 사용함!)
+        - maxlength 속성: 최대입력 글자수 지정
+
+        [ label요소: 입력양식 설명요소 ]
+        - for속성은 연결된 input요소의 아이디명을 써줌.
+        (라벨 클릭시 해당input요소로 포커스가 들어감)
+        - 웹접근성(평등의 원칙) 측면에서 라벨은 input요소의
+        필수요소로 사용할 것을 권고하고 있다!
+        왜? 입력창에 대한 설명으로 리더기가 이것을 읽어줌!
+
+     -->
     
 </body>
 </html>
