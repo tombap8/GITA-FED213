@@ -85,13 +85,32 @@
     font-size: 12px;
     color: #747474;
 }
+/* 첫번째 사이드 메뉴 마우스 오버시 커서모양 text */
+.smbx>li:first-child>a{
+    /* 직계a로 잡을 것! 서브a엔 미적용! */
+    cursor: text;
+    /* 
+        참고) css커서모양종류
+        https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor
+    */
+
+}
 /* 사이드 메뉴 서브박스 */
 .smsub{
     position: absolute;
     border: 1px solid #e5e5e5;
     opacity: 0;
     /* 투명하게-오버시 트랜지션 보이기! */
-    
+    height: 0;
+    overflow: hidden;
+    /* 높이값0에 넘치는요소 숨기기! */
+}
+/* 상위메뉴 li오버시 하위메뉴 보이기 */
+.smbx>li:hover .smsub {
+    opacity: 1;
+    height: auto;
+    /* 원래자신의 높이값으로 돌아감!(트랜지션과 무관) */
+    transition: opacity .4s ease-in-out;
 }
 /* 서브메뉴 a요소 */
 .smsub a{
