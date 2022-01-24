@@ -66,7 +66,7 @@
             } //// else //////
 
 
-            console.log("msg변수:", msg,"/색상:",fc);
+            console.log("msg변수:", msg, "/색상:", fc);
 
             // 4. 결과출력
             jexp.innerText = "평가결과는 " + msg;
@@ -122,14 +122,26 @@
     </script>
     <style>
         /* 칭찬스티커 */
-        #jshow{
+        #jshow {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: -18px;
+            left: 121px;
             width: 322px;
             height: 322px;
+            transform: scale(.3);
             background: url(./images/ifshow.jpg) no-repeat;
-            background-position: 0 0;
+            background-position: 322px 0;
+            /* 처음에 안보에게 배경을 오른쪽바깥에 둠 */
+
+            /* 트랜지션: 속시이지 */
+            transition: all .4s ease-out;
+        }
+        /* IR(배경이미지설명숨김) */
+        .ir{
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
         }
     </style>
 </head>
