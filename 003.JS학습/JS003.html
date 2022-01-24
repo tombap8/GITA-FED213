@@ -31,6 +31,9 @@
             // 2-3. 출력대상: #jexp
             var jexp = document.getElementById("jexp");
 
+            // 2-4. 칭찬스티커 대상: #jshow
+            var jshow = document.getElementById("jshow");
+
             ////////////////////////////////
             // 결과메시지 변수
             var msg;
@@ -87,6 +90,10 @@
             // -> fc라는 변수에 각 조건별 색상명을 할당하여 변경
             // style.color = 값
             jexp.style.color = fc;
+
+            // 6. 칭찬스티커 나오게하기
+            // -> pos라는 변수에 각 조건별 배경이미지 위치값 할당
+            jshow.style.backgroundPosition = pos;
 
 
         } /////////// jumsu 함수 ///////////////////////////
