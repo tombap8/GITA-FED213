@@ -425,7 +425,9 @@
 
      -->
 
+     <br>
     <hr>
+    <br>
 
     <!-- switch case문 -->
     <h2>switch case문 연습</h2>
@@ -433,6 +435,52 @@
     <label for="local">지역명 입력:</label>
     <input type="text" id="local" placeholder="지역명에 '도'를 빼고 쓰세요!" onkeypress="if(event.keyCode == 13)local()">
     <button class="sbtn" onclick="local()">국번문의</button>
+
+    <hr>
+
+
+    <!-- for문 연습 -->
+    <h2>for문 연습</h2>
+    <h3>구구단 출력하기</h3>
+    <select name="sel" id="sel">
+        <option value="1">구구단을 선택하세요!</option>
+        <option value="2">2단</option>
+        <option value="3">3단</option>
+        <option value="4">4단</option>
+        <option value="5">5단</option>
+        <option value="6">6단</option>
+        <option value="7">7단</option>
+        <option value="8">8단</option>
+        <option value="9">9단</option>
+        <option value="10">10단</option>
+        <option value="11">11단</option>
+        <option value="12">12단</option>
+        <option value="13">13단</option>
+        <option value="14">14단</option>
+        <option value="15">15단</option>
+        <option value="16">16단</option>
+        <option value="17">17단</option>
+        <option value="18">18단</option>
+        <option value="19">19단</option>
+        <option value="20">20단</option>
+    </select>
+    <!-- 
+        [ select 요소 ]
+
+        - 어떤 제시된 값을 드롭다운 메뉴에서 선택할 수 
+        있는 입력요소
+
+        - name 속성 : 백엔드 코딩에서 값을 얻기위한
+        구분이름으로 사용된다(name은 id명과 같아도 무관)
+
+        - 하위 필수 속성 -> option 요소
+            -> 선택옵션을 셋팅하는 요소
+            -> 데이터로 값을 넣고  이 값을 선택했을때
+            코드를 넣는다! value 속성이 구분코드임!
+            -> 만약 value를 안쓰게 되면 데이터를 읽어감
+            (참고: html태그에서 데이터는 꺽쇠사이의 문자)
+
+     -->
 
 </body>
 
