@@ -168,5 +168,9 @@ font-family: 'Roboto Condensed', sans-serif;
     background-size: cover;
 }
 
+/* 배경색 class */
+.bgc{
+    background-color: #f9f9f9;
+}
 
 

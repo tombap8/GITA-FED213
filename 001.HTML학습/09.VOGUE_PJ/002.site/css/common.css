@@ -7,6 +7,17 @@
 ******************************************/
 
 /*************** 1. 상단영역 ***************/
+#top{
+    position: relative;
+    /* 포지션이 있어야 z-index적용됨! */
+    z-index: 9999;
+    box-shadow: 0 2px 2px rgba(0 0 0 / 12%);
+    /* rgba 색상표기 2가지
+        rgba(0, 0, 0, 0.12)
+        rgba(0 0 0 / 12%)
+    */
+    background-color: #fff;
+}
 .top{
     min-height: 206px;
     /* 최소높이값 설정 - 컨텐츠가 많아지면 자동으로 늘어남! */
@@ -161,6 +172,7 @@
 /* 마지막 리스트 li 돋보기 두꺼운체 */
 .gnb li:last-child a{
     font-weight: bold;
+    padding-top: 12px;
 }
 /* 마지막li는 패딩없앰 */
 .gnb li:last-child {
