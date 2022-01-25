@@ -376,10 +376,11 @@
 
             // 구구단 내용만들기 
             // (기존내용에 더함 += 대입연산자사용!)
-            code += `${opt} × 1 ＝ ${opt*1} <br>`;
-            code += `${opt} × 2 ＝ ${opt*2} <br>`;
-            code += `${opt} × 3 ＝ ${opt*3} <br>`;
-            code += `${opt} × 4 ＝ ${opt*4} <br>`;
+            // for(시;한;증){코드}
+            for(var i=1;i<=100;i++){
+                code += `${opt} × ${i} ＝ ${opt*i} <br>`;
+
+            } /////// for /////////////
 
             // 4. 화면출력
             gugu.innerHTML = code;
