@@ -231,7 +231,7 @@
             var tg = document.querySelector("#local");
 
             // 2-2. 대상선정: 출력대상 - #info
-            var info = document.querySelector("info");
+            var info = document.querySelector("#info");
 
             // 3. 입력된 값 읽어오기
             var txt = tg.value;
@@ -251,6 +251,19 @@
             } ///////// switch case ///////////
 
             console.log("메시지:",msg);
+
+            // 5. 메시지 만들기
+            // msg변수에 최종 출력내용을 다시 담아서 변경함
+            if(msg==="esc"){
+                msg = "등록되지 않는 지역입니다!";
+            } //// if //////
+            else{
+                msg = `${txt}의 지역번호는 ${msg}입니다!`;
+            } ///// else //////
+
+            // 6. 화면출력
+            // 출력대상: #info -> info변수
+            info.innerText = msg;
 
 
 
