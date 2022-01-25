@@ -15,7 +15,7 @@
 .tmenu{
     display: flex;
     /* 플렉스박스 */
-    max-width: 982px;
+    max-width: 970px;
     height: 45px;
     margin: 0 auto;
 }
