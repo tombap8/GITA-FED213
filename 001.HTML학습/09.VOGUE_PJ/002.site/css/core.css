@@ -95,6 +95,29 @@ font-family: 'Roboto Condensed', sans-serif;
         to top,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0));
 }
 
+/* 컨텐츠박스 가상요소로 보더애니 구현 */
+.cbx::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* 나의 부모? .cbx */
+    box-sizing: border-box;
+    /* 박스크기 유지(보더포함) */
+    border: 0px solid transparent;
+    /* 처음에 보더가 투명색 두께0 */
+
+    /* 트랜지션: 속시이지 */
+    transition: border .2s ease-in;
+}
+/* .cbx에 마우스 오버시 보더애니 */
+.cbx:hover::after{
+    border: 20px solid red;
+}
+
 /* 컨텐츠 타이틀박스 */
 .cbx h2{
     position: absolute;
