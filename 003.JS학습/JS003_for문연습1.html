@@ -38,6 +38,21 @@
         */ ////////////////////////////////////////
         function insMini(num) { // num - 전달값 변수
 
+            // 1. 함수호출 및 전달값 확인
+            console.log("미니언즈!",num);
+
+            // 2. 대상선정: .Bcase
+            var tg = document.querySelector(".Bcase");
+
+            // 3. 내용변경: 대상에 이미지 태그 넣기
+            // 대입연산자사용! 기존값에 더하기 +=
+            // for문을 이용하여 여러번처리하기
+            // for(시;한;증){코드}
+            for(var i=0;i<num;i++){
+                tg.innerHTML += 
+                '<img src="./images/Minions.png" alt="미니언즈">';
+
+            } ////////// for /////////
             
 
 
@@ -48,9 +63,9 @@
 
 <body>
     <h1>for문 연습1 - 파란상자에 미니언즈 집어넣기</h1>
-    <img src="./images/Minions.png" alt="미니언즈" class="mini" title="나를 클릭하면 한개씩 가방에 들어갈꼬얌~!">
-    <img src="./images/Minions.png" alt="미니언즈" class="mini" title="나를 클릭하면 다섯개씩 가방에 들어갈꼬얌~!">
-    <img src="./images/Minions.png" alt="미니언즈" class="mini" title="나를 클릭하면 열개씩 가방에 들어갈꼬얌~!">
+    <img src="./images/Minions.png" alt="미니언즈" class="mini" title="나를 클릭하면 한개씩 가방에 들어갈꼬얌~!" onclick="insMini(1)">
+    <img src="./images/Minions.png" alt="미니언즈" class="mini" title="나를 클릭하면 다섯개씩 가방에 들어갈꼬얌~!" onclick="insMini(5)">
+    <img src="./images/Minions.png" alt="미니언즈" class="mini" title="나를 클릭하면 열개씩 가방에 들어갈꼬얌~!" onclick="insMini(10)">
     <!-- 파란상자 -->
     <div class="Bcase"></div>
 
