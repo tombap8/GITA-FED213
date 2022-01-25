@@ -109,6 +109,8 @@ font-family: 'Roboto Condensed', sans-serif;
     /* 박스크기 유지(보더포함) */
     border: 0px solid transparent;
     /* 처음에 보더가 투명색 두께0 */
+    cursor: pointer;
+    /* 손가락모양 */
 
     /* 트랜지션: 속시이지 */
     transition: border .2s ease-in;
