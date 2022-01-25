@@ -210,7 +210,25 @@
          ※ 주의사항: else if나 else문은 처음에 쓰거나 단독으로
          사용할 수 없다!
 
+         ※ 참고: 만약 if문의 실행문이 한줄일 경우
+                중괄호를 생략할 수 있다.
+                예)
+                if(aa>10) {my = "야야";}
+                아래처럼 중괄호 생략가능
+                if(aa>10) my = "야야";
+
         ***********************************************/
+
+        /********************************************** 
+            함수명: local
+            기능: 지역명을 입력하면 지역국번을 안내한다!
+        **********************************************/
+       function local(){
+            // 1. 함수호출확인
+            console.log("지역국번은 뭐야?");
+
+       } /////////// local 함수 ////////////////////////
+       /////////////////////////////////////////////////
     </script>
     <style>
         /* 칭찬스티커 */
@@ -291,8 +309,8 @@
      <h2>switch case문 연습</h2>
      <h3 id="info">국번안내</h3>
      <label for="local">지역명 입력:</label>
-     <input type="text" id="local" placeholder="지역명에 '도'를 빼고 쓰세요!">
-     <button class="sbtn">국번문의</button>
+     <input type="text" id="local" placeholder="지역명에 '도'를 빼고 쓰세요!" onkeypress="if(event.keyCode == 13)local()">
+     <button class="sbtn" onclick="local()">국번문의</button>
 
 </body>
 
