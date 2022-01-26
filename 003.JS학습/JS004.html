@@ -84,7 +84,9 @@
             // 출력대상: txt1
             let txt1 = document.getElementById("txt1");
 
-            txt1.innerText = `이름:${arr1[5]}`;
+            // 배열개수는? 배열변수.length
+            // 배열의 마지막배열번호는? 전체개수-1
+            txt1.innerText = `이름:${arr1[arr1.length-1]}`;
             txt1.innerText += ` / 키:${arr1[1]}`;
             txt1.innerText += ` / 몸무게:${arr1[2]}`;
             txt1.innerText += ` / 최근작:${arr1[3]}`;
