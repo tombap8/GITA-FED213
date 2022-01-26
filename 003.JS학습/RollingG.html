@@ -124,7 +124,12 @@
             console.log("이미지번호:",num);
 
             // 4. 변경내용: 이미지 src를 이전/다음 이미지로 변경
-            tg.src = `./images/img${num}.jpg`;
+            tg.setAttribute("src",`./images/img${num}.jpg`);
+            // tg.src = `./images/img${num}.jpg`;
+
+            // 속성셋팅 방법 2가지:
+            // 1. 선택요소.속성명 = 속성값
+            // 2. 선택요소.setAttribute(속성명,속성값)
 
 
        } ////////// chgImg 함수 ///////////
