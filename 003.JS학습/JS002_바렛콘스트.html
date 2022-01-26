@@ -79,6 +79,47 @@
 
         /////////////////////////////////////////////
 
+        /// let, const 테스트 ///////////////
+        var seoul = "서울";
+        var jeju = "제주도";
+        let toktok = "카톡";
+        let sport = "축구";
+
+        /// 중괄호로 블록영역을 만들어 본다!///
+
+        //*********************************************
+        {
+
+            
+            // 블록내부에서 전역변수 찍기 앞
+            console.log("전역변수를 블록영역에서 찍기!앞");
+            console.log("seoul:",seoul);
+            console.log("jeju:",jeju);
+            console.log("toktok:",toktok);
+            console.log("sport:",sport);
+
+            // 블록에서 변수 재선언하기! //////////
+            var seoul = "강남구";
+            // 전역변수가 다시 선언되어 할당된 결과임!
+
+
+            // 블록내부에서 전역변수 찍기 뒤
+            console.log("전역변수를 블록영역에서 찍기!뒤");
+            console.log("seoul:",seoul);
+            console.log("jeju:",jeju);
+            console.log("toktok:",toktok);
+            console.log("sport:",sport);
+
+
+        }
+        //***********************************************
+
+        // 전역영역에서 전역변수 찍기
+        console.log("전역변수를 전역영역에서 찍기!");
+        console.log("seoul:",seoul);
+        console.log("jeju:",jeju);
+        console.log("toktok:",toktok);
+        console.log("sport:",sport);
 
 
 
