@@ -69,8 +69,17 @@
             console.log("버튼개수:",btn.length);
 
             // 오른쪽버튼 클릭시
+            // item(순번) -> 버튼이 담긴 컬렉션집합 순번
+            // (오른쪽버튼은 2번째이므로 0,1 순서니까 1번이다!!!)
+            // onclick은 html요소의 이벤트속성이다!
+            // 이퀄뒤에 function(){코드} -> 이벤트발생시 실행코드!
             btn.item(1).onclick = function(){
-                chgImg();
+                chgImg(1);
+            } ///////// click 함수 ////////////
+
+            // 왼쪽버튼 클릭시 /////////////////
+            btn.item(0).onclick = function(){
+                chgImg(0);
             } ///////// click 함수 ////////////
 
 
@@ -82,10 +91,10 @@
             함수명: chgImg
             기능: 버튼 클릭시 이미지변경
         **********************************/
-       function chgImg() {
+       function chgImg(gubun) { // gubun - 구분값 전달변수
 
             // 1. 함수호출확인
-            console.log("나야나!");
+            console.log("나야나!",gubun);
 
        } ////////// chgImg 함수 ///////////
        ////////////////////////////////////
