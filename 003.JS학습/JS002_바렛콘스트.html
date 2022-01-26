@@ -23,11 +23,11 @@
 
             [ let ] : 블록영역변수 (중괄호는 모두 블록임!)
 
-            1. var 전역변수를 같은 이름의 let 블록변수로
-            선언하면 별도로 관리된다!(별개의 변수임)
-
-            2. let 전역변수도 같은이름의 let 블록변수로
-            사용할 수 있다!
+            1. let으로 변수를 만들면 전역과 지역을 별도로
+            관리하여 같은이름변수도 별개의 변수로 인식된다!
+            2. let변수는 선언 후에 아래쪽에서 사용해야
+            호출할 수 있다(var는 위에서 호출가능-> 호이스팅!)
+            3. 같은 영역에 같은 이름의 변수를 중복 선언할 수 없다
 
         **********************************************/
 
@@ -94,13 +94,38 @@
             // 블록내부에서 전역변수 찍기 앞
             console.log("전역변수를 블록영역에서 찍기!앞");
             console.log("seoul:",seoul);
-            console.log("jeju:",jeju);
-            console.log("toktok:",toktok);
+            // console.log("jeju:",jeju); 에러남!
+            // console.log("toktok:",toktok); 에러남!
             console.log("sport:",sport);
+            // console.log("myitem:",myitem); 에러남!
 
             // 블록에서 변수 재선언하기! //////////
             var seoul = "강남구";
             // 전역변수가 다시 선언되어 할당된 결과임!
+            let jeju = "마라도";
+            // 전역변수 var로 선언된 같은 이름의 변수를
+            // let으로 블록영역에서 선언하여 할당하면
+            // 블록영역의 지역변수가 된다!
+            // 이 변수보다 위에서 미리 찍을 수 없다!(에러발생)
+            let toktok = "라인";
+            // 전역변수 let으로 선언된 같은 이름의 변수를
+            // let으로 블록영역에서 선언하여 할당하면
+            // 블록영역의 지역변수가 된다!(jeju와 같음)
+            
+            // var sport = "배구";
+            // 에러남!
+            // Uncaught SyntaxError: Identifier 'sport' has already been declared
+            // let으로 이미 전역변수에 선언된 변수는
+            // 블록영역일 지라도 var로 선언하게 되면
+            // 바깥쪽에 같은 이름으로 선언된 것과 같으므로
+            // 위와 같은 에러가 난다!
+
+            myitem = "곰인형";
+            // 선언없이 변수를 할당하면?
+            // 함수가 아니라면 전역변수에 var로 자동등록됨
+            // 편리한가? 아니다!!! 변수관리가 부실해짐!!!
+            // 반드시 선언하고 사용할것!
+
 
 
             // 블록내부에서 전역변수 찍기 뒤
@@ -109,6 +134,7 @@
             console.log("jeju:",jeju);
             console.log("toktok:",toktok);
             console.log("sport:",sport);
+            console.log("myitem:",myitem);
 
 
         }
@@ -120,6 +146,13 @@
         console.log("jeju:",jeju);
         console.log("toktok:",toktok);
         console.log("sport:",sport);
+        console.log("myitem:",myitem);
+
+        //////////////////////////////////////////////
+
+        // 변수 호이스팅(hoisting)
+        cat = "고양이"; // 변수할당먼저
+        console.log("cat:",cat);
 
 
 
