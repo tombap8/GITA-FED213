@@ -191,6 +191,14 @@
 /* 상단변경은 모두 #top최상위 박스에 class="on"이 된경우
 적용되도록 한다!!! -> #top.on 하위변경 */
 
+/* 전체 상단영역 고정하기 */
+#top.on{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 /* 로고박스이동 */
 #top.on .logo{
     position: absolute;
