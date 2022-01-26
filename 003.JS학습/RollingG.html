@@ -47,11 +47,40 @@
             4. 맨처음과 맨끝에서는 서로의 끝으로 연결하여 이동함
         */
 
+        // html이 모두 로딩된 후 실행구역 //
+        // JS코드가 html 코드보다 위에 있으면
+        //아래있는 html코드를 모르게 됨!
+        /* 
+        window.addEventListener(이벤트명,함수)
+        -> 설정된 이벤트가 발생하면 함수를 실행
+        -> load이벤트를 사용하여 html 페이지가
+        모두 로딩된 후 함수를 실행함
+        -> 함수는 외부에 함수를 만들어도 되지만
+        function(){} -> 익명함수를 사용할 수 있다!
+        */
+
+       window.addEventListener("load",
+        function(){
+
+            console.log("로딩완료!");
+
+            // 대상선정: 버튼요소 - .btn
+            var btn = document.querySelectorAll(".btn");
+            console.log("버튼개수:",btn.length);
+
+
+        });//////// 로드구역 ////////////////
+
+
+
         /********************************** 
             함수명: chgImg
             기능: 버튼 클릭시 이미지변경
         **********************************/
        function chgImg() {
+
+            // 1. 함수호출확인
+            console.log("나야나!");
 
        } ////////// chgImg 함수 ///////////
        ////////////////////////////////////
@@ -75,6 +104,5 @@
             <img src="./images/right_btn.png" alt="오른쪽버튼">
         </a>
     </div>
-    
 </body>
 </html>
