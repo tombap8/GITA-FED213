@@ -395,6 +395,7 @@
                     mv.style.transform = "translate(-50%,-50%)";
                     mv.style.width = "700px";
                     mv.style.height = "450px";
+                    mv.style.backgroundColor = "#000";
 
                     // 닫기버튼 셋팅
                     let cbtn = document.querySelector(".cbtn");
@@ -411,6 +412,15 @@
                     cbtn.style.borderRadius = "50%";
                     cbtn.style.cursor = "pointer";
                     cbtn.style.lineHeight = "40px";
+
+                    // 닫기버튼 클릭시 #mv지우기
+                    cbtn.onclick = () => mv.remove();
+                    // ()=>{실행문} 
+                    // 실행문이 하나일 경우 중괄호 생략가능
+                    // ()=>실행문
+                    // remove() 메서드는 선택요소를 삭제함! 
+
+
 
                 } //// trailer 메서드 ////
 
