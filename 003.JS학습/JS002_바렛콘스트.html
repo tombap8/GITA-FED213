@@ -238,12 +238,21 @@
         // 값변경
         myObj.second = "배불러~!";
         console.log("상수 객체 myObj 중 second값:",myObj.second);
-        
+
         // 속성추가
         // 추가방법: Object 객체의 속성정의 메서드를 사용함
         // -> Object.defineProperty(객체명,속성명,{value:속성값})
         Object.defineProperty(myObj,"name",{value:"톰소여"});
         console.log("상수 객체 myObj 중 추가된 name값:",myObj.name);
+        console.log("상수 객체 myObj:",myObj);
+
+        // 속성지우기
+        // delete 객체명.속성명 -> 속성을 삭제함!
+        // myObj.second 를 삭제하자!
+        delete myObj.second;
+        console.log("상수 객체 myObj 중 second값:",myObj.second);
+        console.log("상수 객체 myObj:",myObj);
+
 
 
         // 함수호출
