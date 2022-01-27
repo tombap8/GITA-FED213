@@ -232,11 +232,20 @@
             third:()=>console.log("객체함수실행!")
         }; //////// myObj객체 /////////
 
+
         // 값찍기
         console.log("상수 객체 myObj 중 second값:",myObj.second);
         // 값변경
         myObj.second = "배불러~!";
         console.log("상수 객체 myObj 중 second값:",myObj.second);
+        
+        // 속성추가
+        // 추가방법: Object 객체의 속성정의 메서드를 사용함
+        // -> Object.defineProperty(객체명,속성명,{value:속성값})
+        Object.defineProperty(myObj,"name",{value:"톰소여"});
+        console.log("상수 객체 myObj 중 추가된 name값:",myObj.name);
+
+
         // 함수호출
         myObj.third();
 
