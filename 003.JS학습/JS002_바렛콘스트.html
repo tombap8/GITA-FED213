@@ -226,6 +226,20 @@
 
         ///// 객체일 경우 /////////////
 
+        const myObj = {
+            first: "나야나",
+            second: "너두냐",
+            third:()=>console.log("객체함수실행!")
+        }; //////// myObj객체 /////////
+
+        // 값찍기
+        console.log("상수 객체 myObj 중 second값:",myObj.second);
+        // 값변경
+        myObj.second = "배불러~!";
+        console.log("상수 객체 myObj 중 second값:",myObj.second);
+        // 함수호출
+        myObj.third();
+
     </script>
 </head>
 <body>
