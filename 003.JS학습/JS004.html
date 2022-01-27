@@ -312,8 +312,15 @@
             제 소속사는 모르시는 분들이 많은데 
             ${GU.com}입니다. 빠이빠이~!`;
 
-            
+            // 공유박스 마우스 오버시 툴팁보이기
+            // 속성넣기 2가지 방법:
+            // 요소.속성명=값 or 요소.setAttribute(속성명,값)
+            txt5.setAttribute(
+                "title",
+                GU.name+"의 펜레터를 확인하세요! 바로클릭!");
 
+            // 손가락모양
+            txt5.style.cursor = "pointer";
 
 
 
