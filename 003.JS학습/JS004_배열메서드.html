@@ -103,7 +103,8 @@
                 // 배열forEach()호출함수
                 const mk = (val) => { 
                     // val-각 배열값 전달변수
-                    console.log("배열값:",val);
+                    // console.log("배열값:",val);
+                    
                     // 전달된 배열값으로 li코드를 만든다!
                     code += `
                         <li 
@@ -122,7 +123,7 @@
                     fruit.forEach(mk);
                     code += "</ul>";
 
-                    console.log("출력HTML:"+code);
+                    // console.log("출력HTML:"+code);
 
                     // 화면출력하기
                     cont.innerHTML = code;
