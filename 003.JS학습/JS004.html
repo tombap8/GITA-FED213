@@ -370,10 +370,27 @@
                 trailer:()=>{
                     // 1. 호출확인
                     console.log("예고편!");
-                    
+
                 } //// trailer 메서드 ////
 
             }; //////// myMovie 객체 //////////
+
+            // 객체화면 출력
+            // 대상: #txt6
+            let txt6 = document.getElementById("txt6");
+
+            // 줄간격조정
+            txt6.style.lineHeight = "34px";
+
+            // 출력 
+            txt6.innerHTML = 
+            `
+                ♣ 영화명 : ${myMovie.title}
+                ♣ 감독 : ${myMovie.director}
+                ♣ 배우 : ${myMovie.actors} <br>
+                ♣ 장르 : ${myMovie.genre}
+                ♣ 등급 : ${myMovie.ratings}
+            `;
 
 
 
