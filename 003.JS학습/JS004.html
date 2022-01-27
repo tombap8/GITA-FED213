@@ -9,7 +9,8 @@
             text-align: center;
         }
 
-        div {
+        /* body 직계 div만 적용! */
+        body>div {
             width: 1000px;
             height: 80px;
             border: 2px solid #000;
@@ -378,10 +379,10 @@
                     mvbx.innerHTML =
                     `
                         <div id="mv">
-                            // 유튜브 아이프레임
+                            <!--유튜브 아이프레임-->
                             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lPYxbbKYYmE?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                            // 닫기버튼
+                            <!--닫기버튼-->
                             <span class="cbtn">×</span>   
                         </div>
                     `;
