@@ -85,7 +85,7 @@
 
 
         // 선언적함수 호출
-        // callMe("함수 위에서 호출!");
+        callMe("함수 위에서 호출!");
         // 선언적 함수를 함수코드 보다 위에서 호출할때
         // 호출되는 현상을 호이스팅 이라고 함!
         // 함수호출 호이스팅(hoisting)
@@ -97,7 +97,7 @@
         } /// callMe함수 /////
 
         // 선언적함수 호출
-        // callMe("함수 아래에서 호출!");
+        callMe("함수 아래에서 호출!");
 
 
         // 익명함수를 함수 생성 전 위에서 호출하기
@@ -107,6 +107,19 @@
         // 에러메시지:
         // Uncaught TypeError: myHome is not a function
         
+        // 만약 특정요소에 이벤트로 설정할 경우 위에서
+        // 코디이 되어도 나중에 실행되기 때문에 상관이 없다!
+        window.addEventListener("load",function(){
+
+            // 버튼 클릭시 익명함수 호출하기!
+            // 위쪽에 코딩되어도 호출가능함!!!
+            document.querySelector("#btngo")
+            .onclick = function(){
+                // 익명함수 호출!
+                myHome("내가 누구게?");
+            };/////// click함수 ///////
+
+        });////// 로드구역 ///////////////////
 
         /// 할당형 익명함수 만들기 ///
         var myHome = function(txt){ // txt는 전달변수
@@ -114,13 +127,13 @@
         }; ///// myHome 익명함수 ///////
 
         // 익명함수를 함수 생성 후 아래에서 호출하기
-        // myHome("아래에서 익명함수호출!");
+        myHome("아래에서 익명함수호출!");
         
     </script>
 </head>
 <body>
 
-    <button id="btngo" onclick="">
+    <button id="btngo">
         익명함수호출하기!
     </button>
     
