@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,34 +11,40 @@
             text-align: center;
             font-size: 3vw;
         }
+
         /* 그리드 박스 */
-        .grid{
+        .grid {
             display: grid;
-            grid-template-columns: repeat(5,1fr);
+            grid-template-columns: repeat(5, 1fr);
             /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
             /* grid-template-columns: 100px 200px 150px; */
             /* grid-template-rows: 1fr 2fr; */
             /* grid-template-rows: 100px 200px 300px; */
+            /* 높이값 템플릿은 사용안하고 내가만든 비율사용 */
+            grid-row-gap: 1.5vw;
+            grid-column-gap: 1vw;
 
             max-width: 1200px;
             margin: 0 auto;
-            
+
         }
+
         /* 그리드 각박스 */
-        .grid>div{
+        .grid>div {
             position: relative;
             /* 부모자격 */
             border: 2px solid #ccc;
         }
+
         /* 가상요소before로 패딩탑 사용 비율만들기 */
-        .grid>div::before{
+        .grid>div::before {
             content: '';
             display: block;
             padding-top: 150%;
         }
 
         /* 내용 이미지 */
-        .grid>div>img{
+        .grid>div>img {
             position: absolute;
             top: 0;
             width: 100%;
@@ -48,16 +55,82 @@
         }
 
         /* 상품설명박스 */
-        .grid aside{
-            display: none;
+        .grid aside {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.404);
+            color: #fff;
+        }
+
+        .grid aside h2 {
+            font-size: min(24px, 1.8vw);
+        }
+
+        .grid aside h3 {
+            font-size: min(18px, 1.4vw);
         }
 
 
+        /* 미디어쿼리 - 1100px 이하 */
+        @media screen and (max-width:1100px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* 1100px 이하 */
+
+        /* 미디어쿼리 - 1000px 이하 */
+        @media screen and (max-width:1000px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* 1000px 이하 */
+
+        /* 미디어쿼리 - 800px 이하 */
+        @media screen and (max-width:800px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid aside h2 {
+                font-size: 3vw;
+            }
+
+            .grid aside h3 {
+                font-size: 2.5vw;
+            }
+        }
+
+        /* 800px 이하 */
+
+        /* 미디어쿼리 - 600px 이하 */
+        @media screen and (max-width:600px) {
+            .grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .grid aside h2 {
+                font-size: 4vw;
+            }
+
+            .grid aside h3 {
+                font-size: 3.5vw;
+            }
+        }
+
+        /* 600px 이하 */
 
 
 
 
-    /**************************************************** 
+
+
+        /**************************************************** 
         [그리드 디스플레이]
         - 가로,세로 양방향 레이아웃을 위한 디스플레이 속성
         - 주요 속성:
@@ -87,10 +160,12 @@
     ****************************************************/
     </style>
 </head>
+
 <body>
     <!-- 타이틀 -->
     <h1 class="tit">그리드1 - 이미지 갤러리</h1>
     <!-- 그리드 레이아웃 박스 -->
+    <!-- .grid>div*50>img[src=img_gallery/$.jpg alt=dress]+(aside>h2{상품명$}+h3{상품가격$}) -->
     <div class="grid">
         <div>
             <img src="img_gallery/1.jpg" alt="dress">
@@ -443,6 +518,7 @@
             </aside>
         </div>
     </div>
-    
+
 </body>
+
 </html>
