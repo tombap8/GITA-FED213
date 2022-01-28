@@ -6,7 +6,7 @@
 window.addEventListener("scroll",()=>{
 
     // 스크롤 위치값
-    let scTop = document.querySelector("html").scrollTop;
+    let scTop = this.scrollY;
     // scrollY - 세로축 스크롤 위치값 리턴
     // this는 화살표함수에서 window객체를 나타냄
 
@@ -17,6 +17,11 @@ window.addEventListener("scroll",()=>{
         3. document.scrollingElement.scrollTop
         4. document.documentElement.scrollTop
         5. document.querySelector("html").scrollTop
+
+        참고) 가로스크롤일 경우
+            scrollY -> scrollX
+            scrollTop -> scrollLeft
+            로 바꿔서 위와 동일함!
 
     **************************************************/
 
