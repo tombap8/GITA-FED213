@@ -91,6 +91,33 @@
 
             // 버튼요소 클릭시 글자 바꾸기 //////
 
+            // 기존방식 /////
+            // document.querySelector("#btn")
+            // .onclick = function(){
+            //     // 클릭된 요소 버튼자신은 this키워드로!
+            //     this.innerText = "너는 누구니?";
+            // }; //////// click 함수 ////////
+
+            // 새로운 방식 ////
+            document.querySelector("#btn")
+            .onclick = () => {
+                // this.innerText = "너는 누구니?";
+                event.currentTarget
+                .innerText = "너는 누구니?";
+            }; ///////// click 함수 ////////////
+
+            /************************************ 
+                화살표함수를 사용할때
+                this 키워드의 의미는 다르다!!!
+
+                화살표함수에서 this는 window객체를 의미!
+                this 키워드 대신
+                event.currentTarget 을 사용하여
+                현재요소 자신을 의미하도록
+                코딩해야함!
+
+            ************************************/
+
             
         });////////// 로드구역 //////////////////
 
