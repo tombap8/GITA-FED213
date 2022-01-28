@@ -25,14 +25,26 @@
         }
         /* 그리드 각박스 */
         .grid>div{
+            position: relative;
+            /* 부모자격 */
             border: 2px solid #ccc;
+        }
+        /* 가상요소before로 패딩탑 사용 비율만들기 */
+        .grid>div::before{
+            content: '';
+            display: block;
+            padding-top: 150%;
         }
 
         /* 내용 이미지 */
         .grid>div>img{
             position: absolute;
+            top: 0;
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            /* 비디오, 이미지요소 비율유지하며 
+            부모박스 채우기 */
         }
 
         /* 상품설명박스 */
@@ -64,6 +76,8 @@
             - 나머지는 1번과 동일
             - 만약 이 값을 설정하지 않으면 모든 박스에 대한
             기본비를 유지함!(내가 원하는 비는 별도로 설정함)
+            -> 기본비에 대한 기준은 내부컨텐츠임
+            (이미지라면 이미지 기본비를 기준함)
             
         3. grid-column-gap
             - 가로방향 사이간격
