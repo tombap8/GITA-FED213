@@ -219,7 +219,12 @@
                     // splice(순번) -> 순번만쓰면 순번부터 모두지움!
                     // 순번은 순번선택박스 : arrNum변수
                     // 지울개수는 지울개수입력박스 : delNum변수
-                    fruit.splice(arrNum.value,delNum.value);
+
+                    if(delNum.value!="") // 지울값이 빈값이 아니면
+                        fruit.splice(arrNum.value,delNum.value);
+                    else // 지울값이 빈값이면  순번하나만씀!
+                        fruit.splice(arrNum.value);
+                        // 순번부터 뒤쪽배열 모두지움
 
                     // 배열정보 출력하기
                     showit.innerText = fruit.join("*");
