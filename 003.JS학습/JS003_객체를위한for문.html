@@ -172,8 +172,11 @@
                                 else // 그 밖에 문자일 경우
                                     newtxt += `<span>${z}</span>`;
 
-                                // &nbsp; 는 띄어쓰기 특수문자처리
                             } ////// for of 문 //////
+                            
+                            // &nbsp; 는 띄어쓰기 특수문자처리
+                            // 특수문자는 엔퍼센드와 세미콜론 사이에 표현함 -> &...;
+                            // nbsp -> No-Break Space(줄바꿈없는 공백)
 
                             // 문구데이터 넣을 대상에 출력!
                             document.querySelector(".show")
