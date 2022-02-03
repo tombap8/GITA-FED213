@@ -88,7 +88,7 @@
 
             // 대상변수 click설정 하기 /////
             // for of문 사용!
-            for(let x of btn){
+            for (let x of btn) {
                 // ((중요)) for문에서 let으로 선언되 지역변수는
                 // for문 내부의 익명함수 내부로 전달된다!
                 // 그런데 var로 선언하면 내부전달 안됨!(마지막값 덮어씀)
@@ -105,7 +105,7 @@
 
                     // 3. 해당요소에 데이터 넣어주기
                     // for in문 사용!!!
-                    for(let y in data){
+                    for (let y in data) {
 
                         // 변수 y는 객체의 속성명이다!
                         // console.log("y는 속성명:",y);
@@ -113,70 +113,73 @@
                         // console.log("속성값:",data[y]);
 
                         // 각 속성명에 해당하는 데이터 셋팅
-                        switch(y){
+                        switch (y) {
                             // 1. 포스터 넣기
                             case "포스터":
                                 document
-                                .querySelector(".photo")
-                                .innerHTML =
-                                `<img 
+                                    .querySelector(".photo")
+                                    .innerHTML =
+                                    `<img 
                                 src="${data[y]}" 
                                 alt="포스터">`;
                                 break;
-                            // 2. 제목 넣기
+                                // 2. 제목 넣기
                             case "제목":
                                 document
-                                .querySelector(".tit")
-                                .innerText = 
-                                `제목: ${data[y]}`;
+                                    .querySelector(".tit")
+                                    .innerText =
+                                    `제목: ${data[y]}`;
                                 break;
-                            // 3. 장르 넣기
+                                // 3. 장르 넣기
                             case "개요":
                                 document
-                                .querySelector(".sum")
-                                .innerText = 
-                                `장르: ${data[y]}`;
+                                    .querySelector(".sum")
+                                    .innerText =
+                                    `장르: ${data[y]}`;
                                 break;
-                            // 4. 감독 넣기
+                                // 4. 감독 넣기
                             case "감독":
                                 document
-                                .querySelector(".dir")
-                                .innerText = 
-                                `감독: ${data[y]}`;
+                                    .querySelector(".dir")
+                                    .innerText =
+                                    `감독: ${data[y]}`;
                                 break;
-                            // 5. 배우 넣기
+                                // 5. 배우 넣기
                             case "출연":
                                 document
-                                .querySelector(".act")
-                                .innerText = 
-                                `배우: ${data[y]}`;
+                                    .querySelector(".act")
+                                    .innerText =
+                                    `배우: ${data[y]}`;
                                 break;
                         } ///////// switch case ///////
 
                         // 영화 한마디 넣기 /////////
                         // for of문을 사용해서 문자데이터
                         // 한글자씩 span태그로 싸서 해당요소에 넣는다!
-                        if(y==="문구"){
+                        if (y === "문구") {
                             // 문구 데이터 담기
                             let txt = data[y];
-                            console.log("문구데이터:",txt);
+                            // console.log("문구데이터:",txt);
 
                             // 만들어진 span태그 문구 넣을변수
                             let newtxt = "";
 
                             // 문구 데이터를 for of로 하나씩 나누기
-                            for(let z of txt){
-                                console.log("한글자씩:",z);
-                                newtxt += `<span>${z}</span>`;
+                            for (let z of txt) {
+                                // console.log("한글자씩:",z);
+                                if (z === " ") //스페이스일 경우
+                                    newtxt += "&nbsp;&nbsp;&nbsp;"
+                                else // 그 밖에 문자일 경우
+                                    newtxt += `<span>${z}</span>`;
                             } ////// for of 문 //////
 
                             // 문구데이터 넣을 대상에 출력!
                             document.querySelector(".show")
-                            .innerHTML = newtxt;
+                                .innerHTML = newtxt;
 
                             // 영화한마디 타이틀 보이기
                             document.querySelector(".showtit")
-                            .style.display = "block";
+                                .style.display = "block";
 
                         } /////// if ////////////
 
@@ -189,7 +192,7 @@
             } /////// for of문 ////////////////
 
 
-            
+
 
 
         }); ////////////////// 로드구역 /////////////////////
