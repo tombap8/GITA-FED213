@@ -123,17 +123,33 @@
                                 src="${data[y]}" 
                                 alt="포스터">`;
                                 break;
+                            // 2. 제목 넣기
                             case "제목":
                                 document
                                 .querySelector(".tit")
                                 .innerText = 
                                 `제목: ${data[y]}`;
                                 break;
+                            // 3. 장르 넣기
                             case "개요":
                                 document
                                 .querySelector(".sum")
                                 .innerText = 
                                 `장르: ${data[y]}`;
+                                break;
+                            // 4. 감독 넣기
+                            case "감독":
+                                document
+                                .querySelector(".dir")
+                                .innerText = 
+                                `감독: ${data[y]}`;
+                                break;
+                            // 5. 배우 넣기
+                            case "출연":
+                                document
+                                .querySelector(".act")
+                                .innerText = 
+                                `배우: ${data[y]}`;
                                 break;
                         } ///////// switch case ///////
 
