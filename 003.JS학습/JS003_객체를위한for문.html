@@ -112,6 +112,19 @@
                         // 속성값은 객체변수[y]
                         console.log("속성값:",data[y]);
 
+                        // 각 속성명에 해당하는 데이터 셋팅
+                        switch(y){
+                            // 1. 포스터 넣기
+                            case "포스터":
+                                document
+                                .querySelector(".photo")
+                                .innerHTML =
+                                `<img 
+                                src="${data[y]}" 
+                                alt="포스터">`;
+                                break;
+                        } ///////// switch case ///////
+
 
                     } ///////// for in문 ///////////
 
