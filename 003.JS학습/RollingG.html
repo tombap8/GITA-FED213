@@ -26,6 +26,8 @@
 
         /* 갤러리 부모박스 */
         .wrap {
+            position: relative;
+            /* 부모자격 - #mini */
             width: 520px;
             margin: 0 auto;
             text-align: center;
@@ -60,6 +62,29 @@
         /* 처음에 멈춤버튼 숨기기 */
         .stop{
             display: none;
+        }
+
+        /* 미니언즈 */
+        #mini {
+            position: absolute;
+            top: 80%;
+            left: -20%;
+            /* 부모는? #wrap */
+            width: 150px;
+            transform: rotate(720deg);
+            transition: all 1.5s ease-out;
+        }
+        /* 미니언즈 변경클래스1 */
+        #mini.on1{
+            top: 0;
+            left: 0;
+            transform: rotate(0deg);
+        }
+        /* 미니언즈 변경클래스2 */
+        #mini.on2{
+            top: 0;
+            left: 80%;
+            transform: rotate(-720deg);
         }
     </style>
     <!-- JS코딩구역 -->
@@ -217,6 +242,15 @@
                     아래 함수를 호출한다!
                         ->>> clearTimeout(변수)
 
+                    *******************************
+
+                    [ JS 클래스 관련 내장함수 ]
+                    classList
+                    -> 클래스를 요소에 넣거나 빼기위한 객체
+                    ((관련메서드))
+                    1. add(클래스명) : 클래스추가
+                    2. remove(클래스명) : 클래스제거
+                    3. toggle(클래스명) : 클래스추가/제거
 
 
                 ******************************************/
@@ -266,6 +300,27 @@
 
                 }; /////// click 함수 ////////
 
+                /// 타임아웃 함수로 미니언즈 애니하기! ///////
+                // 원리: 미리셋팅된 클래스를 미니언즈요소에
+                // 일정시간 후 넣고/빼고/넣기를 해준다!!!
+                // 변경대상: #mini
+                let mini = document.querySelector("#mini");
+
+                // 2초후 미니언즈에 class "on" 넣기
+                setTimeout(() => {
+                    mini.classList.add("on");
+                }, 2000); //// 타임아웃 ///
+
+                // 4초후 미니언즈에 class "on"빼기
+                setTimeout(() => {
+                    mini.classList.remove("on");
+                },4000);
+
+                // 6초후 미니언즈에 class "on"넣기
+                setTimeout(() => {
+                    mini.classList.toggle("on");
+                },6000);
+
 
 
             }); //////// 로드구역 ////////////////
@@ -290,6 +345,8 @@
         <a href="#" class="btn rb">
             <img src="./images/right_btn.png" alt="오른쪽버튼">
         </a>
+        <!-- 미니언즈 -->
+        <img src="./images/Minions.png" alt="미니언즈" id="mini">
     </div>
 
     <!-- 이미지별 설명 텍스트 출력박스 -->
