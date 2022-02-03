@@ -306,20 +306,26 @@
                 // 변경대상: #mini
                 let mini = document.querySelector("#mini");
 
-                // 2초후 미니언즈에 class "on" 넣기
+                // 2초후 미니언즈에 class "on1" 넣기
                 setTimeout(() => {
-                    mini.classList.add("on");
+                    mini.classList.add("on1");
                 }, 2000); //// 타임아웃 ///
 
-                // 4초후 미니언즈에 class "on"빼기
+                // 4초후 미니언즈에 class "on1"빼기
                 setTimeout(() => {
-                    mini.classList.remove("on");
+                    mini.classList.remove("on1");
                 },4000);
 
-                // 6초후 미니언즈에 class "on"넣기
+                // 6초후 미니언즈에 class "on2"넣기
                 setTimeout(() => {
-                    mini.classList.toggle("on");
+                    mini.classList.toggle("on2");
                 },6000);
+
+                // 8초후 미니언즈에 class "on1,on2"빼기
+                setTimeout(() => {
+                    mini.classList.toggle("on1");
+                    mini.classList.toggle("on2");
+                },8000);
 
 
 
