@@ -113,7 +113,7 @@
         let num = 1;
         
         // 이미지설명 배열변수
-        let itxt = [
+        const itxt = [
             "노랑잉꼬가 먹이를 꼭꼭 찍어먹어요~",
             "분홍장미가 머리칼을 너풀너풀 날려요~",
             "백조같은 거위가 뚱하니 바라보아요~",
@@ -122,6 +122,9 @@
             "이 양은 보통양이 아니고 복제양 돌리예요~",
             "잉꼬 한쌍이 영화를 찍어요~"
         ];
+
+        // 이미지 설명 글자색 배열변수
+        const tcolor = ["red","orange","yellow","green","blue","navy","purple"];
 
         /********************************** 
             함수명: chgImg
@@ -133,9 +136,14 @@
             // 1. 함수호출확인
             console.log("나야나!", gubun);
 
-            // 2. 변경대상: #mbox img
+            // 2. 변경대상: 
+            // 중앙이미지 : #mbox img
             let tg = document.querySelector("#mbox img");
             // console.log("이미지경로:",tg.src);
+
+            // 글자출력박스 : .imgtxt
+            let imgtxt = document.querySelector(".imgtxt");
+
 
             // 3. 이미지번호 전역변수 증감분기
             // 3-1.오른쪽버튼처리
@@ -156,8 +164,12 @@
             // tg.src = `./images/img${num}.jpg`;
 
             // 속성셋팅 방법 2가지:
-            // 1. 선택요소.속성명 = 속성값
-            // 2. 선택요소.setAttribute(속성명,속성값)
+            // (1) 선택요소.속성명 = 속성값
+            // (2) 선택요소.setAttribute(속성명,속성값)
+
+            // 5. 이미지 설명 배열에서 읽어와서 넣기
+            // 배열번호 = 이미지번호(num) - 1
+            imgtxt.innerText = itxt[num-1];
 
 
         } ////////// chgImg 함수 ///////////
