@@ -173,4 +173,15 @@ font-family: 'Roboto Condensed', sans-serif;
     background-color: #f9f9f9;
 }
 
+/* 등장액션 class */
+.scAct{
+    transform: translateY(100px);
+    opacity: 0;
+    transition: .8s ease-out;
+}
+/* 원위치 복귀 등장! */
+.scAct.on{
+    transform: translateY(0);
+    opacity: 1;
+}
 
