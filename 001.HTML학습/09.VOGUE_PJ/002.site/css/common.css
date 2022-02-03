@@ -281,3 +281,34 @@
 .blink li:last-child a{
     font-weight: bold;
 }
+
+/* 위로가기 버튼 */
+.tbtn{
+    position: fixed;
+    bottom: -35px;
+    /* 처음에 아래에 나가있음! */
+    right: 75px;
+    width: 48px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    background-color: #333;
+    border-radius: 4px 4px 0 0;
+    /* 둥근모서리: 왼위 오른위 오른아래 왼아래 */
+    color: #fff;
+    z-index: 9999;
+    opacity: 0;/* 투명 */
+    transition: background-color .3s,
+    opacity .3s,bottom .001s .3s;
+}
+/* 위로이동버튼 .on주기 */
+.tbtn.on{
+    bottom: 0;/* 위로올라옴 */
+    opacity: 1;/* 나타나기 */
+    transition: background-color .3s, 
+    opacity .3s;
+}
+/* 탑버튼 마우스 오버시 */
+.tbtn:hover{
+    background-color: #f00;
+}
