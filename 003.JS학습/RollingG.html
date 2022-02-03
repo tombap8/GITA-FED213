@@ -219,7 +219,47 @@
                 // 이벤트 대상: .abtn button
                 let abtn = document
                 .querySelectorAll(".abtn button");
-                console.log("자동버튼개수:",abtn.length);
+                // console.log("자동버튼개수:",abtn.length);
+
+                // 인터발용 변수
+                let autoI;
+
+                // 자동넘김버튼 클릭시
+                abtn[0].onclick = ()=>{
+                    // console.log("자동넘김!");
+
+                    // 자동넘김 버튼자신 숨기기
+                    // 자기자신 -> this키워드
+                    // 화살표함수에서 this는 window이므로
+                    // event.currentTarget 을 사용함!
+                    event.currentTarget
+                    .style.display = "none";
+
+                    // 멈춤버튼 보이기(원래 display값으로!)
+                    abtn[1].style.display = "inline-block";
+
+                    // 인터발셋팅 -> 변수에 담아야 지울 수 있다!
+                    autoI = setInterval(()=>{
+                        chgImg(1);
+                    },1500);
+
+                }; //////// click함수 /////////
+
+                // 멈춤버튼 클릭시 인터발지우기!
+                abtn[1].onclick = ()=>{
+                    // 자기자신 숨기기
+                    event.currentTarget
+                    .style.display="none";
+
+                    // 자동넘김 버튼 보이기
+                    abtn[0].style.display = "inline-block";
+
+                    // 인터발지우기
+                    clearInterval(autoI);
+
+
+                }; /////// click 함수 ////////
+
 
 
             }); //////// 로드구역 ////////////////
