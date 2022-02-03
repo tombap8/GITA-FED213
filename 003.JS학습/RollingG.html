@@ -93,6 +93,11 @@
                 btn[0].onclick = () => chgImg(0);
                 ///////// click 함수 ////////////
 
+                // 첫번째 이미지 설명 넣기
+                // 대상: .imgtxt
+                document.querySelector(".imgtxt")
+                .innerText = itxt[0];
+
 
             }); //////// 로드구역 ////////////////
 
@@ -180,9 +185,8 @@
     </div>
 
     <!-- 이미지별 설명 텍스트 출력박스 -->
-    <h2 class="imgtxt">
-        노랑잉꼬가 먹이를 꼭꼭 찍어먹어요~
-    </h2>
+    <h2 class="imgtxt"></h2>
+
 </body>
 
 </html>
