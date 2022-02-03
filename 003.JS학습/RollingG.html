@@ -49,6 +49,18 @@
             color: red;
             text-shadow: 1px 1px 1px #777;
         }
+
+        /* 자동넘김 버튼박스 */
+        .abtn {
+            text-align: center;
+        }
+        .abtn button {
+            font-size: 1.5rem;
+        }
+        /* 처음에 멈춤버튼 숨기기 */
+        .stop{
+            display: none;
+        }
     </style>
     <!-- JS코딩구역 -->
     <script>
@@ -214,6 +226,12 @@
 
     <!-- 이미지별 설명 텍스트 출력박스 -->
     <h2 class="imgtxt"></h2>
+
+    <!-- 자동넘김 버튼박스 -->
+    <div class="abtn">
+        <button class="start">자동넘김</button>
+        <button class="stop">멈춤</button>
+    </div>
 
 </body>
 
