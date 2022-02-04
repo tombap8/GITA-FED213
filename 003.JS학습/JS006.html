@@ -269,8 +269,15 @@
                }; /////////// insImg 함수 ////////////////
                ///////////////////////////////////////////
 
+               // 랜덤이미지 넣기 함수 최초호출!
+               insImg();
+
+               // 랜넘이미지 넣기 함수 인터발호출!
+               setInterval(insImg,1500);
+
+
                // 임시호출
-               window.addEventListener("click",insImg);
+            //    window.addEventListener("click",insImg);
 
 
 
