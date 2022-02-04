@@ -57,7 +57,6 @@ window.addEventListener("DOMContentLoaded",
         // 위로가기 버튼 - .tbtn
         let tbtn = document.querySelector(".tbtn");
 
-
         ///// 윈도우 스크롤 이벤트 함수 //////
         // 스크롤 이벤트 : scroll
         // window객체에 스크롤이벤트를 걸어준다!(전체스크롤)
