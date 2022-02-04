@@ -90,7 +90,7 @@
                     let H = today.getHours();
 
                     // 시간테스트 조작
-                    H = 18;
+                    H = 13;
 
                     // 12보다 크면 12를 빼고 "오후"로 noon값 변경
                     if (H > 12) {
@@ -98,10 +98,25 @@
                         noon = "오후";
                     } ////// if //////
 
+                    /// 시,분,초에 대한 두자릿수 출력하기 ///
+                    // addZero() 함수만들기!
+                    // 10미만이면 숫자앞에 0을 붙여서 리턴함!
+                    const addZero =
+                        num => num < 10 ? "0" + num : num;
+                        // num => {
+                        //     if (num < 10) "0" + num;
+                        // }
+                    // 비?집:놀이동산; -> 조건연산자(삼항연산자)
+
+                    // const addZero = function(num) {num < 10 ? "0"+num : num;};
+                    // const addZero = (num) => {num < 10 ? "0"+num : num;};
+
+
+
                     // 오전/오후 출력
                     tt[4].innerText = noon;
                     // 시간출력!
-                    tt[5].innerText = H;
+                    tt[5].innerText = addZero(H);
 
 
 
