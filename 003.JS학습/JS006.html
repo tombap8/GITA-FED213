@@ -90,7 +90,7 @@
                     let H = today.getHours();
 
                     // 시간테스트 조작
-                    H = 13;
+                    // H = 13;
 
                     // 12보다 크면 12를 빼고 "오후"로 noon값 변경
                     if (H > 12) {
@@ -103,13 +103,21 @@
                     // 10미만이면 숫자앞에 0을 붙여서 리턴함!
                     const addZero =
                         num => num < 10 ? "0" + num : num;
+
+                        // if문을 쓸경우
                         // num => {
-                        //     if (num < 10) "0" + num;
+
+                        //     let temp;//임시변수
+
+                        //     if (num < 10) temp = "0" + num;
+                        //     else temp = num;
+
+                        //     return temp;
                         // }
                     // 비?집:놀이동산; -> 조건연산자(삼항연산자)
 
-                    // const addZero = function(num) {num < 10 ? "0"+num : num;};
-                    // const addZero = (num) => {num < 10 ? "0"+num : num;};
+                    // const addZero = function(num) {return num < 10 ? "0"+num : num;};
+                    // const addZero = (num) => {return num < 10 ? "0"+num : num;};
 
 
 
@@ -118,13 +126,32 @@
                     // 시간출력!
                     tt[5].innerText = addZero(H);
 
+                    // 7. 분출력
+                    let M = today.getMinutes();
+                    // M = 8; // 테스트!
+                    tt[6].innerText = addZero(M);
 
+                    // 8. 초출력
+                    let S = today.getSeconds();
+                    // S = 5; // 테스트!
+                    tt[7].innerText = addZero(S);
 
                 }; /////////// showTime 함수 ////////////
                 /////////////////////////////////////////
 
+                // 시간함수 최초호출하기!
+                showTime();
+
+                // 시간함수 인터발호출하기!
+                setInterval(showTime,1000);
+                // setInterval(함수,시간)
+                // 인터발함수의 함수는 함수만 호출할 경우 함수이름만 써도 됨!
+                // 시간은 1/1000초
+
                 // 임시호출!
-                window.addEventListener("click", showTime);
+                // window.addEventListener("click", showTime);
+
+                
 
 
 
