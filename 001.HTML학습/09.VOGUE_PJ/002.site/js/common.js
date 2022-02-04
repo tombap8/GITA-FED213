@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded",
         ******************************************/
        const scAction = seq => { // seq 순번
 
-            console.log("순번:",seq);
+            // console.log("순번:",seq);
 
             if (scTop > scPos[seq]-winH && // 시작위치
                 scTop < scPos[seq]) { // 끝위치
@@ -56,6 +56,11 @@ window.addEventListener("DOMContentLoaded",
         let topA = document.querySelector("#top");
         // 위로가기 버튼 - .tbtn
         let tbtn = document.querySelector(".tbtn");
+
+        /////// 위로가기버튼 클릭시 맨위로 가기! ///////
+        /// 부드러운 스크롤의 위치변수 pos에 0값을 주면 위로이동함
+        tbtn.onclick = () => {pos=0; return false;};
+        // return false -> a요소의 기본이동기능을 못하게 막음!
 
         ///// 윈도우 스크롤 이벤트 함수 //////
         // 스크롤 이벤트 : scroll
