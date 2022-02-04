@@ -99,12 +99,28 @@
         // 특수문자(^)로 잘라서 변수에 할당!
         let arr = sp1.split("^");
         console.log(arr);
+
+        // "목요일"을 선택하여 출력
+        console.log(arr[4]);
+
+        // 배열에서 데이터를 선택하여 다른말로 변경하시오.
+        // "나는 학원에서까지 공부한다"
+        console.log(
+            `${arr[0]} ${arr[7]}${arr[8]}${arr[6]} ${arr[9]}${arr[10]}`);
        
         
         /************************************** 
             4. String(숫자데이터)
             -> 숫자형 데이터를 문자형으로 변환
         **************************************/
+       let str1 = 35;
+       let str2 = 11;
+
+       // 결과
+       let res1 = str1 + str2;
+        console.log("이번주 복권당첨번호는? ",res1);
+        let res2 = String(str1) + String(str2); 
+        console.log("이번주 복권당첨번호는? ",res2);
        
        
 
