@@ -104,16 +104,16 @@
                     const addZero =
                         num => num < 10 ? "0" + num : num;
 
-                        // if문을 쓸경우
-                        // num => {
+                    // if문을 쓸경우
+                    // num => {
 
-                        //     let temp;//임시변수
+                    //     let temp;//임시변수
 
-                        //     if (num < 10) temp = "0" + num;
-                        //     else temp = num;
+                    //     if (num < 10) temp = "0" + num;
+                    //     else temp = num;
 
-                        //     return temp;
-                        // }
+                    //     return temp;
+                    // }
                     // 비?집:놀이동산; -> 조건연산자(삼항연산자)
 
                     // const addZero = function(num) {return num < 10 ? "0"+num : num;};
@@ -143,7 +143,7 @@
                 showTime();
 
                 // 시간함수 인터발호출하기!
-                setInterval(showTime,1000);
+                setInterval(showTime, 1000);
                 // setInterval(함수,시간)
                 // 인터발함수의 함수는 함수만 호출할 경우 함수이름만 써도 됨!
                 // 시간은 1/1000초
@@ -174,13 +174,13 @@
                 *******************************************/
                 // 난수발생시키기
                 let rdm = Math.random();
-                console.log("난수:",rdm);
+                console.log("난수:", rdm);
                 // 난수 * 7
                 rdm *= 7;
-                console.log("난수*7:",rdm);
+                console.log("난수*7:", rdm);
                 // 난수 * 7 -> 소수점아래 올림
                 rdm = Math.ceil(rdm);
-                console.log("난수*7->올림:",rdm);
+                console.log("난수*7->올림:", rdm);
                 /********************************** 
                     [ 내가 원하는 난수 발생시키기 ]
 
@@ -212,8 +212,21 @@
 
                 **********************************/
 
-                
-                
+                // 예시 난수 //
+                console.log("4~9사이난수:",
+                    Math.ceil(Math.random() * 6) + 3);
+
+                // 랜덤 이미지 만들기 ///
+
+                // 랜덤 이미지 웹경로 배열 //
+                const rimg = [
+                    "https://img.etnews.com/photonews/2110/1461216_20211007085904_466_0001.jpg",
+                    "https://d2qqqnyszmt41w.cloudfront.net/wp-content/uploads/2021/04/23150534/202104231445162082.jpg",
+                    "https://img.imbc.com/adams/Program/202111/132804027350463581.jpg",
+                    "https://image.ytn.co.kr/general/jpg/2021/0925/202109251350012465_d.jpg"
+                ];
+
+
 
 
 
