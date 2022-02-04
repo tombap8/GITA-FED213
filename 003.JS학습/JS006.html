@@ -225,7 +225,28 @@
                     "https://img.imbc.com/adams/Program/202111/132804027350463581.jpg",
                     "https://image.ytn.co.kr/general/jpg/2021/0925/202109251350012465_d.jpg"
                 ];
+                // 배열이 4개 이므로 0~3까지의 랜덤수 필요
 
+                // 변경대상: 랜덤 이미지박스 - .imbx
+                let imbx = document.querySelector(".imbx");
+
+                /**************************************** 
+                    함수명: insImg
+                    기능: 박스에 랜덤 이미지 넣기!
+                ****************************************/
+               const insImg = () => {
+
+                    // 1. 랜덤수 만들기 : 0~3사이 난수
+                    let rnum = Math.floor(Math.random()*4);
+
+                    console.log("랜덤수:",rnum);
+
+
+               }; /////////// insImg 함수 ////////////////
+               ///////////////////////////////////////////
+
+               // 임시호출
+               window.addEventListener("click",insImg);
 
 
 
