@@ -40,6 +40,8 @@ window.addEventListener("DOMContentLoaded",
         ******************************************/
        const scAction = seq => { // seq 순번
 
+            console.log("순번:",seq);
+
             if (scTop > scPos[seq]-winH && // 시작위치
                 scTop < scPos[seq]) { // 끝위치
                 scAct[seq].classList.add("on");
@@ -122,7 +124,8 @@ window.addEventListener("DOMContentLoaded",
             // 위치체크를 하여 클래스"on"을 넣어주는 함수
             // scAction() 함수를 순번과 함께 호출해 준다!!!
 
-            배열객체.forEach((배열값,순번)=>{});
+            scPos.forEach((val,idx)=>scAction(idx));
+            // 배열객체.forEach((배열값,순번)=>{});
 
             /* 
             배열객체.forEach(function(item,index,arr){})
