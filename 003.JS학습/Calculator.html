@@ -50,15 +50,15 @@
 		
 		//////////////// 상태값 체크 전역변수 /////////////////
 		////// 1. 숫자가 아닌 기호를 사용한 여부 상태값
-		var nsts=0;//0-사용안함, 1-사용함
+		let nsts=0;//0-사용안함, 1-사용함
 		////// 2. 결과값이 나온여부 상태값
-		var rsts=0;//0-결과전, 1-결과후
+		let rsts=0;//0-결과전, 1-결과후
 		///// 3. 처음상태인지 여부 상태값
-		var ists=0;//0-처음,1-처음아님
+		let ists=0;//0-처음,1-처음아님
 		//// 4. 점(.)을 사용한 여부 상태값
-		var dsts=0;//0-안씀, 1-씀
+		let dsts=0;//0-안씀, 1-씀
 		//// 5. 0 다음에 숫자를 넣을 수 없도록 하는 상태값
-		var zsts=0;//0-연속입력가능, 1-연속입력방지
+		let zsts=0;//0-연속입력가능, 1-연속입력방지
 		
 		///////////////////////////////////////////////////////////	
 		
@@ -90,8 +90,8 @@
 			////////////////////////////////////////////////			
 			
 			// 1. 대상선정 : 출력창, 출력창의 html
-			var tg=document.getElementById("exep");
-			var res=tg.innerHTML;//화면에 출력된 값
+			let tg=document.getElementById("exep");
+			let res=tg.innerHTML;//화면에 출력된 값
 			
 			// 2. 화면 출력
 			if(val==="＝"){//이퀄기호일 경우 결과값 화면에 찍기!
@@ -171,19 +171,19 @@
 			
 			
 			//alert("지워~!");//호출여부
-			var tg = document.getElementById("exep");
-			var res = tg.innerHTML;//기존출력값
-			var cnt = res.length;//문자열개수
+			let tg = document.getElementById("exep");
+			let res = tg.innerHTML;//기존출력값
+			let cnt = res.length;//문자열개수
 			//console.log("문자열개수: "+cnt);
 			
 			//마지막문자열을 제외한 나머지 문자를 다시 출력함(덮어씀)
 			// substr(시작값번호, 개수) - 0부터셈
 			tg.innerHTML=res.substr(0,cnt-1);
-			var res2=res.substr(0,cnt-1);//마지막지운값
-			var cnt2=res2.length;//마지막지운개수
+			let res2=res.substr(0,cnt-1);//마지막지운값
+			let cnt2=res2.length;//마지막지운개수
 			
 			// 마지막 문자가 무엇인지 여부에 따라 상태값 변경하기
-			var last=res2.substr(cnt2-1,1)//마지막번호,1개
+			let last=res2.substr(cnt2-1,1)//마지막번호,1개
 			console.log("마지막문자열:"+last);
 			// 1. 마지막 문자가 기호인지 여부로 변경
 			if(isNaN(last)){//숫자가 아님
@@ -197,7 +197,7 @@
 			/// 어려운점: 기호가 여러가지 이므로 split으로 자를 기준문자열이 없다. 따라서 연산기호를 모두 슬래쉬(/)로  변경 후 split으로 자르고 마지막 배열에 담긴 숫자에 점(.)이 있는지 여부를 조사하면 된다.
 			
 			// 모든기호를 슬래쉬(/)로 변경(자를기준문자)
-			var filter = res2.replace(/＋/g,"/").replace(/－/g,"/").replace(/×/g,"/").replace(/÷/g,"/");
+			let filter = res2.replace(/＋/g,"/").replace(/－/g,"/").replace(/×/g,"/").replace(/÷/g,"/");
 			filter=filter.split("/");//기준문자(/)로 자르기
 			filter=filter[filter.length-1];//마지막 배열숫자
 			filter=filter.indexOf(".");//점이 없으면 -1
