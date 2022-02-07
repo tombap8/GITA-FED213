@@ -6,7 +6,8 @@
     <title>JS - DOM(Document Object Model)</title>
     <script>
         //////////// 로드구역 ///////////////////////////
-        window.addEventListener("DOMContentLoaded", function () {
+        window.addEventListener("DOMContentLoaded", 
+        function () {
 
             // 로드구역 확인
             console.log("로딩완료!");
@@ -15,7 +16,9 @@
             //// #div01의 각 메뉴에 마우스 오버시 하위메뉴 보이기 ////
             ////////////////////////////////////////////////////////
 
-            
+            // 이벤트 대상: .smenu
+            let smenu = document.querySelectorAll(".smenu");
+            console.log("메뉴개수:",smenu.length);
 
 
             /******************************************************** 
