@@ -67,12 +67,14 @@ window.addEventListener("load", () => {
     abtn[1].onclick = () => {
         goSlide(1);
         clearAuto();//자동넘김지우기!
+        return false; // a기본막기
     } ///////// click /////////
 
     // 왼쪽버튼 클릭시
     abtn[0].onclick = () => {
         goSlide(0);
         clearAuto();//자동넘김지우기!
+        return false; // a기본막기
     } ///////// click /////////
 
     // 광클금지 상태변수
@@ -202,7 +204,7 @@ window.addEventListener("load", () => {
         // 1. 인터발 지우기
         clearInterval(autoI);
         // 2. 타임아웃 지우기: 실행 쓰나미 방지!
-
+        clearTimeout(autoT);
         // 3. 타임아웃 셋팅: 일정시간뒤 인터발실행
         autoT = setTimeout(autoSlide,3000);
         // 3초후 인터발호출, 2초후 인터발 최초실행
