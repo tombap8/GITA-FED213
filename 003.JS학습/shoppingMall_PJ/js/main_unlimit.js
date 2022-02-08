@@ -61,8 +61,9 @@ window.addEventListener("load", () => {
     abtn[0].onclick = () => goSlide(0);
     ///////// click /////////
 
-    // 슬라이드 번호 전역변수
-    let snum = 0;
+    // 광클금지 상태변수
+    let prot = 0;
+    // 0-허용, 1-불허용
 
     /******************************* 
         함수명: goSlide
@@ -72,6 +73,17 @@ window.addEventListener("load", () => {
     const goSlide = dir => {
         // dir - 전달변수(1-오른쪽,0-왼쪽)
         // console.log("이동함수!", dir);
+
+        /////// 광클금지 ///////
+        if(prot) return false; // 돌아가!(기본막기)
+        prot = 1;//잠금상태(뒷신호부터 잠긴다!)
+        setTimeout(()=>prot=0,410);
+        // 0.41초후에 다시 허용상태로 변경!
+        // 0.41초는 기본 이동 트랜지션 시간은 0.4초지만
+        // 왼쪽버튼 클릭시 실행시간간격이 0.01초있기에
+        // 이것까지 고려하여 0.41초를 기다린 후 허용함!
+        /////////////////////////
+
 
         // 1. 분기하기
         // (1) 오른쪽버튼
@@ -138,7 +150,9 @@ window.addEventListener("load", () => {
         let clsnum = 
         slide.querySelectorAll("li")[dir?1:0]
         .getAttribute("class").substring(1);
-        console.log("클래스명:",clsnum);
+        // substring(1) -> 2번째 문자부터 끝까지
+        // -> 여기서는 "s번호"이므로 s뒤의 번호가 나옴
+        // console.log("클래스명:",clsnum);
         indic[clsnum].classList.add("on");
 
 
