@@ -129,9 +129,14 @@ window.addEventListener("load", () => {
         for(let x of indic) x.classList.remove("on");
         // (2) 적용하기 : 해당순번의 li에 class "on"넣기
         // 해당순번은 오른쪽이동과 왼쪽이동에 따라 다르다!
+        // -> 오른쪽이동일땐 슬라이드 1번, 왼쪽은 0번
+        // 순번구할때 코드해석: 
+        // slide.querySelectorAll("li")[dir?1:0]
+        // dir?1:0 
+        // -> dir변수가 1이면 true여서 1출력 아니면 0출력
         // 해당순번은 선택할 li요소의 class명의 뒷번호다!
         let clsnum = 
-        slide.querySelectorAll("li")[1]
+        slide.querySelectorAll("li")[dir?1:0]
         .getAttribute("class").substring(1);
         console.log("클래스명:",clsnum);
         indic[clsnum].classList.add("on");
