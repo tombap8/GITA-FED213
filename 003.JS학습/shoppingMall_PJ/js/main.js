@@ -1,6 +1,6 @@
 // 쇼핑몰 배너 JS //
 // 로드구역 ////////////
-window.addEventListener("load",() => {
+window.addEventListener("load", () => {
 
     console.log("로딩완료!");
 
@@ -27,30 +27,28 @@ window.addEventListener("load",() => {
 
     ************************************/
 
-        // 이벤트 대상: .abtn
-        let abtn = document.querySelectorAll(".abtn");
+    // 이벤트 대상: .abtn
+    let abtn = document.querySelectorAll(".abtn");
 
-        // 오른쪽버튼 클릭시
-        abtn[1].onclick = ()=>{
-            console.log("오른쪽이양!");
-        }; ///////// click /////////
+    // 오른쪽버튼 클릭시
+    abtn[1].onclick = () => goSlide(1);
+    ///////// click /////////
 
-        // 왼쪽버튼 클릭시
-        abtn[0].onclick = ()=>{
-            console.log("왼쪽이양!");
-        }; ///////// click /////////
+    // 왼쪽버튼 클릭시
+    abtn[0].onclick = () => goSlide(0);
+    ///////// click /////////
 
-        /******************************* 
-            함수명: goSlide
-            기능: 슬라이드를 다음/이전
-                슬라이드로 이동시킨다!
-        *******************************/
-       const goSlide = dir => { 
-           // dir - 전달변수(1-오른쪽,0-왼쪽)
-           console.log
+    /******************************* 
+        함수명: goSlide
+        기능: 슬라이드를 다음/이전
+            슬라이드로 이동시킨다!
+    *******************************/
+    const goSlide = dir => {
+        // dir - 전달변수(1-오른쪽,0-왼쪽)
+        console.log("이동함수!", dir);
 
-       }; //////// goSlide 함수 /////////////
-       //////////////////////////////////////
+    }; //////// goSlide 함수 /////////////
+    //////////////////////////////////////
 
 
 }); ///////////// load //////////////////////
