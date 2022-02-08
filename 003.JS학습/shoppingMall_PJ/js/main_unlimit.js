@@ -16,9 +16,15 @@ window.addEventListener("load", () => {
             - 후행: 왼쪽에 나가있는 첫번째 슬라이드를
             잘라서 맨뒤로 이동시킨다
             이때 left값을 다시 0으로 초기화한다!
+            (기존 트랜지션을 지워야 초기화과정이 숨겨진다)
             그래야 슬라이드가 튀지 않는다!
 
         (2) 왼쪽버튼 클릭시 
+            - 선행: 맨뒤의 슬라이드를 잘라서 맨앞으로 이동함
+            이때 left값을 -100%로 왼쪽 앞에 공간을 만든다!
+            (트랜지션을 지워서 이 과정이 안보이게 함!)
+            - 후행: 트랜지션으로 left가 0되면서 왼쪽에서 
+            슬라이드가 이동하여 들어온다!
         
 
         5. 추가기능: 슬라이드 위치표시 블릿
@@ -34,6 +40,18 @@ window.addEventListener("load", () => {
     let slide = document.querySelector("#slide");
     // 추가 대상: .indic li
     let indic = document.querySelectorAll(".indic li");
+    // 슬라이드 개수 구해오기
+    const scnt =
+        document.querySelectorAll("#slide li").length;
+    // console.log("슬라이드개수:", scnt);
+
+    // 슬라이드가 순서가 바뀌므로 처음에 슬라이드 li에
+    // 클래스를 순번에 맞게 부여해 준다!
+    for(let i=0;i<scnt;i++) {
+        slide.querySelectorAll("li")[i]
+        .classList.add("s"+i);
+    } /////// for ///////////////////
+
 
     // 오른쪽버튼 클릭시
     abtn[1].onclick = () => goSlide(1);
@@ -45,10 +63,6 @@ window.addEventListener("load", () => {
 
     // 슬라이드 번호 전역변수
     let snum = 0;
-    // 슬라이드 개수 구해오기
-    const scnt =
-        document.querySelectorAll("#slide li").length;
-    // console.log("슬라이드개수:", scnt);
 
     /******************************* 
         함수명: goSlide
@@ -86,7 +100,26 @@ window.addEventListener("load", () => {
         } ///////////////// if /////////////
         // (2) 왼쪽버튼
         else {
-            
+            // 1. 맨뒤요소 맨앞으로 이동하기
+            slide.insertBefore(
+                slide.querySelectorAll("li")[scnt-1],
+                slide.querySelectorAll("li")[0]
+            );
+            // 맨뒤요소: #slide>li중 맨끝(개수-1)
+            // 맨앞이동: insertBefore(넣을놈,넣을놈전놈)
+            // insertBefore(맨뒤li,맨앞li)
+
+            // 2. left값 -100%로 셋팅 + 트랜지션 없애기
+            slide.style.left = "-100%";
+            slide.style.transition = "none";
+
+            // 3. left가 0, 트랜지션설정 - 슬라이드들어오기
+            // 위의 같은 속성변경과 시차가 반드시 필요함!
+            // setTimeout으로 시차를 줌!(0.01초만 줘도됨)
+            setTimeout(()=>{
+                slide.style.left = "0";
+                slide.style.transition = "left .4s ease-in-out";
+            },10);
 
         } ////// else /////////
 
@@ -95,6 +128,7 @@ window.addEventListener("load", () => {
         // (1) 초기화 : 모든 블릿li의 class "on"제거
         for(let x of indic) x.classList.remove("on");
         // (2) 적용하기 : 해당순번의 li에 class "on"넣기
+        // 해당순번은 오른쪽이동과 왼쪽이동에 따라 다르다!
         indic[snum].classList.add("on");
 
 
