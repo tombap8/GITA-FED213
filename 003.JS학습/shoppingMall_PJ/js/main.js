@@ -29,6 +29,8 @@ window.addEventListener("load", () => {
 
     // 이벤트 대상: .abtn
     let abtn = document.querySelectorAll(".abtn");
+    // 변경 대상: #slide
+    let slide = document.querySelector("#slide");
 
     // 오른쪽버튼 클릭시
     abtn[1].onclick = () => goSlide(1);
@@ -38,6 +40,13 @@ window.addEventListener("load", () => {
     abtn[0].onclick = () => goSlide(0);
     ///////// click /////////
 
+    // 슬라이드 번호 전역변수
+    let snum = 0;
+    // 슬라이드 개수 구해오기
+    const scnt =
+        document.querySelectorAll("#slide li").length;
+    console.log("슬라이드개수:", scnt);
+
     /******************************* 
         함수명: goSlide
         기능: 슬라이드를 다음/이전
@@ -45,7 +54,34 @@ window.addEventListener("load", () => {
     *******************************/
     const goSlide = dir => {
         // dir - 전달변수(1-오른쪽,0-왼쪽)
-        console.log("이동함수!", dir);
+        // console.log("이동함수!", dir);
+
+        // 1. 분기하기
+        // (1) 오른쪽버튼
+        if (dir) { /// dir이 1이면(1===true)
+            // 슬라이드 번호를 1씩증가
+            snum++;
+            // 한계수에서 첫번째번호로!
+            if (snum === 5) snum = 0;
+        } ////// if ////////
+        // (2) 왼쪽버튼
+        else {
+            // 슬라이드 번호 1씩감소
+            snum--;
+            // 한계수에서 마지막번호로!
+            if (snum === -1) snum = scnt - 1;
+            // 마지막 슬라이드번호는 (슬라이드개수-1)
+
+        } ////// else /////////
+
+        console.log("슬번호:",snum);
+
+        // 이동하기 : 슬라이드의 left값을 변경함
+        slide.style.left = "-100%";
+        slide.style.transition = "left .4s ease-in-out";
+
+        // a요소 기본이동막기!
+        return false;
 
     }; //////// goSlide 함수 /////////////
     //////////////////////////////////////
