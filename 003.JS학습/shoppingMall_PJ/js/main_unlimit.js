@@ -64,12 +64,16 @@ window.addEventListener("load", () => {
 
 
     // 오른쪽버튼 클릭시
-    abtn[1].onclick = () => goSlide(1);
-    ///////// click /////////
+    abtn[1].onclick = () => {
+        goSlide(1);
+        clearAuto();//자동넘김지우기!
+    } ///////// click /////////
 
     // 왼쪽버튼 클릭시
-    abtn[0].onclick = () => goSlide(0);
-    ///////// click /////////
+    abtn[0].onclick = () => {
+        goSlide(0);
+        clearAuto();//자동넘김지우기!
+    } ///////// click /////////
 
     // 광클금지 상태변수
     let prot = 0;
