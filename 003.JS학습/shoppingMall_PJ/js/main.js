@@ -45,7 +45,7 @@ window.addEventListener("load", () => {
     // 슬라이드 개수 구해오기
     const scnt =
         document.querySelectorAll("#slide li").length;
-    console.log("슬라이드개수:", scnt);
+    // console.log("슬라이드개수:", scnt);
 
     /******************************* 
         함수명: goSlide
@@ -74,10 +74,10 @@ window.addEventListener("load", () => {
 
         } ////// else /////////
 
-        console.log("슬번호:",snum);
+        // console.log("슬번호:",snum);
 
         // 이동하기 : 슬라이드의 left값을 변경함
-        slide.style.left = "-100%";
+        slide.style.left = (-100*snum)+"%";
         slide.style.transition = "left .4s ease-in-out";
 
         // a요소 기본이동막기!
