@@ -10,20 +10,16 @@ window.addEventListener("load", () => {
         2. 이벤트 대상: 이동버튼(.abtn)
         3. 변경 대상: 슬라이드 박스(#slide)
         4. 기능흐름: 
-        (1) 오른쪽버튼 클릭시 다음슬라이드가
-        나타나도록 슬라이드박스의 left값을
-        -100% 단위의 배수로 이동시킨다!
-        -> 이동시 한계값은 마지막 슬라이드
-        이동 배수인 4, 즉 -400%임
-        (2) 왼쪽버튼 클릭시 이전슬라이드가
-        나타나도록 left값은 -100% 단위
-        배수중 이전 배수가 되도록 변경함
-        -> 이동시 한계값은 첫번째 슬라이드의
-        위치값인 0을 기준한다
-        (3) 처음이전과 끝 다음 슬라이드는
-        처음과 마지막 한계값에서 연결하여
-        구현한다.(처음은 마지막으로 마지막은
-        처음으로 돌아가게 함)
+        (1) 오른쪽버튼 클릭시 
+            - 선행: -100%로 하나의 슬라이드를
+            이동한다
+            - 후행: 왼쪽에 나가있는 첫번째 슬라이드를
+            잘라서 맨뒤로 이동시킨다
+            이때 left값을 다시 0으로 초기화한다!
+            그래야 슬라이드가 튀지 않는다!
+
+        (2) 왼쪽버튼 클릭시 
+        
 
         5. 추가기능: 슬라이드 위치표시 블릿
         - 블릿대상 : .indic li
@@ -66,27 +62,35 @@ window.addEventListener("load", () => {
         // 1. 분기하기
         // (1) 오른쪽버튼
         if (dir) { /// dir이 1이면(1===true)
-            // 슬라이드 번호를 1씩증가
-            snum++;
-            // 한계수에서 첫번째번호로!
-            if (snum === 5) snum = 0;
-        } ////// if ////////
+
+            // 1. 이동하기 : 슬라이드의 left값을 변경함
+            slide.style.left = "-100%";
+            slide.style.transition = "left .4s ease-in-out";
+
+            // 2. 이동후 잘라서 끝으로 이동 + left:0
+            // 이동후-> setTimeout(함수,시간)
+            // 0.4초후 함수실행!
+            setTimeout(()=>{
+                // 2-1. 첫번째 슬라이드 맨뒤로이동
+                slide.appendChild(
+                    slide.querySelectorAll("li")[0]);
+                // 첫번째 슬라이드 선택: #slide>li중 1번째
+                // 맨뒤로 이동: appendChild(요소)
+                
+                // 2-2. left값 초기화 + 트랜지션해제!
+                slide.style.left = "0";
+                slide.style.transition = "none";
+
+            },400); ///// setTimeout //////
+
+        } ///////////////// if /////////////
         // (2) 왼쪽버튼
         else {
-            // 슬라이드 번호 1씩감소
-            snum--;
-            // 한계수에서 마지막번호로!
-            if (snum === -1) snum = scnt - 1;
-            // 마지막 슬라이드번호는 (슬라이드개수-1)
+            
 
         } ////// else /////////
 
-        // console.log("슬번호:",snum);
-
-        // 2. 이동하기 : 슬라이드의 left값을 변경함
-        slide.style.left = (-100*snum)+"%";
-        slide.style.transition = "left .4s ease-in-out";
-
+        
         // 3. 블릿표시 변경하기
         // (1) 초기화 : 모든 블릿li의 class "on"제거
         for(let x of indic) x.classList.remove("on");
