@@ -25,12 +25,19 @@ window.addEventListener("load", () => {
         구현한다.(처음은 마지막으로 마지막은
         처음으로 돌아가게 함)
 
+        5. 추가기능: 슬라이드 위치표시 블릿
+        - 블릿대상 : .indic li
+        - 변경내용 : 슬라이드 순번과 같은 순번의
+        li에 클래스 "on"주기(나머진 빼기-초기화)
+
     ************************************/
 
     // 이벤트 대상: .abtn
     let abtn = document.querySelectorAll(".abtn");
     // 변경 대상: #slide
     let slide = document.querySelector("#slide");
+    // 추가 대상: .indic li
+    let indic = document.querySelectorAll(".indic li");
 
     // 오른쪽버튼 클릭시
     abtn[1].onclick = () => goSlide(1);
@@ -76,9 +83,16 @@ window.addEventListener("load", () => {
 
         // console.log("슬번호:",snum);
 
-        // 이동하기 : 슬라이드의 left값을 변경함
+        // 2. 이동하기 : 슬라이드의 left값을 변경함
         slide.style.left = (-100*snum)+"%";
         slide.style.transition = "left .4s ease-in-out";
+
+        // 3. 블릿표시 변경하기
+        // (1) 초기화 : 모든 블릿li의 class "on"제거
+        for(let x of indic) x.classList.remove("on");
+        // (2) 적용하기 : 해당순번의 li에 class "on"넣기
+        indic[snum].classList.add("on");
+
 
         // a요소 기본이동막기!
         return false;
