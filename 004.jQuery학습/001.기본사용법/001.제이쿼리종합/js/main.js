@@ -98,6 +98,26 @@ $(() => { ///////////// jQB ////////////////////////////
             // 애니메이션 후 display:none됨
             // 반대는 fadeIn(시간)
 
+            // 3. 이동위치정보 : 이동할 빌딩li의 위치를 알아내기
+            // 이동할 li 타겟 -> bd변수(.building li)
+            let tg = bd.eq(8); // 8번방
+            // eq(순번) -> 선택요소들 중 몇번째 요소를 선택
+            // eq는 seqence(순서) 라는 단어에서 나온말
+            let tgtop = tg.offset().top; // 화면에서 top값
+            let tgleft = tg.offset().left; // 화면에서 left값
+            console.log(`top:${tgtop} / left:${tgleft}`);
+            /* 
+                offset() 메서드 : 
+                - 요소의 위치나 크기정보를 담고있음
+                offset().top -> 요소의 top값
+                offset().left -> 요소의 left값
+
+                ________________________
+
+                비교) position() 메서드
+            */
+
+
 
 
 
