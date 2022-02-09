@@ -36,7 +36,7 @@ $(() => { ///////////// jQB ////////////////////////////
     // 미니언즈 가로위치 보정값
     // 윈도우 가로크기의 5%
     let win5 = $(window).width() * 0.05;
-    console.log("가로크기의 5%:",win5);
+    // console.log("가로크기의 5%:",win5);
     // width() 가로크기, height() 세로크기
     // -> 단위없는 px 숫자값 리턴함
 
@@ -112,7 +112,8 @@ $(() => { ///////////// jQB ////////////////////////////
             // eq(순번) -> 선택요소들 중 몇번째 요소를 선택
             // eq는 seqence(순서) 라는 단어에서 나온말
             let tgtop = tg.offset().top; // 화면에서 top값
-            let tgleft = tg.offset().left; // 화면에서 left값
+            let tgleft = tg.offset().left + win5;
+            // 화면에서 left값 + 미니언즈 위치보정값
             console.log(`top:${tgtop} / left:${tgleft}`);
             /* 
                 offset() 메서드 : 
@@ -159,7 +160,24 @@ $(() => { ///////////// jQB ////////////////////////////
         // 3-2. "옆방으로!" 버튼 클릭 시작 ///////
         .next().click(function () {
 
-            console.log($(this).text(), "버튼");
+            // console.log($(this).text(), "버튼");
+
+            // 1. 자기자신 버튼 없애기
+            $(this).fadeOut(200);
+
+            // 2. 메시지 사라지기
+            msg.slideUp(200);
+
+            // 3. 이동위치: 9번방
+            let tg = bd.eq(9);
+            let tgtop = tg.offset().top;
+            let tgleft = tg.offset().left + win5;
+
+            // 4. 위치이동
+            mi.animate({
+                top: tgtop + "px",
+                left: tgleft + "px"
+            },1500)
 
         }) //// 3-2."옆방으로!" 버튼 클릭 끝 //////
 
