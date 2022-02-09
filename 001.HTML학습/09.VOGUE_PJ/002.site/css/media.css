@@ -29,9 +29,20 @@
         transition: none;
     }
 
-    /* 6. 첫번째 배경변경 */
+    /* 6. 배경변경 */
     .bg1 {
         background-image: url(../images/cont1b.jpg);
+    }
+    .bg5 {
+        background-image: url(../images/cont3b.jpg);
+    }
+    .bg9 {
+        background-image: url(../images/cont5b.jpg);
+    }
+
+    /* 7. .pt1 비율변경 */
+    .pt1.rbx::before {
+        padding-top: 150.79%;
     }
 
 
