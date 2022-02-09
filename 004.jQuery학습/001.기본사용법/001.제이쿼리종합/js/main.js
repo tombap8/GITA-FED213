@@ -308,7 +308,26 @@ $(() => { ///////////// jQB ////////////////////////////
             mi.animate({
                 top: tgtop + "px",
                 left: tgleft + "px"
-            }, 1500, "easeOutElastic");
+            }, 1500, "easeOutElastic",()=>{
+                // 5. 메시지 보이기
+                msg.empty() // empty() 선택요소 텍스트 지우기
+                .fadeIn(200,()=>{msg.text("무")})
+                .delay(500)
+                .fadeIn(200,()=>{msg.text("무.")})
+                .delay(500)
+                .fadeIn(200,()=>{msg.text("무.서")})
+                .delay(500)
+                .fadeIn(200,()=>{msg.text("무.서.")})
+                .delay(500)
+                .fadeIn(200,()=>{msg.text("무.서.워")})
+                .delay(500)
+                .fadeIn(200,()=>{msg.text("무.서.워.")})
+                .delay(500)
+                .fadeIn(200,()=>{msg.text("무.서.워..")})
+                .delay(500)
+                .fadeIn(200,()=>{msg.text("무.서.워...")})
+
+            }); //////// animate //////////
 
         }) /// 3-5."무서우니 윗층으로!" 버튼 클릭 끝 /////
 
