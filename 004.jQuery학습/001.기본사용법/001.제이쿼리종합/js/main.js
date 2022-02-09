@@ -48,7 +48,7 @@ $(() => { ///////////// jQB ////////////////////////////
     // btns.hide().first().show();
     // 버튼들.숨겨().첫번째().보여()
     // 주어는 하나! 뒤에 메서드 체인!
-    btns.hide().eq(2).show();
+    btns.hide().eq(3).show();
 
     // 2-2. 빌딩숫자셋팅 :
     // -> 모든 빌딩 li를 순서대로 돌면서 순번넣기 + 좀비넣기
@@ -292,7 +292,24 @@ $(() => { ///////////// jQB ////////////////////////////
         }) /// 3-4."다시 옆방으로!" 버튼 클릭 끝 /////
         /// 3-5."무서우니 윗층으로!" 버튼 클릭 시작 /////
         .next().click(function () {
-            console.log($(this).text(), "버튼");
+            // console.log($(this).text(), "버튼");
+            // 1. 자기자신 버튼 없애기
+            $(this).fadeOut(200);
+
+            // 2. 메시지 사라지기
+            msg.slideUp(200);
+
+            // 3. 이동위치: 4번방
+            let tg = bd.eq(4);
+            let tgtop = tg.offset().top;
+            let tgleft = tg.offset().left + win5;
+
+            // 4. 위치이동
+            mi.animate({
+                    top: tgtop + "px",
+                    left: tgleft + "px"
+                }, 1500, "easeOutElastic");
+
         }) /// 3-5."무서우니 윗층으로!" 버튼 클릭 끝 /////
 
 
