@@ -306,9 +306,9 @@ $(() => { ///////////// jQB ////////////////////////////
 
             // 4. 위치이동
             mi.animate({
-                    top: tgtop + "px",
-                    left: tgleft + "px"
-                }, 1500, "easeOutElastic");
+                top: tgtop + "px",
+                left: tgleft + "px"
+            }, 1500, "easeOutElastic");
 
         }) /// 3-5."무서우니 윗층으로!" 버튼 클릭 끝 /////
 
