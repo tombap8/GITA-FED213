@@ -266,6 +266,10 @@
 
 /* 1.4. 모바일 검색박스 */
 .mos{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
     padding: 15px 30px;
     background-color: #fff;
     display: none;/* 처음에 숨기기 */
@@ -310,14 +314,24 @@
     font-size: 12px;
     font-weight: bold;
 }
-
+/* 모바일 전체메뉴 최상위박스 */
+.mobwrap{
+    position: fixed;
+    top: 54px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 54px);
+    display: none;
+    overflow-y: auto;
+    /* 세로스크롤 자동생성 */
+}
 /* 1.5. 모바일 전체메뉴박스 (#top의 하위자식으로 편성) */
 #mobx{
     padding-left: 15px;
     padding-top: 6px;
     padding-bottom: 30px;
     background-color: #fff;
-    display: none;/* 처음에 안보임 */
+    /* display: none;처음에 안보임 */
 }
 /* 1.5-1.모바일 GNb */
 .mognb{

@@ -29,6 +29,36 @@ $(window).resize(chgMob);
 //// 제이쿼리 코드구역 /////////////////////////////
 $(()=>{
 
+    // 1. 햄버거 버튼(.hbtn) 클릭시
+    // 전체 메뉴 보이기: .mobwrap -> 검색창은 숨김!
+    $(".hbtn").click(()=>{
+        $(".mobwrap").slideToggle(400,"easeInOutCubic");
+        $(".mos").hide();
+    });////// click ////////
+
+    // 2. 검색 버튼(.sbtn) 클릭시
+    // 검색창 보이기: .mos -> 전체메뉴는 숨김!
+    $(".sbtn").click(()=>{
+        $(".mos").slideToggle(300,"easeInOutCubic");
+        $(".mobwrap").hide();
+    }); //////// click /////////////
+
+
+    /* 
+        slideUp(시간,이징,함수)
+        원래크기에서 height값을 0으로 만듬
+        0이된후 display:none
+
+        slideDown(시간,이징,함수)
+        display:none이 다시 보이면서
+        height값이 0에서 원래 크기로 돌아감
+        내가 계산 안해도 됨!!!
+
+        slideToggle(시간,이징,함수)
+        slideUp/slideDown 자동전환함!
+    
+    */
+
 }); /////////// jQB ////////////////////////
 
 
