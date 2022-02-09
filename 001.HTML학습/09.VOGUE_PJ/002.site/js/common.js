@@ -6,7 +6,12 @@ let mob = 0;
 
 // 모바일 체크 함수 //
 const chgMob = () => {
-    if($(window).width()<=500) mob=1;
+    if($(window).width()<=500){ 
+        mob=1;
+        // 상단영역 변경 클래스 강제제거하기!
+        $("#top").removeClass("on");
+        // removeClass(클래스명) -> 클래스제거
+    } ////// if ///////////
     else mob=0;
     console.log("모바일:",mob);
 }; ///////// chgMob함수 ///////
@@ -126,8 +131,8 @@ window.addEventListener("DOMContentLoaded",
             // 상단영역 스크롤 반응하기 ///
             /////////////////////////////
 
-            // 1. 스크롤위치가 100px이상일때
-            if (scTop >= 100) {
+            // 1. 스크롤위치가 100px이상일때+모바일아닐때
+            if (scTop >= 100 && !mob) {
                 topA.classList.add("on");
             } /////////// if ////////////
             // 2. 스크롤위치가 100px미만일때
