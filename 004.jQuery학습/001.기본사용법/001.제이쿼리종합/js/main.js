@@ -338,7 +338,29 @@ $(() => { ///////////// jQB ////////////////////////////
                         // 6-2. 주인공에게 달려오기
                         .animate({
                             right: tg.width()*1.2 + "px"
-                        },2000,"easeOutBounce")
+                        },2000,"easeOutBounce",
+                        ()=>{ // 콜백함수
+                            // 7. 주인공 사색되기(흑백처리)
+                            mi.css({
+                                filter:"grayscale(100%)"
+                            });
+                            // 8 메시지 지우기
+                            msg.hide();
+
+                            // 9. 2초뒤에 좀비되기
+                            setTimeout(()=>{
+                                // 9-1. 좀비이미지 변경
+                                mi.find("img")
+                                .attr("src","images/mz1.png");
+                                // attr(속성명,속성값)
+                                //-> 속성값을 바꾸는 메서드!
+                                // 비교) JS의 setAttribute()
+                                // 참고) 속성값 가져오기는
+                                // -> attr(속성명)
+                                // 비교) JS의 getAttribute()
+                            },2000); /// setTimeout ///
+
+                        }); /////// animante ///////
                     
 
                 }) /////// fadeIn ////////
