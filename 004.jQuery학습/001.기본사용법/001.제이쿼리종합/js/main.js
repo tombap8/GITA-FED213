@@ -332,9 +332,13 @@ $(() => { ///////////// jQB ////////////////////////////
                     // -> 7번방 좀비: bd.eq(7).find(".mz")
                     bd.eq(7).find(".mz")
                         // 6-1. 윗층으로 올라오기
-                        .animte({
+                        .animate({
                             bottom: tg.height() + "px"
                         },500,"easeOutElastic")
+                        // 6-2. 주인공에게 달려오기
+                        .animate({
+                            right: tg.width()*1.2 + "px"
+                        },2000,"easeOutBounce")
                     
 
                 }) /////// fadeIn ////////
