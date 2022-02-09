@@ -13,8 +13,16 @@
     .logo img{
         width: 130px;
     }
+    /* 2.5. 상단박스 fixed로 인한 공백지정 */
+    body{
+        padding-top: 54px;
+    }
     /* 3. 상단 겉박스 */
     #top{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        box-sizing: border-box;
         padding: 10px;
     }
     /* 4. 상단 속박스 */
