@@ -45,5 +45,46 @@
         padding-top: 150.79%;
     }
 
+    /* 8. .pt3 하위 컨텐츠 박스 중 마지막박스 없애기 */
+    .pt3 .cbx:last-child{
+        display: none;
+    }
+
+    /* 9. .pt3 비율 변경 */
+    .pt3.rbx::before {
+        padding-top: 75%;
+    }
+
+    /* 10. 컨텐츠 타이틀 */
+    .cbx h2{
+        font-size: 20px;
+    }
+
+    /* 11. 마우스 오버 테두리 */
+    .cbx:hover::after {
+        border: 10px solid red;
+    }
+
+    /* 12. 하단박스 */
+    .info{
+        min-height: auto;
+        padding: 40px;
+    }
+
+    /* 13. 하단로고 */
+    .blogo img{
+        width: 200px;
+    }
+
+    /* 14. 상단 이동버튼 */
+    .tbtn {
+        bottom: 100px;
+        right: 15px;
+        border-radius: 4px;
+    }
+    .tbtn.on {
+        bottom: 100px;
+        right: 15px;
+    }
 
 } /* 미디어쿼리 - 500px이하 */
