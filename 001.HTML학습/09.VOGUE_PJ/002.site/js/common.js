@@ -6,12 +6,14 @@ let mob = 0;
 
 // 모바일 체크 함수 //
 const chgMob = () => {
+    // 500px이하 모바일
     if($(window).width()<=500){ 
         mob=1;
         // 상단영역 변경 클래스 강제제거하기!
         $("#top").removeClass("on");
         // removeClass(클래스명) -> 클래스제거
     } ////// if ///////////
+    // 500px 초과시
     else mob=0;
     console.log("모바일:",mob);
 }; ///////// chgMob함수 ///////

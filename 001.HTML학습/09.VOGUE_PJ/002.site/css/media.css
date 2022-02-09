@@ -5,6 +5,34 @@
 /* 모바일 미디어쿼리 - 500px 이하 */
 @media screen and (max-width:500px) {
     
+    /* 1. 상단영역 요소 없앰 */
+    .tmenu,.gnb {
+        display: none;
+    }
+    /* 2. 로고 줄이기 */
+    .logo img{
+        width: 130px;
+    }
+    /* 3. 상단 겉박스 */
+    #top{
+        padding: 10px;
+    }
+    /* 4. 상단 속박스 */
+    .top{
+        min-height: auto;
+    }
 
-    
+    /* 5. 등장액션 초기화 */
+    .scAct {
+        transform: none;
+        opacity: 1;
+        transition: none;
+    }
+
+    /* 6. 첫번째 배경변경 */
+    .bg1 {
+        background-image: url(../images/cont1b.jpg);
+    }
+
+
 } /* 미디어쿼리 - 500px이하 */
