@@ -1,9 +1,38 @@
 // 공통 기능 구현 JS - common.js //
 
+// 전역변수 구역 ///////////////
+// 모바일여부변수(1-모바일,0-아님)
+let mob = 0;
+
+// 모바일 체크 함수 //
+const chgMob = () => {
+    if($(window).width()<=500) mob=1;
+    else mob=0;
+    console.log("모바일:",mob);
+}; ///////// chgMob함수 ///////
+
+// 모바일 체크 함수 최초호출
+chgMob();
+
+// 윈도우 리사이즈시 모바일 체크함수 호출
+$(window).resize(chgMob);
+
+
+
+//// 제이쿼리 코드구역 /////////////////////////////
+$(()=>{
+
+}); /////////// jQB ////////////////////////
+
+
+
+
+
+
 ///////////// 로드구역 //////////////////////
 window.addEventListener("DOMContentLoaded",
     () => {
-        console.log("로딩완료!");
+        // console.log("로딩완료!");
 
         /// 부드러운 스크롤 호출!(제이쿼리 아님!)
         startSS();
@@ -30,7 +59,7 @@ window.addEventListener("DOMContentLoaded",
         // for(시작값;한계값;증감){코드}
         for(let i=0; i<scAct.length;i++){
             scPos[i] = scAct[i].offsetTop;
-            console.log("페이지위치값",i,"번째:",scPos[i]);
+            // console.log("페이지위치값",i,"번째:",scPos[i]);
         } ///////// for문 ////////////////////////
 
         /****************************************** 
