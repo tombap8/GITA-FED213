@@ -9,6 +9,10 @@
     .tmenu,.gnb {
         display: none;
     }
+    /* 1.5. 모바일 메뉴 보이기 */
+    .mobtn{
+        display: block;
+    }
     /* 2. 로고 줄이기 */
     .logo img{
         width: 130px;
