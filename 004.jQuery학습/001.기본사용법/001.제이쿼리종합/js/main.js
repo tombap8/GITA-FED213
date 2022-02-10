@@ -474,7 +474,7 @@ $(() => { ///////////// jQB ////////////////////////////
             mi.animate({
                 top: tgtop + "px",
                 left: tgleft + "px"
-            }, 1000,()=>{
+            }, 1000,"easeOutBack",()=>{
 
                 // 5. 메시지 보이기
                 msg.text("어서 윗층으로 가자!").fadeIn(200);
@@ -485,6 +485,77 @@ $(() => { ///////////// jQB ////////////////////////////
             }); /////// animate ////////
 
         }) /// 3-7."3번방으로!" 버튼 클릭 끝 /////
+        /// 3-8."1번방으로!" 버튼 클릭 시작 /////
+        .next().click((e)=>{ // e-이벤트전달변수
+            // 화살표함수는 this대신 event.currentTarget사용
+            // 제이쿼리는 내부전달 이벤트변수를 사용함!
+            // console.log($(e.currentTarget).text(),"버튼");
+
+            // 1. 자기자신 버튼 없애기
+            $(e.currentTarget).slideUp(200);
+
+            // 2. 메시지 지우기
+            msg.fadeOut(200);
+
+            // 3. 이동위치: 1번방
+            let tg = bd.eq(1);
+            let tgtop = tg.offset().top;
+            let tgleft = tg.offset().left + win5;
+
+            // 4. 위치이동
+            mi.animate({
+                top: tgtop + "px",
+                left: tgleft + "px"
+            },1000,"easeOutBack",
+            ()=>{ // 콜백함수
+
+                // 5. 메시지 보이기
+                msg.text("이제 곧 탈출이닷!").fadeIn(200);
+
+                // 6. 다음버튼 보이기: '헬기를 호출!'
+                btns.last().slideDown(300);
+                // last()는 버튼 중 마지막버튼 선택
+
+
+            }); ///// animate //////
+        })
+        /// 3-8."1번방으로!" 버튼 클릭 끝 /////
+        /// 3-9."헬기를 호출!" 버튼 클릭 시작 /////
+        .next().click((e)=>{ // 이벤트전달변수
+            // console.log($(e.currentTarget).text(),"버튼");
+
+            // 1. 자기자신 버튼 없애기
+            $(e.currentTarget).slideUp(200);
+
+            // 2. 메시지 지우기
+            msg.fadeOut(200);
+
+            // 3. 이동위치: 0번방
+            let tg = bd.eq(0);
+            let tgtop = tg.offset().top;
+            let tgleft = tg.offset().left + win5;
+
+            // 4. 위치이동
+            mi.animate({
+                top: tgtop + "px",
+                left: tgleft + "px"
+            }, 1000,"easeOutBack",
+            ()=>{ // 콜백함수
+
+                // 5. 메시지 보이기
+                msg.text("도와줘요~!!!").fadeIn(200);
+
+                // 6. 좀비들 최총추적!!!
+                // -> 1번방에 숨겨진 좀비들 
+                // -> bd.eq(1).find(".mz")
+                bd.eq(1).find(".mz")
+                    .fadeIn(200,()=>{
+                        
+                    }) //// fadeIn //////
+                
+            }); ///////// animate //////////
+            
+        }) /// 3-9."헬기를 호출!" 버튼 클릭 끝 /////
 
 
 
