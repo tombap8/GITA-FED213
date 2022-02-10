@@ -554,7 +554,13 @@ $(() => { ///////////// jQB ////////////////////////////
                           $(this)
                           .animate({
                               right: tg.width()*1.3+"px"
-                          },5000,"easeInOutQuint")
+                          },5000,"easeInOutQuint");
+
+                          // 6-2. 헬기등장
+                          $(".heli").animate({
+                              left: "20%"
+                          }, 3000, "easeOutBack")
+                          
                     }) //// fadeIn //////
                 
             }); ///////// animate //////////
