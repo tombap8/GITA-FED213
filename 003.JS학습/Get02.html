@@ -87,6 +87,8 @@
 
             // 타이틀 박스
             let tit = document.querySelector("#title");
+            // 메인 박스
+            let main = document.querySelector("#main");
 
             // 1. 타이틀 넣기
             tit.innerText = pm;
@@ -94,7 +96,10 @@
             // 2. 타이틀 배경색
             tit.style.backgroundColor = sdata[pm]["배경색"];
 
-            
+
+            // 3. 메인 박스 배경이미지 변경
+            main.style.backgroundImage = 
+            `url(images/${sdata[pm]["이미지"]})`;
 
 
         });/////////// 로드구역 //////////////////////////////////
