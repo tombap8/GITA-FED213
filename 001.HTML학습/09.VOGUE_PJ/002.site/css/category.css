@@ -103,6 +103,7 @@
 .living .bg2-3{
     background-image: url(../images/living/cont2-3a.jpg);
 }
+
 /************************ people ************************/
 .people .bg1-1{
     background-image: url(../images/people/cont1-1a.jpg);
@@ -121,4 +122,64 @@
 }
 .people .bg2-3{
     background-image: url(../images/people/cont2-3a.jpg);
+}
+
+/************************ video ************************/
+.video .bg1-1{
+    background-image: url(../images/video/cont1-1a.jpg);
+}
+.video .bg1-2{
+    background-image: url(../images/video/cont1-2a.jpg);
+}
+.video .bg1-3{
+    background-image: url(../images/video/cont1-3a.jpg);
+}
+.video .bg2-1{
+    background-image: url(../images/video/cont2-1a.jpg);
+}
+.video .bg2-2{
+    background-image: url(../images/video/cont2-2a.jpg);
+}
+.video .bg2-3{
+    background-image: url(../images/video/cont2-3a.jpg);
+}
+
+/************************ runway ************************/
+.runway .bg1-1{
+    background-image: url(../images/runway/cont1-1a.jpg);
+}
+.runway .bg1-2{
+    background-image: url(../images/runway/cont1-2a.jpg);
+}
+.runway .bg1-3{
+    background-image: url(../images/runway/cont1-3a.jpg);
+}
+.runway .bg2-1{
+    background-image: url(../images/runway/cont2-1a.jpg);
+}
+.runway .bg2-2{
+    background-image: url(../images/runway/cont2-2a.jpg);
+}
+.runway .bg2-3{
+    background-image: url(../images/runway/cont2-3a.jpg);
+}
+
+/************************ shopping ************************/
+.shopping .bg1-1{
+    background-image: url(../images/shopping/cont1-1a.jpg);
+}
+.shopping .bg1-2{
+    background-image: url(../images/shopping/cont1-2a.jpg);
+}
+.shopping .bg1-3{
+    background-image: url(../images/shopping/cont1-3a.jpg);
+}
+.shopping .bg2-1{
+    background-image: url(../images/shopping/cont2-1a.jpg);
+}
+.shopping .bg2-2{
+    background-image: url(../images/shopping/cont2-2a.jpg);
+}
+.shopping .bg2-3{
+    background-image: url(../images/shopping/cont2-3a.jpg);
 }
