@@ -422,10 +422,11 @@ $(() => { ///////////// jQB ////////////////////////////
                 // 5. 주사기 돌리기
                 // 주의: transform은 animate에서 사용불가!
                 // transform은 transition으로 구현
-                $(".inj").animate({
+                $(".inj").css({
                     transform:"rotate(-150deg)",
+                    transition:".5s ease-out 1s",
                     zIndex:"9999"
-                },1000)
+                })
 
             }); /////// animate /////////
 
