@@ -426,7 +426,30 @@ $(() => { ///////////// jQB ////////////////////////////
                     transform:"rotate(-150deg)",
                     transition:".5s ease-out 1s",
                     zIndex:"9999"
-                })
+                }); ////// css ///////
+
+                // 6. 주사놓은 후(1.5초) 다시 미니언즈2(후유증)
+                setTimeout(() =>{
+                    // 6-1. 미니언즈 흑백모드 풀기
+                    mi.css({filter:"grayscale(0%)"})
+                    // 6-2. 새로운 미니언즈 이미지 변경
+                    .find("img").attr("src","images/m2.png");
+
+                    // 6-3. 주사기 제거하기
+                    $(".inj").remove();
+                    // remove() 메서드는 태그를 지운다!
+
+                    // 7. 메시지 보이기
+                    msg.text("치료완료!").fadeIn(200)
+                    .delay(1000).fadeIn(200,()=>{
+                        msg.html("이제, 조금만 더<br>가면 탈출이닷!");
+                    }); //////// fadeIn ////////
+
+
+
+                },1500); //// setTimeout ////
+
+
 
             }); /////// animate /////////
 
