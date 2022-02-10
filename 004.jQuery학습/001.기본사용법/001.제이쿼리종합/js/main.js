@@ -573,8 +573,13 @@ $(() => { ///////////// jQB ////////////////////////////
                           .delay(1000) // 9. 1초 기다림
                           .animate({ // 10. 오른쪽 끝으로
                               left: "70%"
-                          },3000,"easeInOutQuart")
-                    }) //// fadeIn //////
+                          },3000,"easeInOutQuart",
+                          function(){ // 끝으로 이동후
+                            // 11. 헬기조종사 좀비이미지
+                            $(this).attr("src","images/heli3.png");
+                          }) //// animate //////
+                          
+                    }) /////// fadeIn //////////
                 
             }); ///////// animate //////////
             
