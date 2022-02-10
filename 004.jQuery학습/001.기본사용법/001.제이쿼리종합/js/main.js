@@ -397,8 +397,40 @@ $(() => { ///////////// jQB ////////////////////////////
             }); //////// animate //////////
 
         }) /// 3-5."무서우니 윗층으로!" 버튼 클릭 끝 /////
+        /// 3-6."치료주사방으로!" 버튼 클릭 시작 /////
+        .next().click(function () {
+            // console.log($(this).text(), "버튼");
 
-        
+            // 1. 자기자신 버튼 없애기
+            $(this).fadeOut(200);
+
+            // 2. 메시지 사라지기
+            msg.slideUp(200);
+
+            // 3. 이동위치: 2번방
+            let tg = bd.eq(2);
+            let tgtop = tg.offset().top;
+            let tgleft = tg.offset().left + win5;
+
+            // 4. 위치이동
+            mi.animate({
+                top: tgtop + "px",
+                left: tgleft + "px"
+            }, 1500, "easeOutElastic",
+            ()=>{ // 콜백함수
+
+                // 5. 주사기 돌리기
+                // 주의: transform은 animate에서 사용불가!
+                // transform은 transition으로 구현
+                $(".inj").animate({
+                    transform:"rotate(-150deg)",
+                    zIndex:"9999"
+                },1000)
+
+            }); /////// animate /////////
+
+        }) /// 3-6."치료주사방으로!" 버튼 클릭 끝 /////
+
 
 
 
