@@ -549,8 +549,12 @@ $(() => { ///////////// jQB ////////////////////////////
                 // -> 1번방에 숨겨진 좀비들 
                 // -> bd.eq(1).find(".mz")
                 bd.eq(1).find(".mz")
-                    .fadeIn(200,()=>{
-                        
+                    .fadeIn(200,function(){
+                          // 6-1. 좀비들 움직이기
+                          $(this)
+                          .animate({
+                              right: tg.width()*1.3+"px"
+                          },5000,"easeInOutQuint")
                     }) //// fadeIn //////
                 
             }); ///////// animate //////////
