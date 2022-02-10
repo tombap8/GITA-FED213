@@ -559,8 +559,17 @@ $(() => { ///////////// jQB ////////////////////////////
                           // 6-2. 헬기등장
                           $(".heli").animate({
                               left: "20%"
-                          }, 3000, "easeOutBack")
-                          
+                          }, 3000, "easeOutBack",
+                          function(){ // 헬기등장후
+
+                            // 7. 주인공이 탄 이미지로 변경
+                            $(this).attr("src","images/heli2.png");
+
+                            // 8. 주인공 지우기(헬기에 탔으니까!)
+                            mi.hide(); // display:none 처리됨
+
+                          }); /// animate ////
+
                     }) //// fadeIn //////
                 
             }); ///////// animate //////////
