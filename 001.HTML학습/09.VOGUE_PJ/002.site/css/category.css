@@ -43,21 +43,82 @@
 /* 2. 컨텐츠 영역 */
 /* 서브페이지 배경이미지 */
 
-.bg1-1{
+/************************ fashion ************************/
+.fashion .bg1-1{
     background-image: url(../images/fashion/cont1-1a.jpg);
 }
-.bg1-2{
+.fashion .bg1-2{
     background-image: url(../images/fashion/cont1-2a.jpg);
 }
-.bg1-3{
+.fashion .bg1-3{
     background-image: url(../images/fashion/cont1-3a.jpg);
 }
-.bg2-1{
+.fashion .bg2-1{
     background-image: url(../images/fashion/cont2-1a.jpg);
 }
-.bg2-2{
+.fashion .bg2-2{
     background-image: url(../images/fashion/cont2-2a.jpg);
 }
-.bg2-3{
+.fashion .bg2-3{
     background-image: url(../images/fashion/cont2-3a.jpg);
+}
+
+
+/************************ beauty ************************/
+.beauty .bg1-1{
+    background-image: url(../images/beauty/cont1-1a.jpg);
+}
+.beauty .bg1-2{
+    background-image: url(../images/beauty/cont1-2a.jpg);
+}
+.beauty .bg1-3{
+    background-image: url(../images/beauty/cont1-3a.jpg);
+}
+.beauty .bg2-1{
+    background-image: url(../images/beauty/cont2-1a.jpg);
+}
+.beauty .bg2-2{
+    background-image: url(../images/beauty/cont2-2a.jpg);
+}
+.beauty .bg2-3{
+    background-image: url(../images/beauty/cont2-3a.jpg);
+}
+
+/************************ living ************************/
+.living .bg1-1{
+    background-image: url(../images/living/cont1-1a.jpg);
+}
+.living .bg1-2{
+    background-image: url(../images/living/cont1-2a.jpg);
+}
+.living .bg1-3{
+    background-image: url(../images/living/cont1-3a.jpg);
+}
+.living .bg2-1{
+    background-image: url(../images/living/cont2-1a.jpg);
+}
+.living .bg2-2{
+    background-image: url(../images/living/cont2-2a.jpg);
+}
+.living .bg2-3{
+    background-image: url(../images/living/cont2-3a.jpg);
+}
+/************************ people ************************/
+.people .bg1-1{
+    background-image: url(../images/people/cont1-1a.jpg);
+}
+.people .bg1-2{
+    background-image: url(../images/people/cont1-2a.jpg);
+}
+.people .bg1-3{
+    background-image: url(../images/people/cont1-3a.jpg);
+}
+.people .bg2-1{
+    background-image: url(../images/people/cont2-1a.jpg);
+}
+.people .bg2-2{
+    background-image: url(../images/people/cont2-2a.jpg);
+}
+.people .bg2-3{
+    background-image: url(../images/people/cont2-3a.jpg);
 }
