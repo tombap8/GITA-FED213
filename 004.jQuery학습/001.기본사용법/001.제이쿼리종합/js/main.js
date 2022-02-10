@@ -582,7 +582,46 @@ $(() => { ///////////// jQB ////////////////////////////
                           // 12. 아주 천천히 화면 바깥으로 나감
                           .animate({
                               left: "100%"
-                          },10000, "easeInOutSine")
+                          },10000, "easeInOutSine",()=>{
+
+                            // 13. 미리 지정한 class를
+                            // 타이틀에 줘서 간판떨어짐
+                            // 대상: .tit
+                            let tit = $(".tit");
+
+                            // 1단계: 간판 중간떨어짐(.on)
+                            tit.addClass("on");
+
+                            // 2단계: 3초후 간판떨어짐(.on2)
+                            setTimeout(() => {
+                                // 간판 클래스 추가
+                                tit.addClass("on2");
+
+                                // 건물무너지기 클래스 넣기
+                                // 대상: .building
+                                // bd변수를 이용해보자!
+                                // -> bd변수: .building li
+                                // 한단계위인 부모로 올라감
+                                // parent() -> 부모로 올라감
+                                bd.parent().addClass("on");
+
+                            }, 3000); /// setTimeout ////
+
+                            /* 
+                                [ 제이쿼리 클래스조작 ]
+                                1. addClass(클래스명)
+                                -> 클래스넣기
+                                2. removeClass(클래스명)
+                                -> 클래스지우기
+                                (클래스명을 안쓰면 모두지움)
+                                3. toggleClass(클래스명)
+                                -> 클래스넣기/지우기 전환
+
+                                ->>> JS의 classList객체의
+                                add,remove,toggle과 비교
+                            */
+
+                          }); /////// animate /////////
 
                     }) /////// fadeIn //////////
                 
