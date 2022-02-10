@@ -15,7 +15,7 @@ const chgMob = () => {
     } ////// if ///////////
     // 500px 초과시
     else mob=0;
-    console.log("모바일:",mob);
+    // console.log("모바일:",mob);
 }; ///////// chgMob함수 ///////
 
 // 모바일 체크 함수 최초호출
