@@ -37,7 +37,21 @@
     </style>
     <script>
         // Get방식으로 넘어온 값 받기!
-        
+        let pm = location.href;
+        // location.href를 이퀄 오른쪽에 쓰면 url값을 읽어옴!
+
+        // url로 받은 문자값 가공하기!
+        // 물음표(?)로 잘라서 배열로 저장 
+        // -> split(자를문자열)
+        // 잘라진 문자열 중 두번째 키=값 은 1번
+        // 이퀄기호로 한번더 자른후 뒤에값은 1번
+        pm = pm.split("?")[1].split("=")[1];
+        // 한글등 2byte문자열은 깨지기 때문에
+        // 보낼때 escape() 메서드로 보내고
+        // 받을때 unescape() 메서드로 풀어주면된다!
+        pm = unescape(pm);
+
+        console.log("URL값->",pm);
         
         /// 데이터 셋업하기! //////
         let sdata = {
