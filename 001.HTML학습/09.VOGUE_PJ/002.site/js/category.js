@@ -53,7 +53,26 @@ $(()=>{
 
         // LNB 메뉴 박스에 html넣기!
         lnb.html(`<ul>${temp}</ul>`);
+
     } /////// if /////////////////
+
+    // 4. 컨텐츠 타이틀 넣기
+    // 대상: .cbx h2
+    let cbxtit = $(".cbx h2");
+    // 배열데이터 개수만큼 forEach() 메서드 사용!
+    // forEach((값,순번)=>{})
+    // data["타이틀"].forEach((tit,idx)=>{
+    //     // console.log(idx);
+    //     cbxtit.eq(idx).html(tit);
+    // }); /////// forEach //////////////
+
+    // 제이쿼리 each() 메서드사용하면?
+    // each((idx,ele)=>{})
+    cbxtit.each((idx,ele)=>{
+        $(ele).html(data["타이틀"][idx]);
+    }); //////////// each /////////////
+
+
 
 
 
