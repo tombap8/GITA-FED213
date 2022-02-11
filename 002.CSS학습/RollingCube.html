@@ -24,7 +24,6 @@
             left: calc(50% - 150px);
             width: 300px;
             height: 300px;
-            outline: 2px solid #000;
 
             /* 
                 [ 입체로 설정하기! ]
@@ -45,51 +44,110 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            opacity: 0.7;
+            opacity: 0.8;
+            outline: 1px solid #000;
         }
         /* 1. 앞면 */
         .cube>span:first-child{
-            background-color: red;
+            /* background-color: red; */
+            background: url(images/newyorkCity.jpg) no-repeat right/cover;
             /* 화면방향(z축)으로 이동하기 */
             transform: translateZ(150px);
         }
         /* 2. 오른쪽면 */
         .cube>span:nth-child(2){
-            background-color: green;
+            /* background-color: green; */
+            background: url(images/seoulCity.jpg) no-repeat center/cover;
             transform: rotateY(90deg) translateZ(150px);
             /* y축 회전먼저하고 z축밀기 해야함(순서중요!) */
         }
         /* 3. 뒷면 */
         .cube>span:nth-child(3){
-            background-color: orange;
+            /* background-color: orange; */
+            background: url(images/parisCity.jpg) no-repeat center/cover;
             transform: rotateY(180deg) translateZ(150px);
             /* y축 회전먼저하고 z축밀기 해야함(순서중요!) */
         }
         /* 4. 왼쪽면 */
         .cube>span:nth-child(4){
-            background-color: yellow;
+            /* background-color: yellow; */
+            background: url(images/cityMain.jpg) no-repeat center/cover;
             transform: rotateY(-90deg) translateZ(150px);
             /* y축 회전먼저하고 z축밀기 해야함(순서중요!) */
         }
         /* 5. 윗면 */
         .cube>span:nth-child(5){
-            background-color: blue;
+            /* background-color: blue; */
+            background: url(images/citys.jpg) no-repeat center/cover;
             transform: rotateX(90deg) translateZ(150px);
             /* x축 회전먼저하고 z축밀기 해야함(순서중요!) */
         }
         /* 6. 아랫면 */
         .cube>span:nth-child(6){
-            background-color: purple;
+            /* background-color: purple; */
+            background: url(images/img2.jpg) no-repeat center/cover;
             transform: rotateX(-90deg) translateZ(150px);
             /* x축 회전먼저하고 z축밀기 해야함(순서중요!) */
         }
 
+        /* 버튼박스 */
+        .btns{
+            text-align: center;
+            padding: 50px;
+        }
+        .btns button{
+            font-size: 40px;
+            border-radius: 10px;
+        }
+
+        /* 큐브회전 애니메이션 클래스 */
+        .cube-ani{
+            /* 애니메이션: 이시이지반방마 */
+            animation: rolling 5s linear infinite;
+            /* 처음에 애니메이션 멈춤 */
+            animation-play-state: paused;
+        }
+        /* 클래스 on추가시 애니메이션 작동! */
+        .cube-ani.on{
+            animation-play-state: running;
+        }
+        
+        /* 큐브회전 키프레임 */
+        @keyframes rolling {
+            to{
+                transform: rotateX(370deg) rotateY(-330deg);
+                /* 
+                    x축은 10도 나가있고 같은방향(+)으로
+                    한바퀴 회전하려면 360도+10=370도
+                    y축은 30도 나가있고 반대방향(-)으로
+                    한바퀴 회전하려면 -360도+30도=-330도
+                */
+            }
+        } /* 키프레임 */
+
     </style>
+    <!-- 제이쿼리 CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(()=>{ //// jQB ///////////////////
+
+            // 버튼클릭시 큐브돌리기/멈추기
+
+
+        }); //////////// jQB ////////////////
+    </script>
 </head>
 <body>
 
+    <!-- 버튼박스 -->
+    <div class="btns">
+        <button>돌아!</button>
+        <button>멈춰!</button>
+    </div>
+
+
     <!-- 큐브 -->
-    <div class="cube">
+    <div class="cube cube-ani">
         <span></span>
         <span></span>
         <span></span>
