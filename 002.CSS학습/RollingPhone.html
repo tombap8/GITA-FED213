@@ -51,9 +51,14 @@
         .phone>span:first-child{
             background-image: url(images/ip01.png);
             transform: translateZ(10px);
+            display: none;
         }
         /* 2. 오른쪽면 */
         .phone>span:nth-child(2){
+            background-image: url(images/ip03.png);
+            width: 20px;
+            right: -10px;
+            transform: rotateY(90deg);
         }
         /* 3. 뒷면 */
         .phone>span:nth-child(3){
@@ -61,15 +66,25 @@
         }
         /* 4. 왼쪽면 */
         .phone>span:nth-child(4){
+            background-image: url(images/ip04.png);
+            width: 20px;
+            left: -10px;
+            transform: rotateY(-90deg);
             
         }
         /* 5. 윗면 */
-        .phone>span:nth-child(5){
-            
+        .phone>span:nth-child(5){            
+            background-image: url(images/ip06.png);
+            height: 20px;
+            top: -10px;
+            transform: rotateX(90deg);
         }
         /* 6. 아랫면 */
-        .phone>span:nth-child(6){
-            
+        .phone>span:nth-child(6){      
+            background-image: url(images/ip05.png);
+            height: 20px;
+            bottom: -10px;
+            transform: rotateX(90deg);
         }
 
     </style>
