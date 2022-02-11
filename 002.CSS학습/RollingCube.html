@@ -111,7 +111,7 @@
         .cube-ani.on{
             animation-play-state: running;
         }
-        
+
         /* 큐브회전 키프레임 */
         @keyframes rolling {
             to{
@@ -131,8 +131,26 @@
     <script>
         $(()=>{ //// jQB ///////////////////
 
-            // 버튼클릭시 큐브돌리기/멈추기
+            // 변경대상: 큐브 .cube
+            let cube = $(".cube");
 
+            // 버튼클릭시 큐브돌리기/멈추기
+            $(".btns button").click(function(){
+                // 버튼텍스트
+                let txt = $(this).text();
+                console.log(txt);
+
+                // 분기하기 // 
+                switch(txt){
+                    case "돌아!": 
+                        cube.addClass("on");
+                        break;
+                    case "멈춰!":
+                        cube.removeClass("on");
+                        break;
+                } //// switch case ////
+
+            }); /////// click ////////////
 
         }); //////////// jQB ////////////////
     </script>
