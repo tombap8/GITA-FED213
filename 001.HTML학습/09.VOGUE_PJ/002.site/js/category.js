@@ -28,7 +28,15 @@ $(()=>{
     // pm - 카테고리명
 
     // 2. 서브 타이틀 넣기 : .stit
-    $(".stit").text(data["제목"]);
+    let stit = $(".stit");
+    stit.text(data["제목"]);
+    // 만약 pm값이 "runway"이면
+    //  -> 배경이미지넣고 글자색 흰색
+    stit.css({
+        background:
+        "url(images/bg_02.jpg) no-repeat center/cover",
+        color: "#fff"
+    }); //// css /////
 
     // 3. 서브 메뉴 넣기 : .lnb
     // 서브가 있는 경우에만 ul>li>a 구조로 만든다!
@@ -55,6 +63,9 @@ $(()=>{
         lnb.html(`<ul>${temp}</ul>`);
 
     } /////// if /////////////////
+    else{ /// "없음" 이면
+        lnb.remove(); // nav.lnb를 없앤다!
+    } //////// else ///////////////
 
     // 4. 컨텐츠 타이틀 넣기
     // 대상: .cbx h2
