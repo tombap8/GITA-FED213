@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회전하는 아이폰</title>
     <style>
+        /* 웹폰트 */
+        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+        /* font-family: 'Anton', sans-serif; */
+
+
         html,
         body {
             margin: 0;
@@ -48,6 +54,7 @@
             position: absolute;
             width: 200px;
             height: 400px;
+            background-color: #fff;
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }
@@ -119,10 +126,66 @@
         }
 
         /* 키프레임 */
+
+        /* 흘러가는 글자박스 */
+        .fbx{
+            position: absolute;
+            top: 10%;
+            width: 100vw;
+            overflow: hidden;
+            /* 넘치는 자식요소 숨기기 */
+        }
+        /* 텍스트박스(움직일박스) */
+        .tbx{
+            position: relative;
+            left: 0;
+            /* left값이 -100%까지 애니메이션됨! */
+            width: 200vw;
+            display: flex;
+            /* 직계자식 ul이 옆으로 흐름 */
+        }
+
+        .tbx ul{
+            display: flex;
+            /* 직계자식li가 옆으로 흐름 */
+            flex: 1;
+            /* 등분할 */
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        /* 각 리스트 */
+        .tbx li{
+            flex: 1;
+            /* 등분할 */
+            text-align: center;
+        }
+
+
+
     </style>
 </head>
 
 <body>
+
+    <!-- 흘러가는 글자박스 -->
+    <div class="fbx">
+        <div class="tbx">
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+        </div>
+    </div>
+
     <!-- 폰박스 -->
     <div class="phone phone-ani">
         <span></span>
