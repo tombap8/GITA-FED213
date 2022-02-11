@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG - Circle</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+        /* font-family: 'Fredoka One', cursive; */
+
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            background-image: linear-gradient(to bottom, rgb(223, 219, 255),rgb(255, 204, 247), skyblue);
+        }
+        /* 4등분박스 */
+        .cbx{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;/* 플렉스박스 */
+            flex-wrap: wrap;/* 자동줄바꿈 */
+            height: 100%;
+        }
+        .cbx li{
+            position: relative;
+            /* 부모자격 - .btns */
+            width: 50%;
+            height: 50%;
+            /* flex자식일때 높이값을 안주면 자동채움
+            (내용에 따라 유동적인 크기) */
+            /* outline: 2px dotted blue; */
+        }
+        /* 원을 담는 박스 */
+        .btns{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40%;
+            min-width: 150px;
+            background: url(images/man.jpg) no-repeat top/cover;
+            border-radius: 50%;
+            border: 2px dashed red;
+        }
+        /* 비율밀기 */
+        .btns::before{
+            content: '';
+            display: block;
+            padding-top: 100%;
+        }
+        /* svg셋팅 */
+        
+
+        /* circle 설정 */
+        
+
+    </style>
+</head>
+<body>
+    <!-- 4등분박스 -->
+    <ul class="cbx">
+        <li>
+            <div class="btns">
+                
+            </div>
+        </li>
+        <li>
+            <div class="btns btns2">
+                
+            </div>
+        </li>
+        <li>
+            <div class="btns btns3">
+                
+            </div>
+        </li>
+        <li>
+            <div class="btns btns4">
+                
+            </div>
+        </li>
+    </ul>
+
+    <!-- svg text -->
+    <div class="svgtxt">
+        
+    </div>
+    
+    <!-- 
+        [ circle 요소 : 원 ]
+        - cx : 중심원 x좌표 (center x) 단위없는 숫자는 px
+        - cy : 중심원 y좌표 (center y) 단위없는 숫자는 px
+        - r : 반지름(radius)
+        - transform : svg 요소를 변형하기 위한 속성
+            rotate(각도,x위치,y위치)
+            -> 회전속성 각도를 단위없이 사용하며 마이너스는 반시계방향
+            (이런속성을 쓰는 이유는 css의 transform속성이 안먹힌다)
+            -> css transform속성은 svg요소에 적용해야 적용된다!
+
+        [ ellipse 요소 : 타원 ]
+        - cx : 중심원 x좌표 (center x) 단위없는 숫자는 px
+        - cy : 중심원 y좌표 (center y) 단위없는 숫자는 px
+        - rx : x축 반지름(radius)
+        - ry : y축 반지름(radius)
+
+        [ text 요소 : 글자 ]
+        - tspan요소: 글자가 여러줄일때 사용
+        - font-size 속성: 글자크기속성
+        - x 속성: x축위치
+        - y 속성: y축위치
+        - dy 속성: 윗줄 아래에서 부터 y축위치
+
+
+        [defs요소] : 요소에 효과를 정의함
+
+        [linearGradient요소] : 선형그라데이션
+        - id속성 : 적용할 요소에 이 id명을 연결함
+            예) stroke:url(#아이디명)
+        - x1,y1 하나의점에서 x2,y2 하나의 점
+            방향으로 그라데이션이 적용된다!
+
+        [stop요소] : 색상옵션 설정요소
+        - offset속성: 색상변경 지점
+        - stop-color속성: 실제색적용
+
+     -->
+
+
+</body>
+</html>
