@@ -41,11 +41,12 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 40%;
+            width: 200px;
+            /* width: 40%; */
             min-width: 150px;
             background: url(images/man.jpg) no-repeat top/cover;
             border-radius: 50%;
-            border: 2px dashed red;
+            /* border: 2px dashed red; */
         }
         /* 비율밀기 */
         .btns::before{
@@ -54,9 +55,57 @@
             padding-top: 100%;
         }
         /* svg셋팅 */
+        .btns svg{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+            /* circle에서는 트랜스폼 안먹히지만 svg엔 적용됨 */
+        }
         
 
         /* circle 설정 */
+        .c1{
+            fill: none;
+            /* 채우기-기본색은 검정
+            투명(transparent),none(없음) */
+            stroke: red;
+            /* 선색(안쓰면 안나옴) */
+            stroke-width: 10;
+            /* 선두께 안쓰면 1px, 단위없으면 기본px단위임! */
+            stroke-linecap: round;
+            /* 선끝 둥글게 */
+
+            stroke-dasharray: 300%;
+            /* 선공백셋팅 속성
+            값: 선 공백 선 공백 ...
+            
+            [ 선공백셋팅을 이용해서 svg선그리기 애니메이션하기 ]
+            1. 선 공백 셋팅에서 선이 모두 차지하도록 값을 찾는다!
+            -> 쉽게 찾는 방법: 50%줘본다!
+            -> 몇 조각남? 6조각
+            -> 모두 선으로 채우려면 6배함
+            50% * 6 = 300%
+            -> 왜 선이 모두채우게 했지?
+            -> 이유는 다음에 있는 공백을
+            밀어서 선을 숨기기 위해서!
+            -> 어떻게 밀지?
+            ->>> stroke-dashoffset 속성
+            - 이속성은 선공백의시작점을
+            셋팅할 수 있는데 선으로 채워진
+            선공백 값을 넣으면 공백부터 시작한다! -> 이 값을 0으로 만들면서 애니메이션 한다!!!
+             */
+             stroke-dashoffset: 300%;
+             /* 트랜지션: 속시이지 */
+             transition: stroke-dashoffset .7s ease-in-out;
+
+        }
+        /* .c1에 마우스 오버시 
+        선부터 시작하는 위치로 변경함! */
+        .btns:hover .c1{
+            stroke-dashoffset: 0;
+        }
         
 
     </style>
@@ -66,7 +115,9 @@
     <ul class="cbx">
         <li>
             <div class="btns">
-                
+                <svg>
+                    <circle class="c1" cx="100" cy="100" r="95"></circle>
+                </svg>
             </div>
         </li>
         <li>
@@ -97,6 +148,7 @@
         -> 이미지를 확대해도 깨지지 않는 벡터방식의 그래픽요소
         -> 이미지가 소스가 코드로 되어있음
         -> 벡터 그래픽 : 일러스트레이터에서 만드는 이미지
+        w3) https://www.w3schools.com/graphics/svg_intro.asp
 
         비교) 포토샵에서 픽셀로 특정 크기로 제작되는 이미지 -> 비트맵 이미지
         ->>>>>>>>> canvas 요소 : 비트맵이미지 그래픽요소
@@ -105,6 +157,8 @@
         w3) https://www.w3schools.com/graphics/canvas_intro.asp
 
 
+        [ svg 요소 표현법 ]
+        - svg요소 내부에 자식요소로 각 도형요소를 넣고 코딩함
 
         [ circle 요소 : 원 ]
         - cx : 중심원 x좌표 (center x) 단위없는 숫자는 px
