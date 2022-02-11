@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회전하는 아이폰</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            /* 높이값 기준 보이는 화면채우기! */
+        }
+        body{
+            background-image: 
+            linear-gradient(to bottom, #fff 20%, #c1e1ff 40%,#fff);
+            overflow: hidden;
+        }
+
+        /* 큐브 */
+        .phone{
+            position: absolute;
+            top: calc(50% - 200px);
+            left: calc(50% - 100px);
+            width: 200px;
+            height: 400px;
+            outline: 2px solid #000;
+            /* 
+                [ 입체로 설정하기! ]
+                - 입체로 설정할 요소의 부모박스에 아래와 같이 설정함
+
+                transform-style: preserve-3d;
+
+                - 기본값은 flat, 즉 2D
+                - preserve-3d 는 3D 전환설정!
+            */
+            transform-style: preserve-3d;
+
+            /* 입체를 잘보이게 하기 위해 x축, y축으로 약간회전 */
+            transform: rotateX(10deg) rotateY(30deg);
+        }
+        /* 큐브 각면 공통 */
+        .phone>span{
+            position: absolute;
+            width: 200px;
+            height: 400px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        /* 1. 앞면 */
+        .phone>span:first-child{
+            background-image: url(images/ip01.png);
+            transform: translateZ(10px);
+        }
+        /* 2. 오른쪽면 */
+        .phone>span:nth-child(2){
+        }
+        /* 3. 뒷면 */
+        .phone>span:nth-child(3){
+            
+        }
+        /* 4. 왼쪽면 */
+        .phone>span:nth-child(4){
+            
+        }
+        /* 5. 윗면 */
+        .phone>span:nth-child(5){
+            
+        }
+        /* 6. 아랫면 */
+        .phone>span:nth-child(6){
+            
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 폰박스 -->
+    <div class="phone">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+</body>
+</html>
