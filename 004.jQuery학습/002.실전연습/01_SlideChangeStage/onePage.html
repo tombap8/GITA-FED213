@@ -175,6 +175,19 @@
                 // top값은 offset().top
                 console.log("위치:",pos);
 
+                // 왜 top위치값이 필요한가?
+                // -> 스크롤위치값과 요소의 top값과 같으면
+                // 그 위치로 이동할 수 있으므로 이 값이 필요하다!
+                // 요소의 top값 === 스크롤위치값(scrollTop)
+
+                // 3. 스크롤 위치 이동 애니메이션
+                // 대상: html,body -> 최상위부모 2개 그룹선택함!
+                // 스크롤이동 속성: scrollTop -> 세로스크롤 위치속성
+                // 참고) scrollLeft는 가로스크롤 위치속성
+                $("html,body").animate({
+                    scrollTop:pos+"px"
+                }, 700)
+
 
             }); ////////// click ////////////
 
