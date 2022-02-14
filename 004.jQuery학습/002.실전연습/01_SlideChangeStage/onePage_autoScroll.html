@@ -201,17 +201,29 @@
         .indic a {
             display: block;
             width: 100%;
-            height: 2px;
+            height: 10px;
             margin-top: 4px;
+            transition: width .4s;
+        }
+        /* a의 가상요소로 얇은 디자인만들기 */
+        .indic a::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
             background-color: #ccc;
             box-shadow: 1px 1px 1px #777;
-            transition: width .4s;
         }
 
         /* 마우스 오버시 + 클래스 "on" */
+        /* 가로크기는 a요소 */
         .indic li:hover a,
         .indic li.on a {
             width: 150%;
+        }
+        /* 배경색은 a의 가상요소 */
+        .indic li:hover a::after,
+        .indic li.on a::after {
             background-color: #fff;
         }
 
@@ -235,8 +247,8 @@
 
             // GNB 클릭시 스크롤 이동 애니메이션 //
             // -> 여기서는 css의 부드러운스크롤 사용안함!
-            // 대상: .gnb a
-            $(".gnb a").click(function (e) { // e - 이벤트전달변수
+            // 대상: .gnb a + .indic a (GNB와 인디케이터)
+            $(".gnb a,.indic a").click(function (e) { // e - 이벤트전달변수
 
                 // 0. a요소 기본이동막기
                 e.preventDefault();
