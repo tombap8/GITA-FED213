@@ -26,6 +26,7 @@
             --ht1: 200px;
             --ht2: 400px;
             --ht3: 300px;
+            --ht4: 400px;
             --bc1: lightskyblue;
             --bc2: lightgreen;
             --bc3: pink;
@@ -46,7 +47,7 @@
             grid-template-columns: repeat(12, 1fr);
             /* 세로방향 높이값 셋팅 */
             grid-template-rows: 
-                var(--ht1) var(--ht2) var(--ht3);
+                var(--ht1) var(--ht2) var(--ht3) var(--ht4);
             /* 상하갭 */
             grid-row-gap: 10px;
             /* 좌우갭 */
@@ -98,6 +99,7 @@
                 차지하던 설정이 변경된다!
                 세로방향의 영역을 설정함!
             */
+            line-height: 610px;
         }
         /* 4.배너 */
         .ban{
@@ -108,20 +110,26 @@
         /* 5.배너 사이드 */
         .bnside{
             grid-column: 4 / 13;
-            /* 세번째줄  내려가 있는 곳에서
+            /* 세번째줄 내려가 있는 곳에서
             가로방향 영역 조정 */
+            line-height: var(--ht3);
         }
         /* 6.하단 좌측 */
         .bleft{
             grid-column: 1 / 4;
+            grid-row: 3 / 4;
+            /* 세로방향 3번째 줄로 위치이동됨! */
         }
         /* 7.하단정보 */
         .binfo{
-            grid-column: 4 / 10;
+            grid-column: 1 / 10;
+            /* 마지막줄 가로방향 조정 */
+            line-height: var(--ht4);
         }
         /* 8.하단 우측 */
         .bright{
             grid-column: 10 / 13;
+            line-height: var(--ht4);
         }
         /* 
             [ 그리드 위치 영역 속성 ]
