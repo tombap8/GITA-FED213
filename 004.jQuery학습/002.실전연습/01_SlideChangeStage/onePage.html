@@ -116,8 +116,9 @@
         .gnb li{
             margin: 0 7px;
         }
-        /* 메뉴에 마우스 오버시 */
-        .gnb a:hover{
+        /* 메뉴에 마우스 오버시 + 클래스on */
+        .gnb a:hover,
+        .gnb li.on a {
             display: inline-block;/* 트랜스폼적용위해 */
             color: lime;
             text-decoration: overline;/* 윗줄 */
@@ -186,7 +187,14 @@
                 // 참고) scrollLeft는 가로스크롤 위치속성
                 $("html,body").animate({
                     scrollTop:pos+"px"
-                }, 700)
+                }, 700,"easeInOutQuint");
+
+                // 4. 클릭된 a요소의 부모 li에 클래스on넣기
+                // -> CSS셋팅에 현재위치 표시자
+                $(this).parent() // 나자신(a).부모(li)
+                .addClass("on") // .클래스넣기("on")
+                .siblings() // 현재li이외의 다른 형제 li들선택
+                .removeClass("on"); // .클래스제거("on")
 
 
             }); ////////// click ////////////
