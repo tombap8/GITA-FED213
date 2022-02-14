@@ -149,11 +149,37 @@
         }
 
     </style>
-    <!-- 부드러운 스크롤 플러그인:제이쿼리아님! -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script>
-       
+       $(()=>{ ///////// jQB ////////////////////////
+
+            // GNB 클릭시 스크롤 이동 애니메이션 //
+            // -> 여기서는 css의 부드러운스크롤 사용안함!
+            // 대상: .gnb a
+            $(".gnb a").click(function(e){ // e - 이벤트전달변수
+
+                // 0. a요소 기본이동막기
+                e.preventDefault();
+                // preventDefault() 기본기능막는 메서드
+                // e-> 이벤트 전달변수 하위 메서드로 사용함
+
+                // 1. 클릭된 a요소의 href값 읽어오기
+                let link = $(this).attr("href");
+                console.log("링크:",link);
+
+                // 2. 해당 아이디요소의 위치 알아내기
+                let pos = $(link).offset().top;
+                // link변수에 "#아이명"값으로 실제 요소의 top값
+                // 알아내는 메서드는? offset()메서드임!
+                // top값은 offset().top
+                console.log("위치:",pos);
+
+
+            }); ////////// click ////////////
+
+       }); ///////////// jQB ////////////////////////
+       //////////////////////////////////////////////
     </script>
     </head>
 <body>
