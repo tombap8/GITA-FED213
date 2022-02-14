@@ -115,9 +115,12 @@ $(() => { ////////// jQB ///////////////////////////
             // 이동할 위치 -> 페이지높이값*페이지번호
             let pos = $(window).height() * pno;
 
-            $("html,body").animate({
+            $("html,body").stop().animate({
                 scrollTop: pos + "px"
             }, dur_sc, easing_sc);
+
+            // 애니메이션이 큐(Queue)에 쌓이는 것을 지우는것이
+            // stop()메서드임! -> 맨 마지막 것만 남음!
 
 
         }); //////////// mousewheel /////////////////////
