@@ -129,6 +129,42 @@
             
         */
 
+
+        /* 800px이하 미디어쿼리 */
+        @media screen and (max-width:800px) {
+            :root{
+                --ht1: 100px;
+                --ht2: 300px;
+                --ht3: 200px;
+            }
+            .side, .bnside, .bleft{
+                display: none;
+            }
+            .logo{
+                grid-column: 1 / 5;
+            }
+            .gnb{
+                grid-column: 5 / 13;
+            }
+            .ban{
+                grid-column: 1 / 13;
+            }
+            .binfo{
+                grid-column: 1 / 9;
+            }
+            .bright{
+                grid-column: 9 / 13;
+            }
+        }/* 800px이하 */
+
+        /*  600px이하 */
+        @media screen and (max-width:600px) {
+            .grid>div{
+                grid-column: 1 / 13;
+                /* 모두 한줄에 하나씩! */
+            }
+        } /* 600px이하 */
+
     </style>
 </head>
 <body>
