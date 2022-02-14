@@ -229,41 +229,31 @@
             <!-- 1. 카테고리 페이지 탑영역 -->
             <header class="ctop">
                 <!-- 1-1.서브타이틀 -->
-                <h2 class="stit"></h2>
-                <!-- 1-2.서브메뉴
-                    (LNB-Local Navigation Bar) -->
-                <nav class="lnb"></nav>
+                <h2 class="stit">LogIn</h2>
             </header>
             
-            <!-- 2. 카테고리 페이지 컨텐츠박스 -->
-            <!-- 컨텐츠 유형3 -->
-            <div class="pt3 rbx">
-                <div class="rbxIn fbx">
-                    <div class="cbx bgi bg1-1">
-                        <h2></h2>
-                    </div>
-                    <div class="cbx bgi bg1-2">
-                        <h2></h2>
-                    </div>
-                    <div class="cbx bgi bg1-3">
-                        <h2></h2>
-                    </div>
+            <!-- 2. 로그인 페이지 컨텐츠박스 -->
+            <section class="scont">
+                <div id="login">
+                    <form action="process.php" method="post" class="logF">
+                        <!-- 
+                            action 전송할 페이지
+                            method 전송방식(POST 페이지로 전달)
+                         -->
+                         <!-- 아이디박스 -->
+                         <div class="minput">
+                             <label for="mid">아이디</label>
+                             <input type="text" id="mid" name="mid" maxlength="10" placeholder="아이디를 입력해 주세요">
+                             <!-- name속성-서버에서 읽는 입력폼이름(아이디명과 동일해도 됨!) -->
+                         </div>
+                         <!-- 비밀번호박스 -->
+                         <div class="minput mi2">
+                             <label for="mpw">비밀번호</label>
+                             <input type="password" id="mpw" name="mpw" maxlength="10" placeholder="비밀번호를 입력해 주세요">
+                         </div>
+                    </form>
                 </div>
-            </div>
-            <!-- 컨텐츠 유형3 -->
-            <div class="pt3 rbx">
-                <div class="rbxIn fbx">
-                    <div class="cbx bgi bg2-1">
-                        <h2></h2>
-                    </div>
-                    <div class="cbx bgi bg2-2">
-                        <h2></h2>
-                    </div>
-                    <div class="cbx bgi bg2-3">
-                        <h2></h2>
-                    </div>
-                </div>
-            </div>
+            </section>
         </main>
     </div>
     <!-- 3. 하단영역 -->
