@@ -6,6 +6,11 @@
 @import url(core.css);
 @import url(common.css);
 
+/* 로그인 서브 컨텐츠박스 */
+.scont{
+    padding-bottom: 100px;
+}
+
 /* 1-1. 서브 타이틀 */
 .stit{
     font-family: pist;
@@ -13,4 +18,60 @@
     padding: 40px 0 20px;
     text-align: center;
     font-weight: normal;
+}
+
+/* 로그인박스 */
+#login{
+    position: relative;
+    /* 부모자격 */
+    width: 700px;
+    height: 275px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 2px solid #737373;
+    border-radius:10px;
+    box-sizing: border-box;
+    padding: 60px 15px;
+}
+
+/* 입력창 라벨공통 */
+.minput label{
+    display: inline-block;
+    /* 한줄에 오면서 디자인적용 */
+    width: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #737373;
+    text-align: center;
+    line-height: 36px;
+}
+/* 입력양식 공통 */
+.minput input{
+    width: 320px;
+    height: 36px;
+    border: 1px solid #737373;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 18px;
+    padding-left: 5px;
+    color: #666;
+}
+/* 비밀번호 박스 */
+.mi2{
+    margin-top: 20px;
+}
+/* 크롬브라우저 포커스 아웃라인 제거 */
+input:focus{
+    outline: none;
+    /* 기본 진한 테두리 없앰 */
+}
+/* 버튼영역 */
+.btnbx{
+    position: absolute;
+    top: 60px;
+    right: 40px;
+}
+/* 서브밋버튼 */
+#sbtn{
+    width: 113px;
 }
