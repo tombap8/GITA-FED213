@@ -40,6 +40,7 @@
             -> 각 좌표값은 px,%모두 가능
         */
         .clip-polygon{
+            clip-path:polygon(60% 0%,75% 0%, 90% 70%,70% 90%, 20% 100%,0% 80%);
         }
 
         /* 4. svg클리핑 
@@ -48,14 +49,21 @@
             그 모양만큼만 이미지가 보임
         */
         .clip-svg{
+            clip-path: url(#myClip);
         }
 
         /* 
             [ CSS Masking ] - 아직 웹표준기술아님!
             - 이미지의 일부를 자연스럽게 감추는 기법
             - 검정색부분은 보이는 영역, 투명색은 숨기는 영역
+            - 셋팅법이 배경이미지 셋팅과 유사
+            linear-gradient와 같은 그라데이션
+            CSS함수를 이용하여 셋팅함
         */
         .masking1{
+            -webkit-mask-image: 
+            linear-gradient(to right, black 30%, transparent 80%);
+
         }
 
 
@@ -70,8 +78,8 @@
     <svg>
         <defs>
             <clippath id="myClip">
-                <circle cx="90" cy="100" r="50"></circle>
-                <circle cx="90" cy="200" r="80"></circle>
+                <circle cx="90" cy="100" r="40"></circle>
+                <circle cx="90" cy="200" r="70"></circle>
             </clippath>
         </defs>
     </svg>
