@@ -92,7 +92,7 @@ $(() => {
 
     // // 윈도우에서 마우스 움직일때 커서 따라다니기!
     // $(window).mousemove((e)=>{
-    //     // console.log(e.pageX, e.pageY);
+    //     console.log(e.pageX,e.clientX, e.pageY,e.clientY);
     //     // 커서의 top, left 위치값 변경
     //     cs.css({
     //         top: (e.clientY-40) + "px",
