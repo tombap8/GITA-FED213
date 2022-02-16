@@ -80,8 +80,27 @@ $(() => {
         borderRadius: "50%",
         backgroundColor: "red",
         transition: ".4s ease-out",
-        zIndex: "999"
+        mixBlendMode: "exclusion",
+        /* 겹쳐질때 색상변경모드 */
+        zIndex: "9999"
     }); ////// css /////////
+
+    /* 
+        mix-blend-mode 속성
+        https://www.w3schools.com/csSref/playdemo.asp?filename=playcss_mix-blend-mode&preval=normal
+    */
+
+    // 윈도우에서 마우스 움직일때 커서 따라다니기!
+    $(window).mousemove((e)=>{
+        // console.log(e.pageX, e.pageY);
+        // 커서의 top, left 위치값 변경
+        cs.css({
+            top: (e.pageY-40) + "px",
+            left: (e.pageX-40) + "px"
+        }); ///// css /////////
+
+    }); /////// mousemove ///////////
+
 
 
 
