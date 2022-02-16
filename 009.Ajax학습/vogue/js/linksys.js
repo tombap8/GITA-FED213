@@ -7,7 +7,7 @@ $(() => { ///////// jQB ////////////////////
 
     // 로고 클릭시 첫페이지 이동하기
     $(".logo a").click(function () {
-        location.href = "index.html";
+        location.href = "index.php";
     }); ///////// click //////////
 
     // GNB 메뉴 클릭시 이동하기 ///
@@ -27,7 +27,7 @@ $(() => { ///////// jQB ////////////////////
 
             // 검색(search)이 아닌 경우 카테고리페이지로 이동!
             if (txt !== "search")
-                location.href = "category.html?cat=" + txt;
+                location.href = "category.php?cat=" + txt;
 
         }); ///////// click ////////////
 
