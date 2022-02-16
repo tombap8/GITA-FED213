@@ -95,8 +95,8 @@ $(() => {
     //     // console.log(e.pageX, e.pageY);
     //     // 커서의 top, left 위치값 변경
     //     cs.css({
-    //         top: (e.pageY-40) + "px",
-    //         left: (e.pageX-40) + "px"
+    //         top: (e.clientY-40) + "px",
+    //         left: (e.clientX-40) + "px"
     //     }); ///// css /////////
 
     // }); /////// mousemove ///////////
