@@ -92,7 +92,7 @@ $(() => {
 
     // // 윈도우에서 마우스 움직일때 커서 따라다니기!
     // $(window).mousemove((e)=>{
-    //     console.log(e.pageX,e.clientX, e.pageY,e.clientY);
+    //     // console.log(e.pageX,e.clientX, e.pageY,e.clientY);
     //     // 커서의 top, left 위치값 변경
     //     cs.css({
     //         top: (e.clientY-40) + "px",
@@ -106,6 +106,17 @@ $(() => {
     // // z-index는 포지션이 있어야 적용됨!
     // $("a").css({position:"relative",zIndex:"99999"})
 
+    // $.fn.scrollStopped = function(callback) {
+    //     var that = this, $this = $(that);
+    //     $this.scroll(function(ev) {
+    //       clearTimeout($this.data('scrollTimeout'));
+    //       $this.data('scrollTimeout', setTimeout(callback.bind(that), 250, ev));
+    //     });
+    //   };
+    //   let temp = 0;
+    // $(window).scrollStopped(()=>{
+    //     console.log("스멈!")
+    // })
 
 
 
