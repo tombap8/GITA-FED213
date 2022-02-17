@@ -10,7 +10,7 @@ $num = $_GET["num"];
 //echo "1.드라마명: $dname<br>2.주연: $actors<br>3.제작사: $broad<br>4.구분: $gubun<br>5.방영시간: $stime<br>6.방영횟수: $total";
 
 // 1. DB연결문자열 불러오기
-include "../process/dbcon.inc";
+include "../../process/dbcon.inc";
 
 // 2. 입력쿼리 만들기
 // DELETE FROM 테이블명 WHERE `idx`=값

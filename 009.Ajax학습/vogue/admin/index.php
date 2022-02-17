@@ -230,7 +230,7 @@
         
         
         // 1. DB연결 문자열 불러오기        
-        include "../../process/dbcon.inc";
+        include "../process/dbcon.inc";
         
         /// 2. 전체 테이블 데이터 불러오는 쿼리문 만들기
         $sql = "SELECT * FROM `member` ORDER BY `idx` DESC ".

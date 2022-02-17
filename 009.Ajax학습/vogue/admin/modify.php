@@ -88,7 +88,7 @@
         if(isset($_GET["num"])){ 
         
             // 1. DB연결 문자열 불러오기            
-            include "../../process/dbcon.inc";
+            include "../process/dbcon.inc";
 
             /// 2. 해당 테이블 데이터 불러오는 쿼리문 만들기
             # 쿼리문은 DB에서 직접확인한다!!!
