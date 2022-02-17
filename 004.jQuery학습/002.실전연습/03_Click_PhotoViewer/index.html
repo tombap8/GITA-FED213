@@ -69,6 +69,13 @@
 					// 맨뒤이동 메서드 : append()
 				}); ///// animate //////
 
+				// 블릿변경하기 : 슬라이드 순번 2번째가 주인공!
+				// 주인공 슬라이드의 data-seq값을 읽어와서
+				// 블릿변경함수를 호출함!
+				let num = sbx.find("li").eq(1).attr("data-seq");
+				console.log("슬순번:",num);
+				chgIndic(num);
+
 			}); //////////// click ////////////////////////////
 
 
@@ -90,6 +97,13 @@
 
 				// 2. 슬라이드 박스 left:0으로 애니메이션!
 				.animate({left:"0"},600,"easeOutQuint");
+
+				// 블릿변경하기 : 슬라이드 순번 1번째가 주인공!
+				// 주인공 슬라이드의 data-seq값을 읽어와서
+				// 블릿변경함수를 호출함!
+				let num = sbx.find("li").eq(0).attr("data-seq");
+				console.log("슬순번:",num);
+				chgIndic(num);
 
 			}); ///////////////// click ///////////////////////
 
