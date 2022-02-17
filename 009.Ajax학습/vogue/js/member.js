@@ -409,8 +409,8 @@ $(() => { /////////// jQB ////////////////////////////
                         // DB에 입력완료시 위의 메시지를 띄워준다!
 
                         // 로그인 페이지로 이동하기
-                        location.replace("login.html");
-                        // location.href = "login.html";
+                        location.replace("login.php");
+                        // location.href = "login.php";
                         /* 
                             회원가입 후 이전페이지로 못가도록
                             location.replace(주소) 를 사용하여
@@ -418,7 +418,7 @@ $(() => { /////////// jQB ////////////////////////////
                             좀 더 안전한 보안을 유지한다!
                         */
                     } /////// if /////////////
-                    
+
                     else { // 실패시 //////
                         // 에러메시지
                         alert(res);
