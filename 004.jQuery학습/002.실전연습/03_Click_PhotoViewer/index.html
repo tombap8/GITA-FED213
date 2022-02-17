@@ -26,7 +26,7 @@
 			**************************************/
 			const chgIndic = seq => { // seq - 슬라이드순번
 				indic.eq(seq).addClass("on")
-				.siblings().removeClass("on");
+					.siblings().removeClass("on");
 			}; //////// chgIndic 함수 /////////////
 
 			/************************************** 
@@ -37,9 +37,9 @@
 				예) data-seq="0"
 			**************************************/
 			// each() 메서드는 요소개수 만큼 돌아줌!
-			sbx.find("li").each((idx,ele)=>{
+			sbx.find("li").each((idx, ele) => {
 				// idx-순번, ele-요소자신
-				$(ele).attr("data-seq",idx);
+				$(ele).attr("data-seq", idx);
 			}); /////// each /////////////////
 
 
@@ -55,30 +55,32 @@
 			$(".rb").click(function () {
 
 				////////// 광클금지 /////////
-				if(sprot) return;//돌아가
-				sprot = 1;// 잠금
-				setTimeout(()=>sprot=0,600);
+				if (sprot) return; //돌아가
+				sprot = 1; // 잠금
+				setTimeout(() => sprot = 0, 600);
 				// 0.6초후 다시 해제! ///////
 				////////////////////////////
 
 				// 변경대상 left값 -100%로 변경하기
 				sbx.animate({
-					left: "-100%"
-				}, 600, "easeOutQuint",
-				function () { // 콜백함수
-					// 1. 첫번째 슬라이드 맨뒤로이동
-					// this는 sbx변수의 요소
-					$(this).append($("li",this).first())
-					// 2. 이때 동시에 left값 0
-					.css({left:"0"});
-					// 맨뒤이동 메서드 : append()
-				}); ///// animate //////
+						left: "-100%"
+					}, 600, "easeOutQuint",
+					function () { // 콜백함수
+						// 1. 첫번째 슬라이드 맨뒤로이동
+						// this는 sbx변수의 요소
+						$(this).append($("li", this).first())
+							// 2. 이때 동시에 left값 0
+							.css({
+								left: "0"
+							});
+						// 맨뒤이동 메서드 : append()
+					}); ///// animate //////
 
 				// 블릿변경하기 : 슬라이드 순번 2번째가 주인공!
 				// 주인공 슬라이드의 data-seq값을 읽어와서
 				// 블릿변경함수를 호출함!
 				let num = sbx.find("li").eq(1).attr("data-seq");
-				console.log("슬순번:",num);
+				console.log("슬순번:", num);
 				chgIndic(num);
 
 			}); //////////// click ////////////////////////////
@@ -93,28 +95,32 @@
 			// 		마지막 슬라이드를 맨앞으로 이동 + left:-100%
 			//			슬라이드 박스 left:0으로 애니메이션!
 			///////////////////////////////////////////////////
-			$(".lb").click(function(){
+			$(".lb").click(function () {
 
 				////////// 광클금지 /////////
-				if(sprot) return;//돌아가
-				sprot = 1;// 잠금
-				setTimeout(()=>sprot=0,600);
+				if (sprot) return; //돌아가
+				sprot = 1; // 잠금
+				setTimeout(() => sprot = 0, 600);
 				// 0.6초후 다시 해제! ///////
 				////////////////////////////
 
 				// 1. 마지막 슬라이드를 맨앞으로 이동 + left:-100%
 				sbx.prepend(sbx.find("li").last())
-				.css({left:"-100%"})
-				// prepend() 맨앞이동/추가 메서드
+					.css({
+						left: "-100%"
+					})
+					// prepend() 맨앞이동/추가 메서드
 
-				// 2. 슬라이드 박스 left:0으로 애니메이션!
-				.animate({left:"0"},600,"easeOutQuint");
+					// 2. 슬라이드 박스 left:0으로 애니메이션!
+					.animate({
+						left: "0"
+					}, 600, "easeOutQuint");
 
 				// 블릿변경하기 : 슬라이드 순번 1번째가 주인공!
 				// 주인공 슬라이드의 data-seq값을 읽어와서
 				// 블릿변경함수를 호출함!
 				let num = sbx.find("li").eq(0).attr("data-seq");
-				console.log("슬순번:",num);
+				console.log("슬순번:", num);
 				chgIndic(num);
 
 			}); ///////////////// click ///////////////////////
@@ -124,13 +130,28 @@
 			///////// 블릿 클릭시 슬라이드 이동하기 ///////////
 			/////////////////////////////////////////////////
 			// 원리: 슬라이드 항상 현재 슬라이드가 맨앞이므로
-			// 		슬라이드의 절대위치는 snum변수에 담겨있다!
-			// 		이때 블릿을 클릭하면 그 블릿순번과 snum순번을
-			//		비교하여 슬라이드 이동방향을 결정한다!!!
+			// 슬라이드의 절대위치는 블릿li중 on이 있는 순번이다!
+			// 이때 블릿을 클릭하면 그 블릿순번과 
+			//	블릿li중 on이 있는 순번을
+			//	비교하여 슬라이드 이동방향을 결정한다!!!
 			//////////////////////////////////////////////////
 			// 이벤트 대상: #indic li -> indic변수
 			// 이벤트 종류: click 
 			/////////////////////////////////////////////////
+			indic.click(function(){
+
+				// 1. 현재 클릭된 블릿순번
+				let cseq = $(this).index();
+				// current sequence(현재 클릭된순번)
+				// index() 메서드는 클릭된 li의 순번
+				console.log("클순:",cseq);
+
+				// 2. 슬라이드 순번 -> on이 들어간 블릿순번
+				let oseq = indic.filter(".on").index();
+				// filter(선택요소) - 선택요소 중 다시선택
+				console.log("온순:",oseq);
+				
+			}); ////////////////// click ////////////////////
 
 
 
