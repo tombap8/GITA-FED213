@@ -16,9 +16,33 @@
 
 		$(function () { ///// jQB ///////////////////////////
 
+			// 변경 대상: #viewer ul
+			let sbx = $("#viewer ul");
+
 			////////////// 블릿변경함수 /////////////
 			// 대상: #indic li
 			////////////////////////////////////////
+			let indic = $("#indic li");
+			/************************************** 
+						블릿변경함수
+			**************************************/
+			const chgIndic = seq => { // seq - 슬라이드순번
+				indic.eq(seq).addClass("on")
+				.siblings().removeClass("on");
+			}; //////// chgIndic 함수 /////////////
+
+			/************************************** 
+				블릿순번을 위한 슬라이드 속성셋팅
+				- 사용자 속성사용
+				-> data-내가지은이름
+				-> data- 로 만들어야 w3c규칙에 맞는것!
+				예) data-seq="0"
+			**************************************/
+			// each() 메서드는 요소개수 만큼 돌아줌!
+			sbx.find("li").each((idx,ele)=>{
+				// idx-순번, ele-요소자신
+				$(ele).attr("data-seq",idx);
+			}); /////// each /////////////////
 
 
 
@@ -26,8 +50,7 @@
 			// 오른쪽 이동버튼 클릭시 슬라이드박스 왼쪽으로 이동
 			// 이벤트 대상: .rb
 			// 이벤트: click
-			// 변경 대상: #viewer ul
-			let sbx = $("#viewer ul");
+			// 변경 대상: #viewer ul -> sbx변수
 			// 변경 내용: 슬라이드 박스의 left값을 -100%로 이동 후
 			//			첫번째 슬라이드를 맨끝으로 이동 + left:0
 			///////////////////////////////////////////////////
@@ -64,7 +87,7 @@
 				sbx.prepend(sbx.find("li").last())
 				.css({left:"-100%"})
 				// prepend() 맨앞이동/추가 메서드
-				
+
 				// 2. 슬라이드 박스 left:0으로 애니메이션!
 				.animate({left:"0"},600,"easeOutQuint");
 
@@ -178,23 +201,13 @@
 			flex: 1;
 		}
 
-		/* 각 슬라이드 이미지 셋팅 */
-		#viewer li.sld1 {
-			background: url(image/slide1.jpg) no-repeat center/cover;
+		/* 각 슬라이드 공통 이미지 셋팅 */
+		#viewer li img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			/* 이미지 비율유지 맞춤 */
 		}
-
-		#viewer li.sld2 {
-			background: url(image/slide2.jpg) no-repeat center/cover;
-		}
-
-		#viewer li.sld3 {
-			background: url(image/slide3.jpg) no-repeat center/cover;
-		}
-
-		#viewer li.sld4 {
-			background: url(image/slide4.jpg) no-repeat center/cover;
-		}
-
 
 
 		/* 블릿표시자 */
@@ -289,10 +302,18 @@
 		<div id="viewer">
 			<!-- 슬라이드 이동박스 -->
 			<ul>
-				<li class="sld1"><span class="ir">슬라이드1</span></li>
-				<li class="sld2"><span class="ir">슬라이드2</span></li>
-				<li class="sld3"><span class="ir">슬라이드3</span></li>
-				<li class="sld4"><span class="ir">슬라이드4</span></li>
+				<li>
+					<img src="image/slide1.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/slide2.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/slide3.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/slide4.jpg" alt="슬라이드">
+				</li>
 			</ul>
 		</div>
 
