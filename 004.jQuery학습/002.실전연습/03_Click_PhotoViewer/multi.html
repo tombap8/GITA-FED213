@@ -39,9 +39,12 @@
 			// each() 메서드는 요소개수 만큼 돌아줌!
 			sbx.find("ul").each((idx, ele) => {
 				// idx-순번, ele-요소자신
-				$(ele).find("li").each((idx,ele)=>{
+
+				// 각 ul 아래 li를 다시한번 each()로 돌아줌!
+				$(ele).find("li").each((idx, ele) => {
 					$(ele).attr("data-seq", idx);
-				}); ///// each ////
+				}); ////////// each //////////
+
 			}); /////// each /////////////////
 
 
