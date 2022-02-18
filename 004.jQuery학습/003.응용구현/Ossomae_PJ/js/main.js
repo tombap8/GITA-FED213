@@ -16,9 +16,9 @@ $(() => {
     $(".abtn").click(function () {
 
         ///////// 광클금지 /////////
-        if(prot) return;
-        prot = 1;//잠금
-        setTimeout(()=>prot=0,400);
+        if (prot) return;
+        prot = 1; //잠금
+        setTimeout(() => prot = 0, 400);
         ////////////////////////////
 
         // console.log("오른쪽인가?", $(this).is(".rb"))
@@ -39,7 +39,40 @@ $(() => {
             gbx.prepend(gbx.find("div").last());
         } ///////// else /////////
 
+        // 자동호출지우기
+        clearAuto();
+
     }); /////////// click ///////////
+
+    /****************************** 
+            인터발 설정하기 
+    ******************************/
+    let autoI, // 인터발변수
+        autoT; // 타임아웃변수 
+
+    // 1.인터발함수
+    const autoSlide = () => {
+        autoI = setInterval(() =>
+            gbx.append(gbx.find("div").first()), 2000);
+    }; ///// autoSlide함수 //////
+
+    // 인터발 최초호출!
+    autoSlide();
+
+    // 2.지우기함수
+    const clearAuto = () => {
+        clearInterval(autoI); // 인터발지움
+        clearTimeout(autoT); // 타임아웃지움
+        autoT = setTimeout(autoSlide, 3000); //3초후호출
+    }; ////// clearAuto 함수 ////////
+
+
+
+
+
+
+
+
 
     // 오른쪽 버튼 클릭시
     // 이벤트대상: .rb
