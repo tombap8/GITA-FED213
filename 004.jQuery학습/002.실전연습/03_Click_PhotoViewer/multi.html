@@ -66,6 +66,13 @@
 				// 0.6초후 다시 해제! ///////
 				////////////////////////////
 
+				// 변경 대상: .viewer ul 
+				let sbx = $(this).parent().find(".viewer ul");
+				// $(this).parent() 는 클릭된 버튼자신의 부모인 .slider
+
+				// 변경 대상: .indic li
+				let indic = $(this).parents(".slider").find(".indic li");
+
 				// 변경대상 left값 -100%로 변경하기
 				sbx.animate({
 						left: "-100%"
@@ -86,7 +93,10 @@
 				// 블릿변경함수를 호출함!
 				let num = sbx.find("li").eq(1).attr("data-seq");
 				console.log("슬순번:", num);
-				chgIndic(num);
+				// chgIndic(num);
+				// 블릿 직접변경하기!
+				indic.eq(num).addClass("on")
+					.siblings().removeClass("on");
 
 			}); //////////// click ////////////////////////////
 
@@ -109,6 +119,14 @@
 				// 0.6초후 다시 해제! ///////
 				////////////////////////////
 
+				// 변경 대상: .viewer ul 
+				let sbx = $(this).parent().find(".viewer ul");
+				// $(this).parent() 는 클릭된 버튼자신의 부모인 .slider
+
+				// 변경 대상: .indic li
+				let indic = $(this).parents(".slider").find(".indic li");
+
+
 				// 1. 마지막 슬라이드를 맨앞으로 이동 + left:-100%
 				sbx.prepend(sbx.find("li").last())
 					.css({
@@ -126,7 +144,11 @@
 				// 블릿변경함수를 호출함!
 				let num = sbx.find("li").eq(0).attr("data-seq");
 				console.log("슬순번:", num);
-				chgIndic(num);
+				// chgIndic(num);
+
+				// 블릿 직접변경하기!
+				indic.eq(num).addClass("on")
+					.siblings().removeClass("on");
 
 			}); ///////////////// click ///////////////////////
 
@@ -151,6 +173,15 @@
 				setTimeout(() => sprot = 0, 600);
 				// 0.6초후 다시 해제! ///////
 				////////////////////////////
+
+				// 변경 대상: .viewer ul 
+				let sbx = $(this).parents(".slider").find(".viewer ul");
+				// $(this).parents(".slider") 는 클릭된 버튼자신의 
+				// 조상요소들 중 .slider를 선택
+
+				// 변경 대상: .indic li
+				let indic = $(this).parents(".slider").find(".indic li");
+
 
 				/****************************
 				 	1. 현재 클릭된 블릿순번 
@@ -261,7 +292,11 @@
 				/************************************** 
 					5. 블릿변경하기 : 클릭된순번 보내기
 				**************************************/
-				chgIndic(cseq);
+				// chgIndic(cseq);
+				
+				// 블릿 직접변경하기!
+				indic.eq(cseq).addClass("on")
+					.siblings().removeClass("on");
 
 			}); ////////////////// click ////////////////////
 
