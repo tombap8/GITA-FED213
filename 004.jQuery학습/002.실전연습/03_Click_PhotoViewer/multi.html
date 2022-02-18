@@ -14,13 +14,13 @@
 
 		$(function () { ///// jQB ///////////////////////////
 
-			// 변경 대상: #viewer ul
-			let sbx = $("#viewer ul");
+			// 변경 대상: .viewer ul
+			let sbx = $(".viewer ul");
 
 			////////////// 블릿변경함수 /////////////
-			// 대상: #indic li
+			// 대상: .indic li
 			////////////////////////////////////////
-			let indic = $("#indic li");
+			let indic = $(".indic li");
 			/************************************** 
 						블릿변경함수
 			**************************************/
@@ -48,7 +48,7 @@
 			// 오른쪽 이동버튼 클릭시 슬라이드박스 왼쪽으로 이동
 			// 이벤트 대상: .rb
 			// 이벤트: click
-			// 변경 대상: #viewer ul -> sbx변수
+			// 변경 대상: .viewer ul -> sbx변수
 			// 변경 내용: 슬라이드 박스의 left값을 -100%로 이동 후
 			//			첫번째 슬라이드를 맨끝으로 이동 + left:0
 			///////////////////////////////////////////////////
@@ -90,7 +90,7 @@
 			// 왼쪽 이동버튼 클릭시 슬라이드박스 오른쪽으로 이동
 			// 이벤트 대상: .lb
 			// 이벤트: click
-			// 변경 대상: #viewer ul
+			// 변경 대상: .viewer ul
 			// 변경 내용: 
 			// 		마지막 슬라이드를 맨앞으로 이동 + left:-100%
 			//			슬라이드 박스 left:0으로 애니메이션!
@@ -135,7 +135,7 @@
 			//	블릿li중 on이 있는 순번을
 			//	비교하여 슬라이드 이동방향을 결정한다!!!
 			//////////////////////////////////////////////////
-			// 이벤트 대상: #indic li -> indic변수
+			// 이벤트 대상: .indic li -> indic변수
 			// 이벤트 종류: click 
 			/////////////////////////////////////////////////
 			indic.click(function () {
@@ -279,8 +279,8 @@
 			margin: 0;
 			padding: 0;
 			width: 100%;
-			height: 100%;
-			overflow: hidden;
+			/* height: 100%;
+			overflow: hidden; */
 		}
 
 		body {
@@ -302,29 +302,29 @@
 		}
 
 		/* 슬라이드 전체박스 */
-		#slider {
+		.slider {
 			position: relative;
-			top: 50%;
-			transform: translateY(-50%);
+			/* top: 50%;
+			transform: translateY(-50%); */
 			/* 세로중앙이동 */
 			width: 600px;
 			max-width: 90%;
 			/* 양쪽에 여백있게 */
-			margin: 0 auto;
+			margin: 50px auto;
 			/* 가로중앙 마영오! */
 			background-color: #FFF;
 			border: 2px solid #FDF6DD;
 		}
 
 		/* 가상요소로 비율밀기! */
-		#slider::before {
+		.slider::before {
 			content: '';
 			display: block;
 			margin-top: 60%;
 		}
 
 		/* 비율유지속박스 */
-		#viewer {
+		.viewer {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -334,7 +334,7 @@
 		}
 
 		/* 슬라이드 이동박스 */
-		#viewer ul {
+		.viewer ul {
 			position: relative;
 			/* 위치이동포지션 */
 			left: 0;
@@ -351,12 +351,12 @@
 			list-style: none;
 		}
 
-		#viewer li {
+		.viewer li {
 			flex: 1;
 		}
 
 		/* 각 슬라이드 공통 이미지 셋팅 */
-		#viewer li img {
+		.viewer li img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
@@ -365,7 +365,7 @@
 
 
 		/* 블릿표시자 */
-		#indic {
+		.indic {
 			position: absolute;
 			bottom: 5px;
 			right: 5px;
@@ -378,7 +378,7 @@
 			list-style: none;
 		}
 
-		#indic li {
+		.indic li {
 			width: 16px;
 			height: 16px;
 			margin-right: 6px;
@@ -390,13 +390,13 @@
 		}
 
 		/* 마우스 오버시 + 선택메뉴 class="on" */
-		#indic li:hover,
-		#indic li.on {
+		.indic li:hover,
+		.indic li.on {
 			background-color: #222;
 			border: 2px solid lightgoldenrodyellow;
 		}
 
-		#indic li a {
+		.indic li a {
 			display: block;
 			width: 100%;
 			height: 100%;
@@ -450,10 +450,10 @@
 
 <body>
 
-	<div id="slider">
+	<div class="slider">
 
 		<!-- 슬라이드 속박스 -->
-		<div id="viewer">
+		<div class="viewer">
 			<!-- 슬라이드 이동박스 -->
 			<ul>
 				<li>
@@ -472,7 +472,47 @@
 		</div>
 
 		<!-- 블릿표시자 -->
-		<ul id="indic">
+		<ul class="indic">
+			<li class="on"><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
+		</ul>
+
+		<!-- 양쪽이동버튼 -->
+		<a href="#" class="abtn lb">
+			<span class="ir">왼쪽이동버튼</span>
+		</a>
+		<a href="#" class="abtn rb">
+			<span class="ir">오른쪽이동버튼</span>
+		</a>
+
+
+
+	</div>
+	<div class="slider">
+
+		<!-- 슬라이드 속박스 -->
+		<div class="viewer">
+			<!-- 슬라이드 이동박스 -->
+			<ul>
+				<li>
+					<img src="image/slide1.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/slide2.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/slide3.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/slide4.jpg" alt="슬라이드">
+				</li>
+			</ul>
+		</div>
+
+		<!-- 블릿표시자 -->
+		<ul class="indic">
 			<li class="on"><a href="#"><span class="bld">블릿</span></a></li>
 			<li><a href="#"><span class="bld">블릿</span></a></li>
 			<li><a href="#"><span class="bld">블릿</span></a></li>
