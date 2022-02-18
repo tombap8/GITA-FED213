@@ -14,8 +14,8 @@
 
 		$(function () { ///// jQB ///////////////////////////
 
-			// 변경 대상: .viewer ul
-			let sbx = $(".viewer ul");
+			// 변경 대상: .viewer
+			let sbx = $(".viewer");
 
 			////////////// 블릿변경함수 /////////////
 			// 대상: .indic li
@@ -37,9 +37,11 @@
 				예) data-seq="0"
 			**************************************/
 			// each() 메서드는 요소개수 만큼 돌아줌!
-			sbx.find("li").each((idx, ele) => {
+			sbx.find("ul").each((idx, ele) => {
 				// idx-순번, ele-요소자신
-				$(ele).attr("data-seq", idx);
+				$(ele).find("li").each((idx,ele)=>{
+					$(ele).attr("data-seq", idx);
+				}); ///// each ////
 			}); /////// each /////////////////
 
 
