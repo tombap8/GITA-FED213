@@ -116,6 +116,7 @@ $(() => {
     //   let temp = 0;
     // $(window).scrollStopped(()=>{
     //     console.log("스멈!")
+    //     $("html,body").animate({scrollTop:pos+"px"},10)
     // })
 
 
