@@ -14,6 +14,11 @@
 
 		$(function () { ///// jQB ///////////////////////////
 
+			// a태그 기본기능막기
+			$("a").click(function (e) {
+				e.preventDefault();
+			}); /////// click //////////
+
 			// 변경 대상: .viewer
 			let sbx = $(".viewer");
 
@@ -293,7 +298,7 @@
 					5. 블릿변경하기 : 클릭된순번 보내기
 				**************************************/
 				// chgIndic(cseq);
-				
+
 				// 블릿 직접변경하기!
 				indic.eq(cseq).addClass("on")
 					.siblings().removeClass("on");
@@ -381,7 +386,7 @@
 			/* 기준위치값 */
 			display: flex;
 			/* 플랙스박스 */
-			width: 400%;
+			/* width: 400%; -> 크기주지말것!! */
 			/* 사진4장 */
 			height: 100%;
 
@@ -392,7 +397,13 @@
 		}
 
 		.viewer li {
-			flex: 1;
+			/* flex: 1; */
+			flex-shrink: 0;
+			/* flex-shrink 기본값은 1 즉, 줄어들어라!
+			이것을 0으로 해야 안줄어듬! */
+			flex-basis: 100%;
+			/* width와 같은 설정. flex에서 가로크기지정 
+			100%는 부모박스에 가로크기 맞춤!*/
 		}
 
 		/* 각 슬라이드 공통 이미지 셋팅 */
@@ -490,6 +501,7 @@
 
 <body>
 
+	<!-- 1. 풍경슬라이드 -->
 	<div class="slider">
 
 		<!-- 슬라이드 속박스 -->
@@ -530,6 +542,8 @@
 
 
 	</div>
+
+	<!-- 2. 영화슬라이드 -->
 	<div class="slider">
 
 		<!-- 슬라이드 속박스 -->
@@ -537,16 +551,25 @@
 			<!-- 슬라이드 이동박스 -->
 			<ul>
 				<li>
-					<img src="image/slide1.jpg" alt="슬라이드">
+					<img src="image/m1.jpg" alt="슬라이드">
 				</li>
 				<li>
-					<img src="image/slide2.jpg" alt="슬라이드">
+					<img src="image/m2.jpg" alt="슬라이드">
 				</li>
 				<li>
-					<img src="image/slide3.jpg" alt="슬라이드">
+					<img src="image/m3.jpg" alt="슬라이드">
 				</li>
 				<li>
-					<img src="image/slide4.jpg" alt="슬라이드">
+					<img src="image/m4.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/m5.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/m6.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/m7.jpg" alt="슬라이드">
 				</li>
 			</ul>
 		</div>
@@ -554,6 +577,59 @@
 		<!-- 블릿표시자 -->
 		<ul class="indic">
 			<li class="on"><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
+		</ul>
+
+		<!-- 양쪽이동버튼 -->
+		<a href="#" class="abtn lb">
+			<span class="ir">왼쪽이동버튼</span>
+		</a>
+		<a href="#" class="abtn rb">
+			<span class="ir">오른쪽이동버튼</span>
+		</a>
+
+
+
+	</div>
+
+	<!-- 3. 자동차슬라이드 -->
+	<div class="slider">
+
+		<!-- 슬라이드 속박스 -->
+		<div class="viewer">
+			<!-- 슬라이드 이동박스 -->
+			<ul>
+				<li>
+					<img src="image/country1.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/country8.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/country14.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/country18.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/country21.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/country45.jpg" alt="슬라이드">
+				</li>
+			</ul>
+		</div>
+
+		<!-- 블릿표시자 -->
+		<ul class="indic">
+			<li class="on"><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
 			<li><a href="#"><span class="bld">블릿</span></a></li>
 			<li><a href="#"><span class="bld">블릿</span></a></li>
 			<li><a href="#"><span class="bld">블릿</span></a></li>
