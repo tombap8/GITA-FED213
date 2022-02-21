@@ -18,4 +18,5 @@ https://css-validator.kldp.org/
 통과시 이를 프린트 모드에서 PDF로 저장을 선택하여 문서화함!
 
 4. 기타검사
-- 웹접근성 검사
+- 웹접근성 검사 (웹접근성 연구소의 검사툴이 너무오래됨~)
+https://www.wah.or.kr:444/index.asp
