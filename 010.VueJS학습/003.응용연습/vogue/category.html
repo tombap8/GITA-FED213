@@ -19,6 +19,12 @@
     <script src="js/linksys.js"></script>
     <!-- 공통JS -->
     <script src="js/common.js"></script>
+
+    <!-- 뷰JS 프레임워크 스텐드얼론 버전 가져오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기(제이슨불러오기) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
+
     <!-- 카테고리 페이지 JS -->
     <script src="js/category.js"></script>
 </head>
@@ -224,12 +230,20 @@
 
     </div>
     <!-- 2. 메인영역 -->
-    <div class="bgc">
-        <main class="cont ibx">
+    <!-- 메인영역 최상위 박스 #cont가 Vue JS의 대상! -->
+    <div id="cont" class="bgc">
+        <main class="cont ibx" v-for="(v,i) in vals.data" v-if="v.경로===catName">
+            <!-- 
+                v-for="(v,i) in vals.data"
+                해석: 제이슨 데이터 만큼 for문을 돈다!
+                
+                v-if="v.경로===catName"
+                해석: 데이터중 경로값이 카테고리 전달값과 같으면
+             -->
             <!-- 1. 카테고리 페이지 탑영역 -->
             <header class="ctop">
                 <!-- 1-1.서브타이틀 -->
-                <h2 class="stit"></h2>
+                <h2 class="stit">{{v.제목}}</h2>
                 <!-- 1-2.서브메뉴
                     (LNB-Local Navigation Bar) -->
                 <nav class="lnb"></nav>
