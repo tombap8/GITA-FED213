@@ -22,6 +22,9 @@
                 constructor() { ... }
             }
 
+            -> 기본적으로 클래스안에 
+            constructor() 메서드를 필수로 생성함!
+
             *************************
 
             ((클래스 메서드))
@@ -34,6 +37,8 @@
                 method_3() { ... }
             }
 
+            -> 메서드를 추가해서 만들 경우
+            constructor() 메서드 아래에 하나씩 생성한다!
 
         */
         class MovieInfo {
@@ -45,9 +50,9 @@
                 this.문구 = des;
                 
             }
-            함수() { 
+            함수(msg) { 
                 // console.log(this);
-                return `영화 "${this.제목}" 의 감독님 이름은 ${this.감독}`;}
+                return `영화 "${this.제목}" 의 감독님 이름은 ${this.감독}, 나의 응원은 ${msg}`;}
             
         }
 
@@ -60,7 +65,7 @@
         for (let x in mi1) {
             document.write(`<h2>${mi1[x]}</h2>`);
         }
-        document.write(mi1.함수());
+        document.write(mi1.함수('굉장허네!'));
 
         // 객체인지 확인하기!
         console.log(mi1);
@@ -70,7 +75,7 @@
         for (let x in mi2) {
             document.write(`<h2>${mi2[x]}</h2>`);
         }
-        document.write(mi2.함수());
+        document.write(mi2.함수('만만세유~!'));
 
         // 객체인지 확인하기!
         console.log(mi2);
