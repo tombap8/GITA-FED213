@@ -58,13 +58,16 @@
 
         document.write("<h1>JS5-7. JS 클래스</h1><hr>");
 
-        const mi1 = new MovieInfo("조제", "멜로/로맨스, 드라마", "김종관", "한지민, 남주혁", "조제 보러 오세요");
+        const mi1 = 
+        new MovieInfo("조제", "멜로/로맨스, 드라마", "김종관", "한지민, 남주혁", "조제 보러 오세요");
 
-        const mi2 = new MovieInfo("이웃사촌", "드라마, 코미디, 드라마", "이환경", "정우, 김희원", "이웃을 사랑합시다");
+        const mi2 = 
+        new MovieInfo("이웃사촌", "드라마, 코미디, 드라마", "이환경", "정우, 김희원", "이웃을 사랑합시다");
 
         for (let x in mi1) {
             document.write(`<h2>${mi1[x]}</h2>`);
         }
+        // 함수호출!
         document.write(mi1.함수('굉장허네!'));
 
         // 객체인지 확인하기!
@@ -75,6 +78,7 @@
         for (let x in mi2) {
             document.write(`<h2>${mi2[x]}</h2>`);
         }
+        // 함수호출!
         document.write(mi2.함수('만만세유~!'));
 
         // 객체인지 확인하기!
