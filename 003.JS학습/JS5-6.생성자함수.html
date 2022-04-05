@@ -46,6 +46,17 @@
             this.감독 = dir;
             this.출연 = act;
             this.문구 = des;
+
+            // this.함수 = function(){
+            //     console.log(this);
+            //     return `영화 "${this.제목}" 의 감독님 이름은 ${this.감독}`;
+            // }
+
+            // this.함수 = ()=>{
+            //     console.log(this);
+            //     return `영화 "${this.제목}" 의 감독님 이름은 ${this.감독}`;
+            // }
+
             this.함수 = ()=>`영화 "${this.제목}" 의 감독님 이름은 ${this.감독}`;
         }
 
@@ -61,7 +72,7 @@
         document.write(mi1.함수());
         
         // 객체인지 확인하기!
-        console.log(mi1);
+        console.log("mi1이 객체인지 확인:",mi1);
 
         document.write("<hr>");
 
@@ -71,7 +82,7 @@
         document.write(mi2.함수());
 
         // 객체인지 확인하기!
-        console.log(mi2);
+        console.log("mi2가 객체인지 확인:",mi2);
 
 
         // 겍체 메서드 비교

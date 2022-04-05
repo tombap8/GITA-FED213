@@ -10,8 +10,11 @@
 
             ES6버전에서 JS 클래스가 도입됨
             JS 클래스는 JS 객체용 템플릿이다
-            JS 클래스는 객체가 아니다
+            JS 클래스는 객체가 아니다! 함수의 일종이다!
             JS 객체를 위한 템플릿이다
+            클래스는 엄격모드(use "strict")에서 사용된다
+            (만약 엄격모드를 설정하지 않으면 class를 사용하는 JS는
+            자동으로 엄격모드로 적용된다!)
 
             ****************************
 
@@ -47,14 +50,17 @@
                 this.개요 = sum;
                 this.감독 = dir;
                 this.출연 = act;
-                this.문구 = des;
-                
+                this.문구 = des;         
             }
             함수(msg) { 
-                // console.log(this);
+                console.log("class안의 함수의 this는?",this);
                 return `영화 "${this.제목}" 의 감독님 이름은 ${this.감독}, 나의 응원은 ${msg}`;}
             
         }
+
+        
+        console.log("클래스는 뭐지? ",typeof MovieInfo);
+
 
         document.write("<h1>JS5-7. JS 클래스</h1><hr>");
 
@@ -71,7 +77,8 @@
         document.write(mi1.함수('굉장허네!'));
 
         // 객체인지 확인하기!
-        console.log(mi1);
+        console.log("mi1이 객체인지 확인:",typeof mi1);
+
 
         document.write("<hr>");
 
@@ -82,7 +89,7 @@
         document.write(mi2.함수('만만세유~!'));
 
         // 객체인지 확인하기!
-        console.log(mi2);
+        console.log("mi2가 객체인지 확인:",typeof mi2);
     </script>
 </head>
 
