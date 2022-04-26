@@ -1,3 +1,11 @@
+.react{
+  background-color: aqua;
+  color: pink;
+  font-size: 50px;
+  font-weight: bold;
+  padding: 50px;
+  text-align: center;
+}
 .App {
   text-align: center;
 }
