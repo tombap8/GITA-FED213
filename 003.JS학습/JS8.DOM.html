@@ -369,10 +369,6 @@
 
 
 
-
-
-
-
                 /************************************************* 
                     ※ appendChild() 와 insertBefore()는 대상을
                     정하는 것에 따라 중간에 적용할 수 있다!
@@ -403,11 +399,25 @@
             overflow: hidden;
         }
 
+       
+        #div02 {
+            width: 600px;
+            padding: 10px;
+        }
+
         #div02 ul {
+            display: flex;
+            /* 플렉스 박스 */
+            flex-wrap: wrap;
+
             margin: 0;
             padding: 10px;
             list-style: none;
             text-align: center;
+        }
+
+        #div02 ul li {
+            padding: 10px;
         }
     </style>
 
